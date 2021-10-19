@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
 
   private void Update()
   {
-    Debug.Log(_isDashing);
-    
     CheckDash();
     _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
