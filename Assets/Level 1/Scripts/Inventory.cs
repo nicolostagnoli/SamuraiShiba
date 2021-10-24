@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-   public bool[] isFull;
    public GameObject[] slots;
    public int[] currentStack;
-   public int firstFreeSlot;
-   public TextMeshProUGUI[] counterText;
 }
