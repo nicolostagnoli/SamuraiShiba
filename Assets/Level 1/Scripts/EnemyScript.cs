@@ -13,6 +13,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private float _moveSpeed;
 
+    public float initialHealth;
+    private float health;
+
     private Vector3 startingPosition;
 
     private Vector3 roamPosition;
@@ -25,6 +28,16 @@ public class EnemyScript : MonoBehaviour
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
+
+        health = initialHealth;
+    }
+
+    void Update()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -90,5 +103,9 @@ public class EnemyScript : MonoBehaviour
     {
         return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 4f,4f);
     }
-    
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
 }

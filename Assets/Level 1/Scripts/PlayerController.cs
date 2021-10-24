@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
   
   //Components
   private Rigidbody2D _rb;
+  private Animator _animator;
   public LayerMask whatIsGround;
   public Transform feetPos;
  
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
   {
     _rb = GetComponent<Rigidbody2D>();
     _canMove = true;
+    _animator = GetComponent<Animator>();
   }
 
   private void FixedUpdate()
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
     if (_canMove)
     {
       _rb.velocity = new Vector2(_moveInput * speed, _rb.velocity.y);
+      _animator.SetFloat("Speed", Mathf.Abs(_rb.velocity.x));
     }
   }
 
@@ -69,13 +72,15 @@ public class PlayerController : MonoBehaviour
       _facingDirection = -1f;
     }
     
-    
+    //TODO: check when player returns on ground to stop jump animation
     //Jumping with high jump
     if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
     {
       _isJumping = true;
       _jumpTimeCounter = jumpTime;
       _rb.velocity = Vector2.up * jumpForce;
+
+      _animator.SetTrigger("Jump");
     }
 
     if (Input.GetKey(KeyCode.Space) && _isJumping)
@@ -126,8 +131,10 @@ public class PlayerController : MonoBehaviour
         _canMove = false;
         //canFlip = false;
         _rb.velocity = new Vector2(dashSpeed * _facingDirection, _rb.velocity.y);
-        Debug.Log(_rb.velocity);
+        //Debug.Log(_rb.velocity);
         _dashTimeLeft -= Time.deltaTime;
+
+        _animator.SetTrigger("Dash");
 
         if (Mathf.Abs(transform.position.x - _lastImageXPos) > distanceBetweenImages)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private float timeBetweenAttacks;
+    private Animator _animator;
 
     public float startTimeBetweenAttacks;
     public Transform attackPosition;
@@ -15,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         timeBetweenAttacks = 0;
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,13 +25,15 @@ public class PlayerAttack : MonoBehaviour
         if(timeBetweenAttacks <= 0) {
 
            if (Input.GetKey(KeyCode.P)) {
-                Debug.Log("Attacking");
+                //Debug.Log("Attacking");
                 Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
                 for(int i = 0; i < enemiesToAttack.Length; i++) {
-                    enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                    enemiesToAttack[i].gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
                     Debug.Log("Damage to: " + enemiesToAttack[i].gameObject.name);
                 }
                 timeBetweenAttacks = startTimeBetweenAttacks;
+
+                _animator.SetTrigger("Attack");
             }
         }
         else {
