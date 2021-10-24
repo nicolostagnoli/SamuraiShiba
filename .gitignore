@@ -67,3 +67,4 @@ UserSettings/EditorUserSettings.asset
 *.xml
 .idea/.idea.SamuraiShiba/.idea/indexLayout.xml
 UserSettings/EditorUserSettings.asset
+.vsconfig
