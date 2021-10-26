@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2915046846434439667}
   m_Layer: 10
   m_Name: StaminaBar
-  m_TagString: Untagged
+  m_TagString: StaminaBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:

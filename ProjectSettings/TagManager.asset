@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - Enemy
   - HealthPotion
+  - HealthBar
+  - StaminaBar
+  - StaminaPotion
   layers:
   - Default
   - TransparentFX

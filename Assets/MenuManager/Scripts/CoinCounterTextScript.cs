@@ -18,6 +18,5 @@ public class CoinCounterTextScript : MonoBehaviour
     void Update()
     {
         _text.SetText(coinAmount.ToString());
-        Debug.Log(coinAmount.ToString());
     }
 }

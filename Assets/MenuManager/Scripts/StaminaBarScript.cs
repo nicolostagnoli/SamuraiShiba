@@ -9,20 +9,6 @@ public class StaminaBarScript : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetMaxHealth(100);
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            ReduceStamina(19);
-        }
-    }
-
     public void SetStamina(int stamina)
     {
         slider.value = stamina;
@@ -30,14 +16,7 @@ public class StaminaBarScript : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
     
-    public void ReduceStamina(int stamina)
-    {
-        slider.value -= stamina;
-
-        fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
-
-    public void SetMaxHealth(int maxStamina)
+    public void SetMaxStamina(int maxStamina)
     {
         slider.maxValue = maxStamina;
         slider.value = maxStamina;
