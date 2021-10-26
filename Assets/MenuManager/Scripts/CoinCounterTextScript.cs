@@ -7,17 +7,15 @@ using UnityEngine.UI;
 public class CoinCounterTextScript : MonoBehaviour
 {
     private TextMeshProUGUI _text;
-    public int coinAmount;
-    
-    void Start()
+    private void Start()
     {
         _text = GetComponent<TextMeshProUGUI>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        _text.SetText(coinAmount.ToString());
-        Debug.Log(coinAmount.ToString());
     }
-}
+    public void setCoinsAmount(int coins)
+    {
+        _text.SetText(coins.ToString());
+    }
+    
+
+} 
