@@ -10,6 +10,8 @@ TagManager:
   - HealthBar
   - StaminaBar
   - StaminaPotion
+  - Coin
+  - CoinsAmount
   layers:
   - Default
   - TransparentFX
