@@ -6,11 +6,8 @@ TagManager:
   tags:
   - Platform
   - Enemy
-  - HealthPotion
   - HealthBar
   - StaminaBar
-  - StaminaPotion
-  - Coin
   - CoinsAmount
   layers:
   - Default

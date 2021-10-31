@@ -20,6 +20,7 @@ public class EnemyScript : MonoBehaviour
 
     private Vector3 roamPosition;
 
+    public LootTable lootTable;
     
     private Rigidbody2D _rigidbody;
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class EnemyScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            DropLoot();
         }
     }
 
@@ -107,5 +109,16 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+    }
+    
+    private void DropLoot(){
+        if (lootTable != null)
+        {
+            Item current = lootTable.itemPowerup();
+            if (current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
     }
 }
