@@ -20,6 +20,8 @@ public class EnemyScript : MonoBehaviour
 
     private Vector3 roamPosition;
 
+    private Animator _animator;
+
     
     private Rigidbody2D _rigidbody;
     // Start is called before the first frame update
@@ -28,15 +30,17 @@ public class EnemyScript : MonoBehaviour
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
+        _animator = GetComponent<Animator>();
 
         health = initialHealth;
     }
 
     void Update()
     {
+        //die
         if (health <= 0)
         {
-            Destroy(gameObject);
+            _animator.SetTrigger("Die");
         }
     }
 
@@ -107,5 +111,10 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        _animator.SetTrigger("Hit");
+    }
+
+    public void OnCompleteDieAnimation(){
+        Destroy(gameObject);
     }
 }

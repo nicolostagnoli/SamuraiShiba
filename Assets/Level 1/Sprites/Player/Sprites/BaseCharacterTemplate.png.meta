@@ -256,19 +256,19 @@ TextureImporter:
     second: BaseCharacterTemplate_83
   - first:
       213: -8253656380430986457
-    second: BaseCharacterTemplate_84
+    second: HeavyAttack0
   - first:
       213: 5783471858495671720
-    second: BaseCharacterTemplate_85
+    second: HeavyAttack1
   - first:
       213: 8143233687604458816
-    second: BaseCharacterTemplate_86
+    second: HeavyAttack2
   - first:
       213: -5702984833061825692
-    second: BaseCharacterTemplate_87
+    second: HeavyAttack3
   - first:
       213: -7257672634889720011
-    second: BaseCharacterTemplate_88
+    second: HeavyAttack4
   - first:
       213: -762643856179650837
     second: BaseCharacterTemplate_89
@@ -2138,7 +2138,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 386
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -2323,7 +2323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BaseCharacterTemplate_84
+      name: HeavyAttack0
       rect:
         serializedVersion: 2
         x: 0
@@ -2344,7 +2344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BaseCharacterTemplate_85
+      name: HeavyAttack1
       rect:
         serializedVersion: 2
         x: 64
@@ -2365,7 +2365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BaseCharacterTemplate_86
+      name: HeavyAttack2
       rect:
         serializedVersion: 2
         x: 128
@@ -2386,7 +2386,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BaseCharacterTemplate_87
+      name: HeavyAttack3
       rect:
         serializedVersion: 2
         x: 192
@@ -2407,7 +2407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BaseCharacterTemplate_88
+      name: HeavyAttack4
       rect:
         serializedVersion: 2
         x: 256
