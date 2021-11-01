@@ -9,11 +9,11 @@ public class HealthPotion : UsableItem
   private void Start()
   {
     _playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-    initCategory();
-    setItemName(ItemName.HealthPotion);
+    InitCategory();
+    SetItemName(ItemName.HealthPotion);
   }
 
-  public override void useItem()
+  public override void UseItem()
   {
     _playerStats.setHealth(_playerStats.getHealth() + _potionValue);
   }

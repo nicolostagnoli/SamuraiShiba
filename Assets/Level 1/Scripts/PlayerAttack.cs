@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
                 //Debug.Log("Attacking");
                 Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
                 for(int i = 0; i < enemiesToAttack.Length; i++) {
-                    enemiesToAttack[i].gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+                    enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(damage);
                     Debug.Log("Damage to: " + enemiesToAttack[i].gameObject.name);
                 }
                 timeBetweenAttacks = startTimeBetweenAttacks;

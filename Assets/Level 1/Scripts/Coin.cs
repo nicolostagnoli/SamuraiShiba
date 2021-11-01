@@ -6,6 +6,6 @@ public class Coin : Item
 {
     private void Start()
     {
-        setItemName(ItemName.Coin);
+        SetItemName(ItemName.Coin);
     }
 }

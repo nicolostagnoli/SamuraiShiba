@@ -42,7 +42,7 @@ public class Slot : MonoBehaviour
         if (_inventory.currentStack[slotNumber] > 0)
         {
             _item = GetComponentInChildren<UsableItem>();
-            _item.useItem();
+            _item.UseItem();
             _inventory.currentStack[slotNumber]--;
             GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
             if (_inventory.currentStack[slotNumber] == 0)

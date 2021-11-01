@@ -9,10 +9,10 @@ public class StaminaPotion : UsableItem
     private void Start()
     {
         _playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-        initCategory();
-        setItemName(ItemName.StaminaPotion);
+        InitCategory();
+        SetItemName(ItemName.StaminaPotion);
     }
-    public override void useItem()
+    public override void UseItem()
     {
         _playerStats.setStamina(_playerStats.getStamina()+_potionValue);
         Debug.Log("stamina: " +_playerStats.getStamina());

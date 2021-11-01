@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : Enemy
 {
     [SerializeField]
     private Transform _player;
@@ -13,14 +13,11 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private float _moveSpeed;
 
-    public float initialHealth;
-    private float health;
+    private float initialHealth=20f;
 
     private Vector3 startingPosition;
 
     private Vector3 roamPosition;
-
-    public LootTable lootTable;
     
     private Rigidbody2D _rigidbody;
     // Start is called before the first frame update
@@ -29,17 +26,7 @@ public class EnemyScript : MonoBehaviour
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
-
-        health = initialHealth;
-    }
-
-    void Update()
-    {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-            DropLoot();
-        }
+        SetHealth(initialHealth);
     }
 
     // Update is called once per frame
@@ -62,11 +49,11 @@ public class EnemyScript : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, roamPosition, 2f* Time.deltaTime);
         if (transform.position.x < roamPosition.x)
         {
-            turnRight();
+            TurnRight();
         }
         else if(transform.position.x > roamPosition.x)
         {
-            turnLeft();
+            TurnLeft();
         }
         if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance)
         {
@@ -79,23 +66,23 @@ public class EnemyScript : MonoBehaviour
         if (transform.position.x < _player.position.x)
         {
             _rigidbody.velocity = new Vector2(_moveSpeed, 0);
-            turnRight();
+            TurnRight();
 
         }
         else if(transform.position.x > _player.position.x)
         {
             _rigidbody.velocity = new Vector2(-_moveSpeed, 0);
-            turnLeft();
+            TurnLeft();
         }
     }
 
-    private void turnRight()
+    private void TurnRight()
     {
         transform.localScale = new Vector2(1, 1);
 
     }
 
-    private void turnLeft()
+    private void TurnLeft()
     {
         transform.localScale = new Vector2(-1, 1);
 
@@ -106,19 +93,4 @@ public class EnemyScript : MonoBehaviour
         return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 4f,4f);
     }
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-    }
-    
-    private void DropLoot(){
-        if (lootTable != null)
-        {
-            Item current = lootTable.itemPowerup();
-            if (current != null)
-            {
-                Instantiate(current.gameObject, transform.position, Quaternion.identity);
-            }
-        }
-    }
 }

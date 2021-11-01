@@ -7,11 +7,11 @@ using UnityEngine;
 public abstract class UsableItem : Item
 {
     private float itemCooldown=1;
-    public abstract void useItem();
+    public abstract void UseItem();
     
-    public void initCategory()
+    public void InitCategory()
     {
-        setCategory(Category.UsableItem);
+        SetCategory(Category.UsableItem);
     }
 
 

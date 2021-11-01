@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 [System.Serializable]
 public class Loot
 {
-    
     public Item item;
     public int lootChanche;
 }
@@ -15,19 +14,24 @@ public class Loot
 public class LootTable : ScriptableObject
 {
     public Loot[] loots;
+    private List<Item> droppedItems=new List<Item>();
 
-    public Item itemPowerup()
+    public List<Item> itemPowerup(int dropAmount)
     {
-        int cumProb=0;
-        int currentProb = Random.Range(0, 100);
-        for (int i = 0; i < loots.Length; i++)
+        for (int k = 0; k < dropAmount; k++)
         {
-            cumProb += loots[i].lootChanche;
-            if (currentProb <= cumProb)
+            int cumProb=0;
+            int currentProb = Random.Range(0, 100);
+            for (int i = 0; i < loots.Length; i++)
             {
-                return loots[i].item;
+                cumProb += loots[i].lootChanche;
+                if (currentProb <= cumProb)
+                {
+                    droppedItems.Add(loots[i].item);
+                    break;
+                }
             }
         }
-        return null;
+        return droppedItems;
     }
 }

@@ -52,7 +52,7 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<Item>().getItemName().Equals(ItemName.Coin))
+        if (other.gameObject.GetComponent<Item>().GetItemName().Equals(ItemName.Coin))
         {
             _coins++;
             _coinCounterTextScript.setCoinsAmount(_coins);

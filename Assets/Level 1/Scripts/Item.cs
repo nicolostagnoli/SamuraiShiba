@@ -19,22 +19,22 @@ public abstract class Item : MonoBehaviour
     private Category category;
     private ItemName _itemName;
 
-    public void setCategory(Category category)
+    public void SetCategory(Category category)
     {
         this.category = category;
     }
 
-    public Category getCategory()
+    public Category GetCategory()
     {
         return category;
     }
     
-    public void setItemName(ItemName itemName)
+    public void SetItemName(ItemName itemName)
     {
         _itemName = itemName;
     }
 
-    public ItemName getItemName()
+    public ItemName GetItemName()
     {
         return _itemName;
     }
