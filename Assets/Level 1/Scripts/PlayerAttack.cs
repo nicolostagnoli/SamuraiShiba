@@ -56,7 +56,8 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("Heavy Attacking");
                 Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
                 for(int i = 0; i < enemiesToAttack.Length; i++) {
-                    enemiesToAttack[i].gameObject.GetComponent<EnemyScript>().TakeDamage(heavyDamage+_comboCont*comboDamageBoost*1.2f);
+
+                    enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(heavyDamage+_comboCont*comboDamageBoost*1.2f);
                     Debug.Log("Damage " + heavyDamage+_comboCont*comboDamageBoost*1.2f + " to: " + enemiesToAttack[i].gameObject.name);
 
                     //Combo counter

@@ -33,7 +33,7 @@ public class Pickup : MonoBehaviour
                     break;
                 }
                 //Item already present in the inventory
-                if (_inventory.slots[i].transform.GetChild(ItemPosition).gameObject.tag.Equals(gameObject.tag) && _inventory.currentStack[i] < _maxStack)
+                if (_inventory.slots[i].transform.GetComponentInChildren<UsableItem>().GetItemName().Equals(gameObject.GetComponent<UsableItem>().GetItemName()) && _inventory.currentStack[i] < _maxStack)
                 {
                     _inventory.currentStack[i]++;
                     Destroy(gameObject);

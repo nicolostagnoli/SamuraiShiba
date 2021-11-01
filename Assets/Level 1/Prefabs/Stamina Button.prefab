@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8676493382220687780}
   m_Layer: 5
   m_Name: Stamina Button
-  m_TagString: StaminaPotion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,4 +133,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae5520665465154cbd075c8491628ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCooldown: 1

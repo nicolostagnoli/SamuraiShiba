@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -740654754505120860}
   m_Layer: 1
   m_Name: Health Button
-  m_TagString: HealthPotion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,5 +133,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da1562040624fd4b80de7d156d9ca1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCooldown: 1
-  healthbar: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
