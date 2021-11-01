@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
 {
     private Inventory _inventory;
     public int slotNumber;
-    private Item _item;
+    private UsableItem _item;
     public KeyCode key;
     private Button button;
     private void Start()
@@ -41,8 +41,8 @@ public class Slot : MonoBehaviour
     {
         if (_inventory.currentStack[slotNumber] > 0)
         {
-            _item = GetComponentInChildren<Item>();
-            _item.useItem();
+            _item = GetComponentInChildren<UsableItem>();
+            _item.UseItem();
             _inventory.currentStack[slotNumber]--;
             GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
             if (_inventory.currentStack[slotNumber] == 0)

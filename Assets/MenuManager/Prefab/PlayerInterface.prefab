@@ -661,6 +661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaminaBar
       objectReference: {fileID: 0}
+    - target: {fileID: 2915046846434439665, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_TagString
+      value: StaminaBar
+      objectReference: {fileID: 0}
     - target: {fileID: 2915046846712345511, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -693,6 +697,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_TagString
       value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374723, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
