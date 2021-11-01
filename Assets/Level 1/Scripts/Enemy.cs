@@ -1,20 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
     private float _health=50;
     public LootTable lootTable;
-    private int dropAmount = 10;
+    private int dropAmount = 5;
+    private Animator _animator;
+    private bool hasAnimator;
+
+    private void Start()
+    {
+        if (GetComponent<Animator>() == null)
+        {
+            hasAnimator = false;
+        }
+        else _animator = GetComponent<Animator>();
+
+    }
+
     public void TakeDamage(float damage)
     {
+        if (hasAnimator)
+        {
+            _animator.SetTrigger("Hit");
+        }
         Debug.Log(_health);
         _health -= damage;
         if (_health <= 0)
         {
-            Destroy(gameObject);
-            DropLoot();
+            if (hasAnimator)
+            {
+                _animator.SetTrigger("Die");
+                DropLoot();
+            }
+            else
+            {
+                Destroy(gameObject);
+                DropLoot(); 
+            }
+
         }
     }
     
@@ -34,5 +63,8 @@ public class Enemy : MonoBehaviour
         _health = health;
     }
     
+    public void OnCompleteDieAnimation(){
+        Destroy(gameObject);
+    }
     
 }

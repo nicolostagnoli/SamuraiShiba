@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("Light Attacking");
                 Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
                 for(int i = 0; i < enemiesToAttack.Length; i++) {
-                    enemiesToAttack[i].gameObject.GetComponent<EnemyScript>().TakeDamage(lightDamage+_comboCont*comboDamageBoost);
+                    enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage+_comboCont*comboDamageBoost);
                     Debug.Log("Damage " + lightDamage+_comboCont*comboDamageBoost + " to: " + enemiesToAttack[i].gameObject.name);
                     //combo counter
                     if(_timeBetweenCombo > 0){
