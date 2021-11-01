@@ -18,6 +18,9 @@ public class EnemyScript : Enemy
     private Vector3 startingPosition;
 
     private Vector3 roamPosition;
+
+
+    private Animator _animator;
     
     private Rigidbody2D _rigidbody;
     // Start is called before the first frame update
@@ -27,6 +30,18 @@ public class EnemyScript : Enemy
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
         SetHealth(initialHealth);
+        _animator = GetComponent<Animator>();
+
+        health = initialHealth;
+    }
+
+    void Update()
+    {
+        //die
+        if (health <= 0)
+        {
+            _animator.SetTrigger("Die");
+        }
     }
 
     // Update is called once per frame
@@ -93,4 +108,13 @@ public class EnemyScript : Enemy
         return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 4f,4f);
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        _animator.SetTrigger("Hit");
+    }
+
+    public void OnCompleteDieAnimation(){
+        Destroy(gameObject);
+    }
 }
