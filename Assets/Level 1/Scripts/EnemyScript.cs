@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
 public class EnemyScript : Enemy
 {
     [SerializeField]
     private Transform _player;
-    
     [SerializeField]
     private float _agroRange;
-    
+    [SerializeField]
+    private float _attackRange;
     [SerializeField]
     private float _moveSpeed;
-
     private float initialHealth=20f;
-
     private Vector3 startingPosition;
-
     private Vector3 roamPosition;
+    public float attackRange;
+    public Transform attackPosition;
+    public int damage;
+    public LayerMask player;
+    private float _timer;
+    private float _timeBetweenAttacks;
+
 
 
     
@@ -30,6 +35,7 @@ public class EnemyScript : Enemy
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
         SetHealth(initialHealth);
+        _timeBetweenAttacks = 1;
     }
     
 
@@ -40,6 +46,17 @@ public class EnemyScript : Enemy
         if (distanceToPlayer < _agroRange)
         {
             ChasePlayer();
+            if (distanceToPlayer <= attackRange)
+            {
+                StopChasing();
+                if (_timer >_timeBetweenAttacks)
+                {
+                    AttackPlayer();
+                }
+                if(_timer < _timeBetweenAttacks+1){
+                    _timer += Time.deltaTime;
+                }
+            }
         }
         else
         {
@@ -80,6 +97,11 @@ public class EnemyScript : Enemy
         }
     }
 
+    private void StopChasing()
+    {
+        _rigidbody.velocity = Vector2.zero;
+    }
+
     private void TurnRight()
     {
         transform.localScale = new Vector2(1, 1);
@@ -95,6 +117,13 @@ public class EnemyScript : Enemy
     private Vector3 GetRoamingPosition()
     {
         return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 4f,4f);
+    }
+
+    private void AttackPlayer()
+    {
+        Collider2D playerToAttack = Physics2D.OverlapCircle(attackPosition.position, attackRange, player);
+        playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        _timer = 0;
     }
 
 
