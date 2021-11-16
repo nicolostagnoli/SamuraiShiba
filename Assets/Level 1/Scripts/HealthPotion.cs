@@ -15,7 +15,17 @@ public class HealthPotion : UsableItem
 
   public override void UseItem()
   {
-    _playerStats.setHealth(_playerStats.getHealth() + _potionValue);
+    if (_playerStats.getHealth() + _potionValue > _playerStats.GetMaxHealth())
+    {
+      _playerStats.setHealth(_playerStats.GetMaxHealth());
+    }
+    else _playerStats.setHealth(_playerStats.getHealth() + _potionValue);
+    Debug.Log("Player health: "+_playerStats.getHealth());
+  }
+
+  public override bool CannotUseItem()
+  {
+    return _playerStats.getHealth() == _playerStats.GetMaxHealth();
   }
   
 }

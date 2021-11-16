@@ -27,6 +27,21 @@ public class PlayerStats : MonoBehaviour
         staminaBarScript.SetMaxStamina(PlayerMaxStamina);
         Debug.Log(healthBarScript);
     }
+    
+    public void TakeDamage(int damage)
+    {
+        //_animator.SetTrigger("Hit");
+        if (_health > 0)
+        {
+            if(_health-damage<0) setHealth(0);
+            setHealth(_health-damage);
+            Debug.Log("player health: " +_health);
+        }
+        if (_health <= 0)
+        {
+           // _animator.SetTrigger("Die");
+        }
+    }
 
     public void setHealth(int health)
     {
@@ -48,6 +63,16 @@ public class PlayerStats : MonoBehaviour
     public int getStamina()
     {
         return _stamina;
+    }
+
+    public int GetMaxHealth()
+    {
+        return PlayerMaxHealth;
+    }
+    
+    public int GetMaxStamina()
+    {
+        return PlayerMaxStamina;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

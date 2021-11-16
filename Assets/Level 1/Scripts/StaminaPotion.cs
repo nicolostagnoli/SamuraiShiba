@@ -15,7 +15,16 @@ public class StaminaPotion : UsableItem
     public override void UseItem()
     {
         _playerStats.setStamina(_playerStats.getStamina()+_potionValue);
+        if (_playerStats.getStamina() + _potionValue > _playerStats.GetMaxStamina())
+        {
+            _playerStats.setStamina(_playerStats.GetMaxStamina());
+        }
         Debug.Log("stamina: " +_playerStats.getStamina());
+    }
+    
+    public override bool CannotUseItem()
+    {
+        return _playerStats.getStamina() == _playerStats.GetMaxStamina();
     }
     
 }

@@ -14,5 +14,7 @@ public abstract class UsableItem : Item
         SetCategory(Category.UsableItem);
     }
 
+    public abstract bool CannotUseItem();
+
 
 }

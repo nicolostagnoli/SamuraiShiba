@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     private Inventory _inventory;
+    //Assign whatever number you want, but must be different for every slot
     public int slotNumber;
     private UsableItem _item;
     public KeyCode key;
@@ -42,16 +43,20 @@ public class Slot : MonoBehaviour
         if (_inventory.currentStack[slotNumber] > 0)
         {
             _item = GetComponentInChildren<UsableItem>();
-            _item.UseItem();
-            _inventory.currentStack[slotNumber]--;
-            GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
-            if (_inventory.currentStack[slotNumber] == 0)
+            if(!_item.CannotUseItem())
             {
-                for (int i = 1; i < transform.childCount; i++)
+                _item.UseItem();
+                _inventory.currentStack[slotNumber]--;
+                GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
+                if (_inventory.currentStack[slotNumber] == 0)
                 {
-                    Destroy(transform.GetChild(i).gameObject);
+                    for (int i = 1; i < transform.childCount; i++)
+                    {
+                        Destroy(transform.GetChild(i).gameObject);
+                    }
                 }
             }
+
         }
     }
 }
