@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 7354296416057042448, guid: 2226a20089dab4345895af6c31b6221e, type: 3}
-  _maxStack: 5
+  _maxStack: 99
 --- !u!114 &-4643696292872056336
 MonoBehaviour:
   m_ObjectHideFlags: 0

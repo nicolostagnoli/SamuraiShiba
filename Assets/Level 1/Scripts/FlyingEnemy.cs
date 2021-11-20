@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 
-public class EnemyScript : Enemy
+public class FlyingEnemy : Enemy
 {
     [SerializeField]
     private Transform _player;
@@ -85,13 +84,13 @@ public class EnemyScript : Enemy
     {
         if (transform.position.x < _player.position.x)
         {
-            _rigidbody.velocity = new Vector2(_moveSpeed, 0);
+            transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
             TurnRight();
 
         }
         else if(transform.position.x > _player.position.x)
         {
-            _rigidbody.velocity = new Vector2(-_moveSpeed, 0);
+            transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
             TurnLeft();
         }
     }
