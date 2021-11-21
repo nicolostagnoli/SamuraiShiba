@@ -22,7 +22,7 @@ TagManager:
   - Pickable
   - Projectyle
   - EnemyProjectyle
-  - 
+  - Tiles
   - 
   - 
   - 
@@ -46,12 +46,12 @@ TagManager:
   - name: Background
     uniqueID: 1248505815
     locked: 0
+  - name: Tiles
+    uniqueID: 11151385
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 4271838921
-    locked: 0
-  - name: New Layer
-    uniqueID: 11151385
     locked: 0
