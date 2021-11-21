@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CraneScript : MonoBehaviour
 
@@ -27,6 +28,7 @@ public class CraneScript : MonoBehaviour
     public Transform player;
     public int featherGroup;
     public float featherAngle;
+    public float featherAngleTop;
     public float featherVelocity;
     public float minShootTime;
     public float maxShootTime;
@@ -92,15 +94,31 @@ public class CraneScript : MonoBehaviour
         tParam = 0f;
 
         //Set randomly the new route to do
-        int newRoute = Random.Range(0, 2);
-        if (routeToGo == 0 || routeToGo == 3) {
+        int newRoute = Random.Range(0, 3);
+        if (routeToGo == 4)
+        {
+            ThrowFeathersFromTop();
+            routeToGo = 5; //backFromAttack
+            canShoot = false;
+        }
+        else if (routeToGo == 5)
+        {
+            routeToGo = 1;
+            canShoot = true;
+        }
+        else if (routeToGo == 0 || routeToGo == 3) {
             if(newRoute == 0) {
                 routeToGo = 1; //fly
                 canShoot = true;
             }
-            else {
+            else if (newRoute == 1) {
                 routeToGo = 2; //swoop
                 canShoot = false;
+            }
+            else
+            {
+                routeToGo = 4; //attackFromTop
+                canShoot = false; 
             }
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -148,7 +166,29 @@ public class CraneScript : MonoBehaviour
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
     }
-
+    
+    void ThrowFeathersFromTop()
+    {
+        GameObject feather = Instantiate(featherPrefab);
+        feather.transform.position = transform.position;
+        feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
+        feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
+        for (int i = 0; i < 5; i++)
+        {
+            feather = Instantiate(featherPrefab);
+            feather.transform.position = transform.position;
+            feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngleTop * (i + 1));
+            feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            feather = Instantiate(featherPrefab);
+            feather.transform.position = transform.position;
+            feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngleTop * (i + 1));
+            feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
+        }
+    }
+    
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosition.position, attackRange);
