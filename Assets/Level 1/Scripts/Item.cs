@@ -12,7 +12,8 @@ public enum ItemName
 {
     HealthPotion,
     StaminaPotion,
-    Coin
+    Coin,
+    Shuriken
 }
 public abstract class Item : MonoBehaviour
 {

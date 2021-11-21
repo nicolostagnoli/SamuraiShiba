@@ -43,7 +43,7 @@ public class Slot : MonoBehaviour
         if (_inventory.currentStack[slotNumber] > 0)
         {
             _item = GetComponentInChildren<UsableItem>();
-            if(!_item.CannotUseItem())
+            if(_item.CanUseItem())
             {
                 _item.UseItem();
                 _inventory.currentStack[slotNumber]--;

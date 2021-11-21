@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour
     _lastImageXPos = transform.position.x;
   }
 
+  public bool CanUseShuriken()
+  {
+    return _isGrounded && _moveInput == 0;
+  }
+
   private void CheckDash()
   {
     if (_isDashing)

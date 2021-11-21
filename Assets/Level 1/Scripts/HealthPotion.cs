@@ -23,9 +23,9 @@ public class HealthPotion : UsableItem
     Debug.Log("Player health: "+_playerStats.getHealth());
   }
 
-  public override bool CannotUseItem()
+  public override bool CanUseItem()
   {
-    return _playerStats.getHealth() == _playerStats.GetMaxHealth();
+    return _playerStats.getHealth() != _playerStats.GetMaxHealth();
   }
   
 }

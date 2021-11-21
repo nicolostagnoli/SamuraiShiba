@@ -22,9 +22,9 @@ public class StaminaPotion : UsableItem
         Debug.Log("stamina: " +_playerStats.getStamina());
     }
     
-    public override bool CannotUseItem()
+    public override bool CanUseItem()
     {
-        return _playerStats.getStamina() == _playerStats.GetMaxStamina();
+        return _playerStats.getStamina() != _playerStats.GetMaxStamina();
     }
     
 }
