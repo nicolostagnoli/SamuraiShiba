@@ -35,13 +35,22 @@ public class PlayerStats : MonoBehaviour
         {
             if(_health-damage<0) setHealth(0);
             setHealth(_health-damage);
-            Debug.Log("player health: " +_health);
         }
         if (_health <= 0)
         {
            // _animator.SetTrigger("Die");
         }
     }
+    public void UseStamina(int stamina) {
+        if (_stamina > 0) {
+            if (_stamina - stamina < 0) setStamina(0);
+            setStamina(_stamina - stamina);
+        }
+        if (_stamina <= 0) {
+
+        }
+    }
+
 
     public void setHealth(int health)
     {

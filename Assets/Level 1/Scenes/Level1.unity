@@ -13550,8 +13550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c895ee690261f46a07b81f8f8f6ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBetweenLightAttacks: 0.3
-  startTimeBetweenHeavyAttacks: 0.6
+  startTimeBetweenLightAttacks: 0.55
+  startTimeBetweenHeavyAttacks: 0.8
   attackPosition: {fileID: 995381510}
   whatIsEnemy:
     serializedVersion: 2
@@ -13561,6 +13561,8 @@ MonoBehaviour:
   heavyDamage: 10
   comboDuration: 1
   comboDamageBoost: 0.5
+  lightAttackStamina: 10
+  heavyAttackStamina: 20
 --- !u!70 &1053531291
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
