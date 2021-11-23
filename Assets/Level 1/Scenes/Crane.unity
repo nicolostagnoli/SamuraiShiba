@@ -1461,33 +1461,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7516817924806207595, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516817925069830303, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7516817925128107267, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7516817925128107267, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7516817925128107268, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516817925128107268, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516817925128107268, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7516817925128107268, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1528,10 +1508,6 @@ PrefabInstance:
     - target: {fileID: 7516817925128107268, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7516817925128107322, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6bb6f39e51bb6f4eb28e93a128bc925, type: 3}
@@ -2496,9 +2472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
+  m_AssetsPPU: 100
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0

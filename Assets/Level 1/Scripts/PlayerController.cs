@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
       {
         _canMove = false;
         //canFlip = false;
-        _rb.velocity = new Vector2(dashSpeed * _facingDirection, _rb.velocity.y);
+        _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
         //Debug.Log(_rb.velocity);
         _dashTimeLeft -= Time.deltaTime;
 

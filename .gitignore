@@ -69,3 +69,4 @@ UserSettings/EditorUserSettings.asset
 UserSettings/EditorUserSettings.asset
 .vsconfig
 ProjectSettings/TagManager.asset
+*.meta
