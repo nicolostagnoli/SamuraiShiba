@@ -84,13 +84,8 @@ public class PlayerStats : MonoBehaviour
         return PlayerMaxStamina;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.GetComponent<Item>().GetItemName().Equals(ItemName.Coin))
-        {
-            _coins++;
-            _coinCounterTextScript.setCoinsAmount(_coins);
-            Destroy(other.gameObject);
-        }
+    public void addCoin(int amount) {
+        _coins++;
+        _coinCounterTextScript.setCoinsAmount(_coins);
     }
 }

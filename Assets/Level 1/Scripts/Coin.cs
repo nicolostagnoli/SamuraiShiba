@@ -8,4 +8,12 @@ public class Coin : Item
     {
         SetItemName(ItemName.Coin);
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag.Equals("Player")) {
+            PlayerStats stats = other.gameObject.GetComponent<PlayerStats>();
+            stats.addCoin(1);
+            Destroy(gameObject);
+        }
+    }
 }

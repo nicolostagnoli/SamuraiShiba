@@ -14,48 +14,49 @@ public class CraneScript : MonoBehaviour
     */
 {
     [SerializeField]
-    private Transform[] routes;
-    private int routeToGo;
     private float tParam;
-    private Vector2 objectPosition;
     private float speedModifier;
-    private bool coroutineAllowed;
     private float time;
     private float shootTime;
     private bool canShoot;
+    private Rigidbody2D rb;
+    private Vector3 desiredHeight;
+    private Vector3 groundHeight;
 
     public GameObject featherPrefab;
-    public Transform player;
     public int featherGroup;
     public float featherAngle;
     public float featherAngleTop;
     public float featherVelocity;
     public float minShootTime;
     public float maxShootTime;
+    public float featherDamage;
+
+    public Transform player;
+    public float speed;
+    public float minHeight;
+    public float maxHeight;
+
     public Transform attackPosition;
-    public LayerMask whatIsPlayer;
     public float attackRange;
+    public LayerMask whatIsPlayer;
     public float damage;
 
     // Start is called before the first frame updat
     void Start() {
-        routeToGo = 0;
         tParam = 0f;
         speedModifier = 0.5f;
-        coroutineAllowed = true;
         shootTime = Random.Range(minShootTime, maxShootTime);
         time = 0;
         canShoot = true;
+        rb = GetComponent<Rigidbody2D>();
+        desiredHeight = rb.position;
+        groundHeight = player.position;
     }
 
     // Update is called once per frame
 
     void Update() {
-        //Follow Bezier
-        if (coroutineAllowed) {
-            StartCoroutine(GoByTheRoute(routeToGo));
-        }
-
         //Shoot feathers
         time += Time.deltaTime;
         if (time >= maxShootTime) {
@@ -63,82 +64,37 @@ public class CraneScript : MonoBehaviour
         }
         if (time >= shootTime) {
             if (canShoot) {
-                ThrowFeathers();
+                int attackType = Random.Range(0, 3);
+                switch (attackType) {
+                    case 0:
+                        ThrowSingleFeather();
+                        break;
+                    case 1:
+                        ThrowFeathers();
+                        break;
+                    case 2:
+                        //ThrowFeathersFromTop();
+                        break;
+                    default:
+                        ThrowSingleFeather();
+                        break;
+                }
                 shootTime = Random.Range(minShootTime, maxShootTime);
                 time = 0;
             }
         }
 
+        //follow player
+        rb.position = Vector2.MoveTowards(rb.position, desiredHeight, speed * Time.deltaTime);
+        if (rb.position.y - desiredHeight.y <= 0.1) {
+            desiredHeight = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+        }
         //Player collider check
         Collider2D[] playerToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
         if (playerToAttack.Length > 0) {
             PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
             stats.TakeDamage(10);
-            Debug.Log("Player Hit by Crane");
         }
-    }
-
-    private IEnumerator GoByTheRoute(int routeNum) {
-
-        coroutineAllowed = false;
-        Vector2 p0 = routes[routeNum].GetChild(0).position;
-        Vector2 p1 = routes[routeNum].GetChild(1).position;
-        Vector2 p2 = routes[routeNum].GetChild(2).position;
-        Vector2 p3 = routes[routeNum].GetChild(3).position;
-        while (tParam < 1) {
-            tParam += Time.deltaTime * speedModifier;
-            objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3;
-            transform.position = objectPosition;
-            yield return new WaitForEndOfFrame();
-        }
-        tParam = 0f;
-
-        //Set randomly the new route to do
-        int newRoute = Random.Range(0, 3);
-        if (routeToGo == 4)
-        {
-            ThrowFeathersFromTop();
-            routeToGo = 5; //backFromAttack
-            canShoot = false;
-        }
-        else if (routeToGo == 5)
-        {
-            routeToGo = 1;
-            canShoot = true;
-        }
-        else if (routeToGo == 0 || routeToGo == 3) {
-            if(newRoute == 0) {
-                routeToGo = 1; //fly
-                canShoot = true;
-            }
-            else if (newRoute == 1) {
-                routeToGo = 2; //swoop
-                canShoot = false;
-            }
-            else
-            {
-                routeToGo = 4; //attackFromTop
-                canShoot = false; 
-            }
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if (routeToGo == 1 || routeToGo == 2) {
-            if (newRoute == 0) {
-                routeToGo = 0; //fly
-                canShoot = true;
-            }
-            else {
-                routeToGo = 3; //swoop
-                canShoot = false;
-            }
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-
-        if (routeToGo > routes.Length - 1) {
-            routeToGo = 0;
-        }
-
-        coroutineAllowed = true;
     }
 
     void ThrowSingleFeather() {
