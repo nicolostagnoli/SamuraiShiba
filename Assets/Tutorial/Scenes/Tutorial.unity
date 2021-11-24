@@ -174,7 +174,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -708,9 +708,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -260, y: -105}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 520, y: 210}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1741239111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,10 +933,17 @@ MonoBehaviour:
   dialogue:
     name: Golden Shadow
     sentences:
-    - -------------------Hello Shiba-------------
-    - I'm here to guide you through your dangerous adventures...
-    - Let's start by doing some practice with your basic action
-    - Press W or D to move LEFT/RIGHT
+    - Hey.........
+    - ........You are awake.........
+    - Try......get to the mountain.......
+    - .......find......the "answer"........
+    - '.......Well.......guess I need to teach you something.......
+
+'
+    - (Press W/D to move LEFT/RIGHT)
+    - ......alright.....that's all........
+    - ......we will see each other.......again......
+    - ......soon......
 --- !u!1 &1845476595
 GameObject:
   m_ObjectHideFlags: 0
