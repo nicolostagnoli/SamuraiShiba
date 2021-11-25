@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
   private Animator _animator;
   public LayerMask whatIsGround;
   public Transform feetPos;
+  public GameObject anim;
  
   //Horizontal Movement
   public float speed;
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
   {
     _rb = GetComponent<Rigidbody2D>();
     _canMove = true;
-    _animator = GetComponent<Animator>();
+    _animator = anim.GetComponent<Animator>();
   }
 
   private void FixedUpdate()
@@ -118,8 +119,8 @@ public class PlayerController : MonoBehaviour
     _dashTimeLeft = dashTime;
     _lastDash = Time.time;
 
-    PlayerAfterImagePool.Instance.GetFromPool();
-    _lastImageXPos = transform.position.x;
+    //PlayerAfterImagePool.Instance.GetFromPool();
+    //_lastImageXPos = transform.position.x;
   }
 
   public bool CanUseShuriken()
@@ -135,17 +136,16 @@ public class PlayerController : MonoBehaviour
       {
         _canMove = false;
         //canFlip = false;
-        _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
+        //_rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
         //Debug.Log(_rb.velocity);
         _dashTimeLeft -= Time.deltaTime;
-
         _animator.SetTrigger("Dash");
 
-        if (Mathf.Abs(transform.position.x - _lastImageXPos) > distanceBetweenImages)
+        /*if (Mathf.Abs(transform.position.x - _lastImageXPos) > distanceBetweenImages)
         {
           PlayerAfterImagePool.Instance.GetFromPool();
           _lastImageXPos = transform.position.x;
-        }
+        }*/
       }
 
       if (_dashTimeLeft <= 0)
@@ -156,5 +156,11 @@ public class PlayerController : MonoBehaviour
 
       }
     }
+  }
+
+  public void Dash()
+  {
+    Debug.Log("VELOCITY:" + _rb.velocity);
+    _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
   }
 }
