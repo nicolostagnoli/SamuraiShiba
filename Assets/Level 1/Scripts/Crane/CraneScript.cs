@@ -20,8 +20,9 @@ public class CraneScript : MonoBehaviour
     private float shootTime;
     private bool canShoot;
     private Rigidbody2D rb;
-    private Vector3 desiredHeight;
+    private Vector3 desiredPosition;
     private Vector3 groundHeight;
+    private float _speed;
 
     public GameObject featherPrefab;
     public int featherGroup;
@@ -33,7 +34,8 @@ public class CraneScript : MonoBehaviour
     public float featherDamage;
 
     public Transform player;
-    public float speed;
+    public float normalSpeed;
+    public float swoopSpeed;
     public float minHeight;
     public float maxHeight;
 
@@ -50,8 +52,9 @@ public class CraneScript : MonoBehaviour
         time = 0;
         canShoot = true;
         rb = GetComponent<Rigidbody2D>();
-        desiredHeight = rb.position;
+        desiredPosition = rb.position;
         groundHeight = player.position;
+        _speed = normalSpeed;
     }
 
     // Update is called once per frame
@@ -84,10 +87,35 @@ public class CraneScript : MonoBehaviour
             }
         }
 
+        //face right direction
+        if(transform.position.x > player.position.x) {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
         //follow player
-        rb.position = Vector2.MoveTowards(rb.position, desiredHeight, speed * Time.deltaTime);
-        if (rb.position.y - desiredHeight.y <= 0.1) {
-            desiredHeight = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+        rb.position = Vector2.MoveTowards(rb.position, desiredPosition, _speed * Time.deltaTime);
+        if (Vector2.Distance(rb.position, desiredPosition) <= 0.001) {
+            //new movement, update desired position
+            int rand = Random.Range(0, 2);
+            switch (rand) {
+                case 0:
+                    desiredPosition = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+                    _speed = normalSpeed;
+                    break;
+                case 1:
+                    desiredPosition = player.position;
+                    _speed = swoopSpeed;
+                    break;
+                default:
+                    desiredPosition = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+                    _speed = normalSpeed;
+                    break;
+            }
+            //if healt < tot && healWaiTime
+            //go to heal
         }
         //Player collider check
         Collider2D[] playerToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
