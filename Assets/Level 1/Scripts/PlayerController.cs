@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
   {
     _rb = GetComponent<Rigidbody2D>();
     _canMove = true;
-    _animator = anim.GetComponent<Animator>();
+    //_animator = anim.GetComponent<Animator>();
+    _animator = GetComponent<Animator>();
   }
 
   private void FixedUpdate()
@@ -60,6 +61,8 @@ public class PlayerController : MonoBehaviour
   {
     CheckDash();
     _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    if(_isGrounded == true)
+      _animator.SetBool("Jumping", false);
 
     //Turn left and right the sprite
     if (_moveInput > 0)
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
       _jumpTimeCounter = jumpTime;
       _rb.velocity = Vector2.up * jumpForce;
 
-      _animator.SetTrigger("Jump");
+      _animator.SetBool("Jumping", true);
     }
 
     if (Input.GetKey(KeyCode.Space) && _isJumping)
@@ -94,6 +97,7 @@ public class PlayerController : MonoBehaviour
       else
       {
         _isJumping = false;
+        
       }
     }
 
@@ -139,8 +143,8 @@ public class PlayerController : MonoBehaviour
         //_rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
         //Debug.Log(_rb.velocity);
         _dashTimeLeft -= Time.deltaTime;
-        _animator.SetTrigger("Dash");
-
+        _animator.SetTrigger("Dodge");
+        _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
         /*if (Mathf.Abs(transform.position.x - _lastImageXPos) > distanceBetweenImages)
         {
           PlayerAfterImagePool.Instance.GetFromPool();
@@ -156,11 +160,5 @@ public class PlayerController : MonoBehaviour
 
       }
     }
-  }
-
-  public void Dash()
-  {
-    Debug.Log("VELOCITY:" + _rb.velocity);
-    _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
   }
 }

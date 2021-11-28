@@ -40,7 +40,11 @@ public class PlayerAttack : MonoBehaviour
                 if (_playerStats.getStamina() >= lightAttackStamina) {
                     _playerStats.UseStamina((int)lightAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenLightAttacks;
-                    _animator.SetTrigger("LightAttack");
+                    int lightDice = Random.Range(0, 2);
+                    if (lightDice == 0)
+                        _animator.SetTrigger("LightAttack1");
+                    else
+                        _animator.SetTrigger("LightAttack2");
                 }
 
             } //HEAVY ATTACK
@@ -48,7 +52,11 @@ public class PlayerAttack : MonoBehaviour
                 if (_playerStats.getStamina() >= heavyAttackStamina) {
                     _playerStats.UseStamina((int)heavyAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenHeavyAttacks;
-                    _animator.SetTrigger("HeavyAttack");
+                    int heavyDice = Random.Range(0, 2);
+                    if( heavyDice == 0)
+                    _animator.SetTrigger("HeavyAttack1");
+                    else
+                        _animator.SetTrigger("HeavyAttack2");
                 }
             }
         }

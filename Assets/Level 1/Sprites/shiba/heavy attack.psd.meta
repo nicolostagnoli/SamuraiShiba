@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: -1448789361661436583
     second: heavy attack_5
+  - first:
+      213: 6396683354212160155
+    second: heavy attack_6
+  - first:
+      213: 6268478907974851855
+    second: heavy attack_9
+  - first:
+      213: -682361634564923310
+    second: heavy attack_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -184,12 +193,12 @@ TextureImporter:
       name: heavy attack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 35
+        y: 19
+        width: 50
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,36 +211,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b429a9580917a82e0800000000000000
-      internalID: -2122759408821038517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: heavy attack_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
+        x: 139
+        y: 19
+        width: 87
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,36 +232,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c24ff9bc70192770800000000000000
-      internalID: 8586412292441064129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: heavy attack_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
+        x: 267
+        y: 19
+        width: 68
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,22 +253,64 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_5
+      name: heavy attack_6
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 392
+        y: 19
+        width: 58
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95d1ec760cdd4ebe0800000000000000
-      internalID: -1448789361661436583
+      spriteID: b92587c9e9595c850800000000000000
+      internalID: 6396683354212160155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heavy attack_9
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 19
+        width: 87
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d9edfda5c1ef650800000000000000
+      internalID: 6268478907974851855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heavy attack_12
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 19
+        width: 75
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4787234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250276b65b3c786f0800000000000000
+      internalID: -682361634564923310
       vertices: []
       indices: 
       edges: []

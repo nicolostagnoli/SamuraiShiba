@@ -156,14 +156,14 @@ MonoBehaviour:
     m_Bits: 128
   feetPos: {fileID: 7516817924806207592}
   anim: {fileID: 8145402003219904852}
-  speed: 7
+  speed: 2
   jumpForce: 12
   checkRadius: 0.3
   jumpTime: 0.25
-  dashTime: 0.2
-  dashSpeed: 10
+  dashTime: 1
+  dashSpeed: 4
   distanceBetweenImages: 0.1
-  dashCooldown: 2
+  dashCooldown: 3
 --- !u!114 &7516817925128107264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,8 @@ MonoBehaviour:
   heavyDamage: 0
   comboDuration: 0
   comboDamageBoost: 0
+  lightAttackStamina: 0
+  heavyAttackStamina: 0
 --- !u!114 &7516817925128107269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +215,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7516817925128107267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ebe7b22509b69d64cb954f4beeea766d, type: 2}
   m_CullingMode: 0
@@ -398,7 +400,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8145402003219904852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ebe7b22509b69d64cb954f4beeea766d, type: 2}
   m_CullingMode: 0
