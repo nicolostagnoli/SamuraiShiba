@@ -10,16 +10,22 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
 
 	public Animator animator;
-
-	private Queue<string> sentences;
-	public DialogueTrigger dialogueTrigger;
+	private int _dialoguesCounter = 0;
+	private Queue<string> _sentences;
+	public GoldenShadowTutorial goldenShadowTutorial;
 	
 
 	// Use this for initialization
 	void Start () {
-		sentences = new Queue<string>();
-		dialogueTrigger.TriggerDialogue();
+		_sentences = new Queue<string>();
+		TriggerDialogue();
 	}
+
+	private void TriggerDialogue()
+	{
+		goldenShadowTutorial.TriggerDialogue(_dialoguesCounter);
+	}
+	
 
 	private void Update()
 	{
@@ -27,6 +33,7 @@ public class DialogueManager : MonoBehaviour {
 		{
 			DisplayNextSentence();
 		}
+		
 	}
 
 	public void StartDialogue (Dialogue dialogue)
@@ -35,11 +42,11 @@ public class DialogueManager : MonoBehaviour {
 
 		nameText.text = dialogue.name;
 
-		sentences.Clear();
+		_sentences.Clear();
 
 		foreach (string sentence in dialogue.sentences)
 		{
-			sentences.Enqueue(sentence);
+			_sentences.Enqueue(sentence);
 		}
 
 		DisplayNextSentence();
@@ -47,13 +54,14 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence ()
 	{
-		if (sentences.Count == 0)
+		if (_sentences.Count == 0)
 		{
 			EndDialogue();
 			return;
 		}
 
-		string sentence = sentences.Dequeue();
+		string sentence = _sentences.Dequeue();
+		
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));
 	}
@@ -71,6 +79,16 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+		_dialoguesCounter++;
+		StartCoroutine(Wait1Second());
+		Invoke("TriggerDialogue", 2);
+	}
+	
+	IEnumerator Wait1Second()
+	{
+		
+		yield return new WaitForSeconds(10f);
+
 	}
 
 }
