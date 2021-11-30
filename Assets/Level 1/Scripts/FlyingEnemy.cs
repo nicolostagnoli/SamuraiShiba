@@ -20,6 +20,7 @@ public class FlyingEnemy : Enemy
     public LayerMask player;
     private float _timer;
     private float _timeBetweenAttacks;
+    private bool inAttackRange;
 
 
 
@@ -46,6 +47,7 @@ public class FlyingEnemy : Enemy
             ChasePlayer();
             if (distanceToPlayer <= _attackRange)
             {
+                inAttackRange = true;
                 StopChasing();
                 if (_timer >_timeBetweenAttacks)
                 {
@@ -54,6 +56,10 @@ public class FlyingEnemy : Enemy
                 if(_timer < _timeBetweenAttacks+1){
                     _timer += Time.deltaTime;
                 }
+            }
+            else
+            {
+                inAttackRange = false;
             }
         }
         else
@@ -82,16 +88,19 @@ public class FlyingEnemy : Enemy
     
     private void ChasePlayer()
     {
-        if (transform.position.x < _player.position.x)
+        if (!inAttackRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
-            TurnRight();
+            if (transform.position.x < _player.position.x)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                TurnRight();
 
-        }
-        else if(transform.position.x > _player.position.x)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
-            TurnLeft();
+            }
+            else if(transform.position.x > _player.position.x)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                TurnLeft();
+            }
         }
     }
 
@@ -100,15 +109,27 @@ public class FlyingEnemy : Enemy
         _rigidbody.velocity = Vector2.zero;
     }
 
+    private void turnPlayer()
+    {
+        if (transform.position.x < roamPosition.x)
+        {
+            TurnRight();
+        }
+        else if(transform.position.x > roamPosition.x)
+        {
+            TurnLeft();
+        }
+    }
+    
     private void TurnRight()
     {
-        transform.localScale = new Vector2(1, 1);
+        transform.localScale = new Vector2(-1, 1);
 
     }
 
     private void TurnLeft()
     {
-        transform.localScale = new Vector2(-1, 1);
+        transform.localScale = new Vector2(1, 1);
 
     }
 
@@ -119,11 +140,23 @@ public class FlyingEnemy : Enemy
 
     private void AttackPlayer()
     {
-        Collider2D playerToAttack = Physics2D.OverlapCircle(attackPosition.position, _attackRange, player);
-        if(playerToAttack != null) {
-            playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        if (transform.position.x < _player.position.x)
+        {
+            TurnRight();
+
         }
+        else if(transform.position.x > _player.position.x)
+        {
+            TurnLeft();
+        }
+        Collider2D playerToAttack = Physics2D.OverlapCircle(attackPosition.position, _attackRange, player);
+        playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         _timer = 0;
+    }
+    
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPosition.position, _attackRange);
     }
     
 }

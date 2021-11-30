@@ -7,8 +7,8 @@ public class PlayerStats : MonoBehaviour
 {
     private int _health = PlayerMaxHealth;
     private int _stamina = PlayerMaxStamina;
-    private const int PlayerMaxStamina=200;
-    private const int PlayerMaxHealth=200;
+    private const int PlayerMaxStamina=100;
+    private const int PlayerMaxHealth=100;
     private int _coins=1;
 
     private HealthBarScript healthBarScript;
