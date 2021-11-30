@@ -267,7 +267,7 @@ MonoBehaviour:
       (Press SPACEBAR to JUMP)'
   - name: Golden Shadow
     sentences:
-    - (Left click to Attack, Right click for Heavy Attack)
+    - (J to Attack, K for Heavy Attack)
   - name: Golden Shadow
     sentences:
     - (Press SHIFT to DASH)
@@ -382,6 +382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 793865708409581296, guid: e4c727327194e584293f0db49eb4cb7e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1483594985672543159, guid: e4c727327194e584293f0db49eb4cb7e, type: 3}
       propertyPath: m_Name
       value: Ground
@@ -696,7 +700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Spacebar to continue...
+  m_Text: Press Enter to continue...
 --- !u!222 &1452835390
 CanvasRenderer:
   m_ObjectHideFlags: 0
