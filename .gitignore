@@ -58,15 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Packages/manifest.json
-Packages/packages-lock.json
-UserSettings/EditorUserSettings.asset
-*.xml
-*.xml
-*.xml
 *.xml
 .idea/.idea.SamuraiShiba/.idea/indexLayout.xml
 UserSettings/EditorUserSettings.asset
 .vsconfig
-ProjectSettings/TagManager.asset
-*.meta
