@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 4ac92a0ef29c80a47b9b0c23cd399e0e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5947480675486199492
+    second: Shiba run_0
+  - first:
+      213: 3485101974107134534
+    second: Shiba run_1
+  - first:
+      213: 9050337882909433000
+    second: Shiba run_2
+  - first:
+      213: -4546362499028476937
+    second: Shiba run_3
+  - first:
+      213: 3709489048937931251
+    second: Shiba run_4
+  - first:
+      213: -1020835082829622375
+    second: Shiba run_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +50,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +59,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +86,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +107,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Shiba run_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 12
+        width: 62
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31152536dd467da0800000000000000
+      internalID: -5947480675486199492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiba run_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 12
+        width: 68
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5106383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a1ba4d7c19d5030800000000000000
+      internalID: 3485101974107134534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiba run_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 12
+        width: 63
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49484536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acd3109a52499d70800000000000000
+      internalID: 9050337882909433000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiba run_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 11
+        width: 62
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb1041156318e0c0800000000000000
+      internalID: -4546362499028476937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiba run_4
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 13
+        width: 68
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5106383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1a524e2a0ca7330800000000000000
+      internalID: 3709489048937931251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shiba run_5
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 12
+        width: 64
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49484536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9931fa996e345d1f0800000000000000
+      internalID: -1020835082829622375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
