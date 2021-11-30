@@ -124,6 +124,12 @@ public class MenuManager : Singleton<MenuManager>
     {
         SceneManager.LoadScene("Level 1/Scenes/Level1");
     }
+    
+    public void LoadTutorial()
+    
+    {
+        SceneManager.LoadScene("Tutorial/Scenes/Tutorial");
+    }
 
     public void QuitGame()
     {
