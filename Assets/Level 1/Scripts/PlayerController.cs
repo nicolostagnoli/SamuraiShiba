@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     CheckDash();
     _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
     if(_isGrounded == true)
-      _animator.SetBool("Jumping", false);
+      _animator.SetBool("isJumping", false);
 
     //Turn left and right the sprite
     if (_moveInput > 0)
@@ -81,10 +81,10 @@ public class PlayerController : MonoBehaviour
     if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
     {
       _isJumping = true;
+      _animator.SetTrigger("Jump");
+      _animator.SetBool("isJumping", true);
       _jumpTimeCounter = jumpTime;
       _rb.velocity = Vector2.up * jumpForce;
-
-      _animator.SetBool("Jumping", true);
     }
 
     if (Input.GetKey(KeyCode.Space) && _isJumping)

@@ -10,25 +10,25 @@ TextureImporter:
     second: heavy attack_1
   - first:
       213: -6672210207986867693
-    second: heavy attack_2
+    second: heavy attack_1
   - first:
       213: 8586412292441064129
     second: heavy attack_3
   - first:
       213: 1331458361105641705
-    second: heavy attack_4
+    second: heavy attack_2
   - first:
       213: -1448789361661436583
     second: heavy attack_5
   - first:
       213: 6396683354212160155
-    second: heavy attack_6
+    second: heavy attack_3
   - first:
       213: 6268478907974851855
-    second: heavy attack_9
+    second: heavy attack_4
   - first:
       213: -682361634564923310
-    second: heavy attack_12
+    second: heavy attack_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -211,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_2
+      name: heavy attack_1
       rect:
         serializedVersion: 2
         x: 139
@@ -232,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_4
+      name: heavy attack_2
       rect:
         serializedVersion: 2
         x: 267
@@ -253,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_6
+      name: heavy attack_3
       rect:
         serializedVersion: 2
         x: 392
@@ -261,7 +261,7 @@ TextureImporter:
         width: 58
         height: 105
       alignment: 9
-      pivot: {x: 0.5, y: 0.42857143}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,7 +274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_9
+      name: heavy attack_4
       rect:
         serializedVersion: 2
         x: 524
@@ -282,7 +282,7 @@ TextureImporter:
         width: 87
         height: 108
       alignment: 9
-      pivot: {x: 0.5, y: 0.41666666}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heavy attack_12
+      name: heavy attack_5
       rect:
         serializedVersion: 2
         x: 652
@@ -303,7 +303,7 @@ TextureImporter:
         width: 75
         height: 94
       alignment: 9
-      pivot: {x: 0.5, y: 0.4787234}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
