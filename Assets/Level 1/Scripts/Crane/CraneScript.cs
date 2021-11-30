@@ -11,7 +11,6 @@ public class CraneScript : MonoBehaviour {
     private bool canShoot;
     private Rigidbody2D rb;
     private Vector3 desiredPosition;
-    private Vector3 groundHeight;
     private float _speed;
     private int currentMovement;
     private bool canMakeNewMove;
@@ -53,10 +52,10 @@ public class CraneScript : MonoBehaviour {
         canMakeNewMove = true;
         randomShootTime = Random.Range(minShootTime, maxShootTime);
         timeToShoot = 0;
+        timeToHeal = 0;
         canShoot = true;
         rb = GetComponent<Rigidbody2D>();
         desiredPosition = rb.position;
-        groundHeight = player.position;
         _speed = normalSpeed;
         currentMovement = 0;
         currentHealth = maxHealth;
@@ -120,7 +119,7 @@ public class CraneScript : MonoBehaviour {
                 currentMovement = Random.Range(0, 3);
                 switch (currentMovement) {
                     case 0: //random fly
-                        desiredPosition = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+                        desiredPosition = new Vector3(player.position.x, Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
                         _speed = normalSpeed;
                         break;
                     case 1: //swoop attack
@@ -132,7 +131,7 @@ public class CraneScript : MonoBehaviour {
                         desiredPosition = randAttackPos == 0 ? featherAttackPos1.position : featherAttackPos2.position;
                         break;
                     default: //random fly
-                        desiredPosition = new Vector3(player.position.x, Random.Range(groundHeight.y + minHeight, groundHeight.y + maxHeight), 0);
+                        desiredPosition = new Vector3(player.position.x, Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
                         _speed = normalSpeed;
                         break;
                 }
