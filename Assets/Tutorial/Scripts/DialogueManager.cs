@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -25,15 +24,13 @@ public class DialogueManager : MonoBehaviour {
 
 	private void TriggerDialogue()
 	{
-		
 		goldenShadowTutorial.TriggerDialogue(_dialoguesCounter);
-		
 	}
 	
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			DisplayNextSentence();
 		}
@@ -86,11 +83,6 @@ public class DialogueManager : MonoBehaviour {
 		_dialoguesCounter++;
 		StartCoroutine(Wait1Second());
 		Invoke("TriggerDialogue", 2);
-		if (_dialoguesCounter ==5)
-		{
-			SceneManager.LoadScene("Level1");
-		}
-
 	}
 	
 	IEnumerator Wait1Second()
