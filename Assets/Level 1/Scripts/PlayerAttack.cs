@@ -42,9 +42,9 @@ public class PlayerAttack : MonoBehaviour
                     _timeBetweenAttacks = startTimeBetweenLightAttacks;
                     int lightDice = Random.Range(0, 2);
                     if (lightDice == 0)
-                        _animator.SetTrigger("LightAttack1");
+                        _animator.SetTrigger("Light1");
                     else
-                        _animator.SetTrigger("LightAttack2");
+                        _animator.SetTrigger("Light2");
                 }
 
             } //HEAVY ATTACK
@@ -54,9 +54,9 @@ public class PlayerAttack : MonoBehaviour
                     _timeBetweenAttacks = startTimeBetweenHeavyAttacks;
                     int heavyDice = Random.Range(0, 2);
                     if( heavyDice == 0)
-                    _animator.SetTrigger("HeavyAttack1");
+                        _animator.SetTrigger("Heavy1");
                     else
-                        _animator.SetTrigger("HeavyAttack2");
+                        _animator.SetTrigger("Heavy2");
                 }
             }
         }

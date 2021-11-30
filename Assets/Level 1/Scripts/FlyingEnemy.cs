@@ -120,7 +120,9 @@ public class FlyingEnemy : Enemy
     private void AttackPlayer()
     {
         Collider2D playerToAttack = Physics2D.OverlapCircle(attackPosition.position, _attackRange, player);
-        playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        if(playerToAttack != null) {
+            playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        }
         _timer = 0;
     }
     
