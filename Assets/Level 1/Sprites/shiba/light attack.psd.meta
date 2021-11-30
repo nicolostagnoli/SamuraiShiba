@@ -13,7 +13,7 @@ TextureImporter:
     second: light attack_2
   - first:
       213: -3955092480482122222
-    second: light attack_3
+    second: light attack_1
   - first:
       213: 4229242679132795105
     second: light attack_4
@@ -22,9 +22,24 @@ TextureImporter:
     second: light attack_5
   - first:
       213: -5274306005953139213
-    second: light attack_6
+    second: light attack_2
   - first:
       213: 1639143910641391569
+    second: light attack_7
+  - first:
+      213: -3244052896002910753
+    second: light attack_1
+  - first:
+      213: -5352755820721617085
+    second: light attack_4
+  - first:
+      213: 1429937049147894001
+    second: light attack_5
+  - first:
+      213: 1097016989319008960
+    second: light attack_2
+  - first:
+      213: -6301990265804699911
     second: light attack_7
   externalObjects: {}
   serializedVersion: 11
@@ -190,10 +205,10 @@ TextureImporter:
       name: light attack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 36
+        y: 15
+        width: 45
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,52 +226,10 @@ TextureImporter:
       name: light attack_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd597fcc49accf730800000000000000
-      internalID: 4034322106659870171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: light attack_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dba2bd071c57c320800000000000000
-      internalID: 2578130565776714710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: light attack_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
+        x: 162
+        y: 16
+        width: 52
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,55 +244,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light attack_4
+      name: light attack_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e0b1a62fc941ba30800000000000000
-      internalID: 4229242679132795105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: light attack_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a8f09b93b1594ec0800000000000000
-      internalID: -3582242196745553760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: light attack_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
+        x: 290
+        y: 16
+        width: 83
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,13 +265,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light attack_7
+      name: light attack_3
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
+        x: 418
+        y: 16
+        width: 76
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,8 +279,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d75681c3b86fb610800000000000000
-      internalID: 1639143910641391569
+      spriteID: fd55b2d241fcaf2d0800000000000000
+      internalID: -3244052896002910753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light attack_4
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 16
+        width: 78
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347cb70f0f037b5b0800000000000000
+      internalID: -5352755820721617085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light attack_5
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 16
+        width: 70
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f861a98b2828d310800000000000000
+      internalID: 1429937049147894001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light attack_6
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 16
+        width: 81
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c29de8b323693f00800000000000000
+      internalID: 1097016989319008960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light attack_7
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 16
+        width: 68
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6cdbc1e35da88a0800000000000000
+      internalID: -6301990265804699911
       vertices: []
       indices: 
       edges: []
