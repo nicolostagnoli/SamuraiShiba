@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
             if (MenuManager.Instance != null && PlayerInterface.Instance != null)
             MenuManager.Instance.OpenMenu(PlayerInterface.Instance);
             //MenuManager.Instance.CloseSpecificMenu(MainMenu.Instance);
-            SceneManager.LoadScene("Level 1/Scenes/Level1");
+            SceneManager.LoadScene("Tutorial/Scenes/Tutorial");
         }
 
         public void OnSettingsPressed()
