@@ -34,7 +34,7 @@ public class FlyingEnemy : Enemy
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
         SetHealth(initialHealth);
-        _timeBetweenAttacks = 1;
+        _timeBetweenAttacks = 0.8f;
     }
     
 
@@ -109,18 +109,6 @@ public class FlyingEnemy : Enemy
         _rigidbody.velocity = Vector2.zero;
     }
 
-    private void turnPlayer()
-    {
-        if (transform.position.x < roamPosition.x)
-        {
-            TurnRight();
-        }
-        else if(transform.position.x > roamPosition.x)
-        {
-            TurnLeft();
-        }
-    }
-    
     private void TurnRight()
     {
         transform.localScale = new Vector2(-1, 1);
@@ -149,8 +137,7 @@ public class FlyingEnemy : Enemy
         {
             TurnLeft();
         }
-        Collider2D playerToAttack = Physics2D.OverlapCircle(attackPosition.position, _attackRange, player);
-        playerToAttack.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        gameObject.GetComponent<FeatherAttack>().Attack(_player.transform.position);
         _timer = 0;
     }
     

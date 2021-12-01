@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int _health = PlayerMaxHealth;
-    private int _stamina = PlayerMaxStamina;
-    private const int PlayerMaxStamina=100;
-    private const int PlayerMaxHealth=100;
+    private float _health = PlayerMaxHealth;
+    private float _stamina = PlayerMaxStamina;
+    private const float PlayerMaxStamina=100;
+    private const float PlayerMaxHealth=100;
     private int _coins=1;
 
     private HealthBarScript healthBarScript;
@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log(healthBarScript);
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         //_animator.SetTrigger("Hit");
         if (_health > 0)
@@ -41,7 +41,7 @@ public class PlayerStats : MonoBehaviour
            // _animator.SetTrigger("Die");
         }
     }
-    public void UseStamina(int stamina) {
+    public void UseStamina(float stamina) {
         if (_stamina > 0) {
             if (_stamina - stamina < 0) setStamina(0);
             setStamina(_stamina - stamina);
@@ -52,40 +52,40 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    public void setHealth(int health)
+    public void setHealth(float health)
     {
         _health = health;
         healthBarScript.SetHealth(health);
     }
     
-    public void setStamina(int stamina)
+    public void setStamina(float stamina)
     {
         _stamina = stamina;
         staminaBarScript.SetStamina(stamina);
     }
 
-    public int getHealth()
+    public float getHealth()
     {
         return _health;
     }
     
-    public int getStamina()
+    public float getStamina()
     {
         return _stamina;
     }
 
-    public int GetMaxHealth()
+    public float GetMaxHealth()
     {
         return PlayerMaxHealth;
     }
     
-    public int GetMaxStamina()
+    public float GetMaxStamina()
     {
         return PlayerMaxStamina;
     }
 
     public void addCoin(int amount) {
-        _coins++;
+        _coins+=amount;
         _coinCounterTextScript.setCoinsAmount(_coins);
     }
 }

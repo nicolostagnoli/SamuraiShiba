@@ -9,14 +9,14 @@ public class StaminaBarScript : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void SetStamina(int stamina)
+    public void SetStamina(float stamina)
     {
         slider.value = stamina;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
     
-    public void SetMaxStamina(int maxStamina)
+    public void SetMaxStamina(float maxStamina)
     {
         slider.maxValue = maxStamina;
         slider.value = maxStamina;

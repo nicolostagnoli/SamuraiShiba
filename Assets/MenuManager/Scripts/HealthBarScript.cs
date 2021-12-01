@@ -11,13 +11,13 @@ public class HealthBarScript : MonoBehaviour
     public Image fill;
     
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         slider.value = health;
         Debug.Log("slider value"+slider.value);
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxHealth(float maxHealth)
     {
         
         slider.maxValue = maxHealth;
