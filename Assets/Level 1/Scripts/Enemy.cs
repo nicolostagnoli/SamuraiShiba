@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public LootTable lootTable;
     private int dropAmount = 5;
     private Animator _animator;
+    public GameObject blood;
 
     public void Start()
     {
@@ -19,12 +20,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _animator.SetTrigger("Hit");
+        //_animator.SetTrigger("Hit");
         Debug.Log(_health);
         _health -= damage;
         if (_health <= 0)
         {
-            _animator.SetTrigger("Die");
+            Instantiate(blood, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
     

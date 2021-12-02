@@ -12,7 +12,7 @@ public class FlyingEnemy : Enemy
     private float _attackRange;
     [SerializeField]
     private float _moveSpeed;
-    private float initialHealth=20f;
+    private float initialHealth=50f;
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     public Transform attackPosition;
@@ -21,6 +21,7 @@ public class FlyingEnemy : Enemy
     private float _timer;
     private float _timeBetweenAttacks;
     private bool inAttackRange;
+    public GameObject featherPrefab;
 
 
 
@@ -137,7 +138,8 @@ public class FlyingEnemy : Enemy
         {
             TurnLeft();
         }
-        gameObject.GetComponent<FeatherAttack>().Attack(_player.transform.position);
+        GameObject feather = Instantiate(featherPrefab,transform.position, Quaternion.identity);
+        feather.GetComponent<Feather>().SetDirection(_player.transform.position);
         _timer = 0;
     }
     

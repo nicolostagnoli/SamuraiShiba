@@ -33,20 +33,18 @@ public class Feather : MonoBehaviour
         }
         hit = true;
         _boxCollider2D.enabled = false;
-        Debug.Log("collision with "+ collision.name);
-        Deactivate();
+        //Debug.Log("collision with "+ collision.name);
+        Destroy(gameObject);
+        //Deactivate();
         //_animator.SetTrigger("explode");
     }
     
     public void SetDirection(Vector3 direction)
     {
-        //transform.position = featherTransform.position;
         hit = false;
         _lifeTime = 0;
         transform.rotation=Quaternion.FromToRotation(transform.position, -direction + transform.position);
         GetComponent<Rigidbody2D>().velocity = direction * speed;
-        Debug.Log("direction: " +direction* speed);
-        Debug.Log("velocity: "+GetComponent<Rigidbody2D>().velocity);
         gameObject.SetActive(true);
         _boxCollider2D.enabled = true;
 

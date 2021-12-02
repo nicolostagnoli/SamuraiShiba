@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2053993230984919961}
   - component: {fileID: 4264162707425169515}
   - component: {fileID: 5035159638624904533}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6912025550447371134}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.96, y: 1.4499998, z: -10.537914}
+  m_LocalPosition: {x: 0.02660609, y: -1.9172585, z: 0}
   m_LocalScale: {x: 0.20762727, y: 0.20762727, z: 0.20762727}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3841,7 +3841,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 0
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4836,7 +4836,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
