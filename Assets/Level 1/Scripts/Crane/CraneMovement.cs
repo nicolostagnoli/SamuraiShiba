@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CraneScript : MonoBehaviour {
+public class CraneMovement : MonoBehaviour {
 
     private float timeToHeal;
     private float timeToShoot;
@@ -14,6 +14,8 @@ public class CraneScript : MonoBehaviour {
     private float _speed;
     private int currentMovement;
     private bool canMakeNewMove;
+
+    private Animator anim;
 
     //feather attack
     public GameObject featherPrefab;
@@ -28,7 +30,6 @@ public class CraneScript : MonoBehaviour {
     public Transform ground;
     public Transform healPos;
     public Transform featherAttackPos1;
-    public Transform featherAttackPos2;
 
     //fly parameters
     public float normalSpeed;
@@ -43,10 +44,9 @@ public class CraneScript : MonoBehaviour {
     public float damage;
 
     //health
-    public float maxHealth;
     public float healTreshold;
     public float timeBetweenHealings;
-    private float currentHealth;
+    private Boss bossHealth;
 
     void Start() {
         canMakeNewMove = true;
@@ -58,7 +58,7 @@ public class CraneScript : MonoBehaviour {
         desiredPosition = rb.position;
         _speed = normalSpeed;
         currentMovement = 0;
-        currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     void Update() {
@@ -78,7 +78,8 @@ public class CraneScript : MonoBehaviour {
                         ThrowSingleFeather();
                         break;
                     case 1:
-                        ThrowFeathers(1);
+                        anim.SetTrigger("FeatherAttack");
+                        //ThrowFeathers(1);
                         break;
                     default:
                         ThrowSingleFeather();
@@ -97,7 +98,7 @@ public class CraneScript : MonoBehaviour {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        //follow player
+        //follow desired position
         rb.position = Vector2.MoveTowards(rb.position, desiredPosition, _speed * Time.deltaTime);
 
         //when desired position is reached
@@ -106,7 +107,7 @@ public class CraneScript : MonoBehaviour {
             //based on previuos desired position, do something
             switch (currentMovement) {
                 case 2: //make attack from top
-                    ThrowFeathers(1);
+                    anim.SetTrigger("FeatherAttackFromTop");
                     break;
                 case 3: //heal
                     StartHealing();
@@ -127,8 +128,7 @@ public class CraneScript : MonoBehaviour {
                         _speed = swoopSpeed;
                         break;
                     case 2: //attack from top
-                        int randAttackPos = Random.Range(0, 2);
-                        desiredPosition = randAttackPos == 0 ? featherAttackPos1.position : featherAttackPos2.position;
+                        desiredPosition = featherAttackPos1.position;
                         break;
                     default: //random fly
                         desiredPosition = new Vector3(player.position.x, Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
@@ -137,7 +137,7 @@ public class CraneScript : MonoBehaviour {
                 }
 
                 //after new movement, check if healing should override
-                if (currentHealth < healTreshold && timeToHeal > timeBetweenHealings) {
+                if (bossHealth.getCurrentHealth() < healTreshold && timeToHeal > timeBetweenHealings) {
                     desiredPosition = healPos.position;
                     timeToHeal = 0;
                 }
@@ -185,14 +185,14 @@ public class CraneScript : MonoBehaviour {
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             feather = Instantiate(featherPrefab);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngleTop * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             feather = Instantiate(featherPrefab);
             feather.transform.position = transform.position;
@@ -201,11 +201,11 @@ public class CraneScript : MonoBehaviour {
         }
     }
 
-    void StartHealing() {
+    public void StartHealing() {
         canMakeNewMove = false;
     }
 
-    void OnHealingFinished() {
+    public void OnHealingFinished() {
         canMakeNewMove = true;
     }
 

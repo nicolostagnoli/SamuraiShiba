@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FeatherScript : MonoBehaviour
+public class CraneFeather : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

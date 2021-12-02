@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwoopAttack
+  m_Name: FeatherAttackFromTop
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -4308316685278338477, guid: 46a932a3b6e975644938f19aba7b2946, type: 3}
-    - time: 0.23333333
+    - time: 0.25
       value: {fileID: -7295437576858979171, guid: 46a932a3b6e975644938f19aba7b2946, type: 3}
     - time: 0.5
       value: {fileID: -8237534334314643743, guid: 46a932a3b6e975644938f19aba7b2946, type: 3}
@@ -79,9 +79,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: ThrowFeathers
+    functionName: ThrowFeathersFromTop
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 1
+    intParameter: 0
     messageOptions: 0

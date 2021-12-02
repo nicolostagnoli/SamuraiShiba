@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: 46a932a3b6e975644938f19aba7b2946
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4308316685278338477
+    second: Crane wave attack_2
+  - first:
+      213: -7295437576858979171
+    second: Crane wave attack_3
+  - first:
+      213: -8237534334314643743
+    second: Crane wave attack_4
+  - first:
+      213: 8604943886660782827
+    second: Crane wave attack_5
+  - first:
+      213: 5134881639746231383
+    second: Crane wave attack_6
+  - first:
+      213: 8603581824476601755
+    second: Crane wave attack_7
+  - first:
+      213: 2040148376841731725
+    second: Crane wave attack_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +53,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +62,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +89,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +110,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Crane wave attack_2
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 2
+        width: 168
+        height: 186
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352a81a1dc8c534c0800000000000000
+      internalID: -4308316685278338477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane wave attack_3
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1
+        width: 154
+        height: 253
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36758894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94b84e3d2661ca90800000000000000
+      internalID: -7295437576858979171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane wave attack_4
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 7
+        width: 227
+        height: 171
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54385966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee7712da266ead80800000000000000
+      internalID: -8237534334314643743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane wave attack_6
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 3
+        width: 233
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cdfb445a3c24740800000000000000
+      internalID: 5134881639746231383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crane wave attack_8
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 0
+        width: 257
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5, y: 0.37959182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ebdbab320105c10800000000000000
+      internalID: 2040148376841731725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

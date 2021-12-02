@@ -69,7 +69,13 @@ public class PlayerAttack : MonoBehaviour
     public void MakeLightAttack() {
         Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
         for (int i = 0; i < enemiesToAttack.Length; i++) {
-            enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+            if (enemiesToAttack[i].gameObject.GetComponent<Enemy>()) {
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+            }
+            if (enemiesToAttack[i].gameObject.GetComponent<Boss>()) {
+                enemiesToAttack[i].gameObject.GetComponent<Boss>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+            }
+
             //combo counter
             if (_timeBetweenCombo > 0) {
                 _comboCont++;
@@ -85,7 +91,13 @@ public class PlayerAttack : MonoBehaviour
     public void MakeHeavyAttack() {
         Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
         for (int i = 0; i < enemiesToAttack.Length; i++) {
-            enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(heavyDamage + _comboCont * comboDamageBoost * 1.2f);
+            if (enemiesToAttack[i].gameObject.GetComponent<Enemy>()) {
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+            }
+            if (enemiesToAttack[i].gameObject.GetComponent<Boss>()) {
+                enemiesToAttack[i].gameObject.GetComponent<Boss>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+            }
+
             //Combo counter
             if (_timeBetweenCombo > 0) {
                 _comboCont++;
