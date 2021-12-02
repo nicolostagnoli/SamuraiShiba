@@ -3624,6 +3624,54 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8549399934173115044, guid: d310f8be54a805f42abd479bb7c636a0, type: 3}
   m_PrefabInstance: {fileID: 1164141173}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &780007553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780007552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c74e7ab31b341b4eae49135e894111a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  cinemachineBrain: {fileID: 780007557}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0006713867
+      inSlope: 2.6732266
+      outSlope: 2.6732266
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.11363636
+      value: 0.3044471
+      inSlope: -1.1144599
+      outSlope: -1.1144599
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.040293038
+    - serializedVersion: 3
+      time: 1
+      value: -0.0016860962
+      inSlope: -0.34538105
+      outSlope: -0.34538105
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  duration: 0.4
 --- !u!114 &780007557
 MonoBehaviour:
   m_ObjectHideFlags: 0
