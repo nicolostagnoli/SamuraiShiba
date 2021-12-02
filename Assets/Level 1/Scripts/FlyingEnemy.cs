@@ -30,7 +30,6 @@ public class FlyingEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();

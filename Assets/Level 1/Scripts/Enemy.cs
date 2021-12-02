@@ -4,19 +4,12 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
-[RequireComponent(typeof(Animator))]
 public class Enemy : MonoBehaviour
 {
     private float _health=50;
     public LootTable lootTable;
     private int dropAmount = 5;
-    private Animator _animator;
     public GameObject blood;
-
-    public void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
 
     public void TakeDamage(float damage)
     {
