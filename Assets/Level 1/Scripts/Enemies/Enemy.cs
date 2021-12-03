@@ -10,9 +10,11 @@ public class Enemy : MonoBehaviour
     public LootTable lootTable;
     private int dropAmount = 5;
     public GameObject blood;
+    public HitEffect hitEffect;
 
     public virtual void TakeDamage(float damage)
     {
+        hitEffect.Flash();
         _health -= damage;
         if (_health <= 0)
         {

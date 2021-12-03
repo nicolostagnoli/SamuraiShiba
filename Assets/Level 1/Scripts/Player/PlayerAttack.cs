@@ -73,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < enemiesToAttack.Length; i++) {
             enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
             Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-            CinemachineShake.Instance.ShakeCamera(2f, 0.2f);
+            CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
 
             //combo counter
             if (_timeBetweenCombo > 0) {
@@ -92,7 +92,7 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < enemiesToAttack.Length; i++) {
             enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
             Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-            CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
+            CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
 
             //Combo counter
             if (_timeBetweenCombo > 0) {
