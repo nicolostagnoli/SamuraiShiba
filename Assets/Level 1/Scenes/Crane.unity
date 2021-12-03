@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89601826}
   - component: {fileID: 89601825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,8 +243,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1248505815
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bff937ee8f4c43e4ab554e17a86a4436, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2575,10 +2575,6 @@ PrefabInstance:
       value: Crane
       objectReference: {fileID: 0}
     - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: ground
       value: 
       objectReference: {fileID: 1634909641}
@@ -2637,14 +2633,6 @@ PrefabInstance:
     - target: {fileID: 7537278469565992784, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7537278469565992791, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7537278469565992791, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1441002311
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}

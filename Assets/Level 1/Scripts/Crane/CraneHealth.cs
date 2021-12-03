@@ -15,8 +15,6 @@ public class CraneHealth : Enemy
 
     public override void TakeDamage(float damage) {
         base.TakeDamage(damage);
-        if (base.isVulnerable()) {
-            barScript.SetHealth(GetHealth() - damage); //boss health bar
-        }
+        barScript.SetHealth(GetHealth() - damage); //boss health bar
     }
 }
