@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5956895852786043470}
   - component: {fileID: 5956895852786043440}
   - component: {fileID: 5956895852786043471}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5956895852930424398}
   - component: {fileID: 5956895852930424368}
   - component: {fileID: 5956895852930424399}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HearthSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000055313}
+  m_AnchoredPosition: {x: 49, y: -0.000055313}
   m_SizeDelta: {x: 95.0134, y: 87.7048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5956895852930424368
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 5956895853246131232}
   - component: {fileID: 5956895853246131234}
   - component: {fileID: 5956895853246131233}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HealthBarBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5956895853402374723}
   - component: {fileID: 5956895853402374725}
   - component: {fileID: 5956895853402374724}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: HealthBar
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5956895853402374722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

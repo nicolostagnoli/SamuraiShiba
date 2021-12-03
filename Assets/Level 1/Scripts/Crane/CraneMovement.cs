@@ -48,7 +48,7 @@ public class CraneMovement : MonoBehaviour {
     public float timeBetweenHealings;
     private Enemy enemyScript;
 
-    void Start() {
+    void Awake() {
         canMakeNewMove = true;
         randomShootTime = Random.Range(minShootTime, maxShootTime);
         timeToShoot = 0;

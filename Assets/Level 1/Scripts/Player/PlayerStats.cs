@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     
-    public  float PlayerMaxStamina;
-    public  float PlayerMaxHealth;
+    public float PlayerMaxStamina;
+    public float PlayerMaxHealth;
     private int _coins=1;
     [SerializeField]
     private float _health;

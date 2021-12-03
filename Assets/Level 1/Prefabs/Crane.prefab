@@ -174,11 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   featherPrefab: {fileID: 9089927028098948925, guid: dfed3e2bf9c867b4e96821d5720b248d, type: 3}
-  featherAngle: 10
-  featherAngleTop: 15
+  featherAngle: 15
+  featherAngleTop: 20
   featherVelocity: 3
   minShootTime: 1.5
-  maxShootTime: 3
+  maxShootTime: 4
   featherDamage: 5
   player: {fileID: 0}
   ground: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 8329192199262974375}
   invulnerabilityTime: 0.2
-  maxHealth: 200
+  maxHealth: 150
   barScript: {fileID: 0}
 --- !u!61 &6989026283352402259
 BoxCollider2D:
