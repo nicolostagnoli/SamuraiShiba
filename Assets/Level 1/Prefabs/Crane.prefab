@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6989026283352402259}
   - component: {fileID: 802256332196689997}
   - component: {fileID: 3095063884231675577}
+  - component: {fileID: 8329192199262974375}
   m_Layer: 13
   m_Name: Crane
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MonoBehaviour:
   normalSpeed: 2
   swoopSpeed: 4
   minHeight: 0
-  maxHeight: 6
+  maxHeight: 4
   attackPosition: {fileID: 7537278469146353469}
   attackRange: 0.2
   whatIsPlayer:
@@ -210,7 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable: {fileID: 0}
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
+  hitEffect: {fileID: 8329192199262974375}
   maxHealth: 100
+  barScript: {fileID: 0}
 --- !u!61 &6989026283352402259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -289,6 +292,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32460946, y: 0.8487934}
   m_EdgeRadius: 0
+--- !u!114 &8329192199262974375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537278469565992778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &8325918169504173417
 GameObject:
   m_ObjectHideFlags: 0

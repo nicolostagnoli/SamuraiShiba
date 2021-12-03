@@ -15,6 +15,6 @@ public class CraneHealth : Enemy
 
     public override void TakeDamage(float damage) {
         base.TakeDamage(damage);
-        barScript.SetHealth(GetHealth() - damage);
+        barScript.SetHealth(GetHealth() - damage); //boss health bar
     }
 }

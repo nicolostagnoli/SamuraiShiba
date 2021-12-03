@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
   public LayerMask whatIsGround;
   public Transform feetPos;
   public GameObject anim;
+  public ParticleSystem dust;
  
   //Horizontal Movement
   public float speed;
   private float _moveInput;
   private float _facingDirection;
   private bool _canMove;
+  private float _previousFacingDirection;
   
   //Jump
   public float jumpForce;
@@ -69,11 +71,21 @@ public class PlayerController : MonoBehaviour
     {
       transform.eulerAngles = new Vector3(0, 0, 0);
       _facingDirection = 1f;
+      if (_previousFacingDirection != _facingDirection)
+      {
+        CreateDust();
+      }
+      _previousFacingDirection = _facingDirection;
     }
     else if(_moveInput < 0)
     {
       transform.eulerAngles = new Vector3(0, 180, 0);
       _facingDirection = -1f;
+      if (_previousFacingDirection != _facingDirection)
+      {
+        CreateDust();
+      }
+      _previousFacingDirection = _facingDirection;
     }
     
     //TODO: check when player returns on ground to stop jump animation
@@ -81,6 +93,7 @@ public class PlayerController : MonoBehaviour
     if (_isGrounded && Input.GetKeyDown(KeyCode.Space))
     {
       _isJumping = true;
+      CreateDust();
       _animator.SetTrigger("Jump");
       _animator.SetBool("isJumping", true);
       _jumpTimeCounter = jumpTime;
@@ -160,5 +173,10 @@ public class PlayerController : MonoBehaviour
 
       }
     }
+  }
+
+  private void CreateDust()
+  {
+    dust.Play();
   }
 }

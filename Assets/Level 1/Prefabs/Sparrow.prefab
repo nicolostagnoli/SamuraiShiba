@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4464706017668918127}
   - component: {fileID: 4464706017668918124}
   - component: {fileID: 4464706017668918125}
-  - component: {fileID: -5130016354696087924}
   m_Layer: 8
   m_Name: Sparrow
   m_TagString: Enemy
@@ -169,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: 451ad8409ed6eb549a4f70f2e5ed57d8, type: 2}
   blood: {fileID: 0}
+  hitEffect: {fileID: 0}
   _player: {fileID: 0}
   _agroRange: 7
   _attackRange: 5
@@ -178,20 +178,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &-5130016354696087924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4464706017668918122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a36f11a98e0100c4eae1dd95888ae011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  feathers: []
+  featherPrefab: {fileID: 0}
 --- !u!1 &4464706017987938061
 GameObject:
   m_ObjectHideFlags: 0
