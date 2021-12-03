@@ -5035,9 +5035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5584b922da23bc4da101536174115d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerMaxStamina: 100
+  PlayerMaxHealth: 100
   staminaRegenerationSpeed: 5
   invulnerabilityTime: 1
-  GameOverScreen: {fileID: 0}
 --- !u!114 &830587182818759307
 MonoBehaviour:
   m_ObjectHideFlags: 0

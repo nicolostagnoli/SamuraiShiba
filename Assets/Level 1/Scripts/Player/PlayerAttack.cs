@@ -40,7 +40,8 @@ public class PlayerAttack : MonoBehaviour
             //LIGHT ATTACK
            if (Input.GetKey(KeyCode.N)) {
                 if (_playerStats.getStamina() >= lightAttackStamina) {
-                    _playerStats.UseStamina((int)lightAttackStamina);
+                    _playerStats.UseStamina(lightAttackStamina);
+                    Debug.Log(lightAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenLightAttacks;
                     int lightDice = Random.Range(0, 2);
                     if (lightDice == 0)
@@ -52,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
             } //HEAVY ATTACK
             else if (Input.GetKey(KeyCode.M)) {
                 if (_playerStats.getStamina() >= heavyAttackStamina) {
-                    _playerStats.UseStamina((int)heavyAttackStamina);
+                    _playerStats.UseStamina(heavyAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenHeavyAttacks;
                     int heavyDice = Random.Range(0, 2);
                     if( heavyDice == 0)

@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private float _health = PlayerMaxHealth;
-    private float _stamina = PlayerMaxStamina;
-    public const float PlayerMaxStamina=100;
-    public const float PlayerMaxHealth=30;
+    
+    public  float PlayerMaxStamina;
+    public  float PlayerMaxHealth;
     private int _coins=1;
-
+    [SerializeField]
+    private float _health;
+    [SerializeField]
+    private float _stamina;
     private HealthBarScript healthBarScript;
     private StaminaBarScript staminaBarScript;
     private CoinCounterTextScript _coinCounterTextScript;
@@ -22,6 +24,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        _health = PlayerMaxHealth;
+        _stamina = PlayerMaxStamina;
         healthBarScript = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScript>();
         staminaBarScript=GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<StaminaBarScript>();
         //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
@@ -76,12 +80,22 @@ public class PlayerStats : MonoBehaviour
 
     public void setHealth(float health)
     {
+        if (health >= PlayerMaxHealth)
+        {
+            health = PlayerMaxHealth;
+        }
+
         _health = health;
         healthBarScript.SetHealth(health);
     }
     
     public void setStamina(float stamina)
     {
+        if (stamina >= PlayerMaxStamina)
+        {
+            stamina = PlayerMaxStamina;
+        }
+
         _stamina = stamina;
         staminaBarScript.SetStamina(stamina);
     }
