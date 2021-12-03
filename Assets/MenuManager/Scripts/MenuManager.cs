@@ -50,11 +50,11 @@ public class MenuManager : Singleton<MenuManager>
             if (menu != mainMenuPrefab)
             {
                 menuInstance.gameObject.SetActive(false);
-                Debug.Log("diverso da main menu, disattivo");
+                
             }
             else
             {
-                Debug.Log("uguale a main menu, attivo");
+                
                 OpenSpecificMenu(MainMenu.Instance);
             }
         }
