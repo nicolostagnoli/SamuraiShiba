@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private int dropAmount = 5;
     public GameObject blood;
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         _health -= damage;
         if (_health <= 0)

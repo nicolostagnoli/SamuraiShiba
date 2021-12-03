@@ -5,15 +5,16 @@ using UnityEngine;
 public class CraneHealth : Enemy
 {
     public float maxHealth;
+    public HealthBarScript barScript;
 
     void Start()
     {
         SetHealth(maxHealth);
+        barScript.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(GetHealth());
+    public override void TakeDamage(float damage) {
+        base.TakeDamage(damage);
+        barScript.SetHealth(GetHealth() - damage);
     }
 }
