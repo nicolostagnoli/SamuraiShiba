@@ -2575,6 +2575,10 @@ PrefabInstance:
       value: Crane
       objectReference: {fileID: 0}
     - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: ground
       value: 
       objectReference: {fileID: 1634909641}
@@ -2633,6 +2637,14 @@ PrefabInstance:
     - target: {fileID: 7537278469565992784, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537278469565992791, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537278469565992791, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1441002311
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}

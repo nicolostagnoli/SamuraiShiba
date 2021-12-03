@@ -4975,10 +4975,11 @@ MonoBehaviour:
   jumpForce: 8
   checkRadius: 0.3
   jumpTime: 0.25
+  dashStamina: 15
   dashTime: 0.2
   dashSpeed: 3
   distanceBetweenImages: 0.1
-  dashCooldown: 3
+  dashCooldown: 1
 --- !u!114 &4930271037381103038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,6 +5038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMaxStamina: 100
   PlayerMaxHealth: 100
+  _health: 0
+  _stamina: 0
   staminaRegenerationSpeed: 5
   invulnerabilityTime: 1
 --- !u!114 &830587182818759307

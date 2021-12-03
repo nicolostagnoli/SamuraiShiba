@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
   public Transform feetPos;
   public GameObject anim;
   public ParticleSystem dust;
- 
+  private PlayerStats _stats;
+
   //Horizontal Movement
   public float speed;
   private float _moveInput;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
   private float _lastImageXPos;
   private float _lastDash = -100;
   private bool _isDashing;
+    public float dashStamina;
   
   public float dashTime;
   public float dashSpeed;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     _canMove = true;
     //_animator = anim.GetComponent<Animator>();
     _animator = GetComponent<Animator>();
+        _stats = GetComponent<PlayerStats>();
   }
 
   private void FixedUpdate()
@@ -123,7 +126,7 @@ public class PlayerController : MonoBehaviour
     if (Input.GetKey(KeyCode.LeftShift))
     {
       Debug.Log("Ho premuto shift");
-      if(Time.time >= (_lastDash + dashCooldown))
+      if(Time.time >= (_lastDash + dashCooldown) && _stats.getStamina() >= dashStamina)
         AttemptToDash();
     }
     
@@ -135,6 +138,7 @@ public class PlayerController : MonoBehaviour
     _isDashing = true;
     _dashTimeLeft = dashTime;
     _lastDash = Time.time;
+        _stats.UseStamina(dashStamina);
 
     //PlayerAfterImagePool.Instance.GetFromPool();
     //_lastImageXPos = transform.position.x;

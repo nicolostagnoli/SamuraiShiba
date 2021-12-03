@@ -12,16 +12,33 @@ public class Enemy : MonoBehaviour
     public GameObject blood;
     public HitEffect hitEffect;
 
+    public float invulnerabilityTime;
+    private float timeToInvulnerability;
+    private void Start() {
+        timeToInvulnerability = 0; 
+    }
+
+    private void Update() {
+        timeToInvulnerability += Time.deltaTime;
+    }
+
     public virtual void TakeDamage(float damage)
     {
-        hitEffect.Flash();
-        _health -= damage;
-        if (_health <= 0)
-        {
-            Instantiate(blood, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            //anim.SetTrigger("die")
+        if (timeToInvulnerability >= invulnerabilityTime) {
+            timeToInvulnerability = 0;
+
+            hitEffect.Flash();
+            _health -= damage;
+            if (_health <= 0) {
+                Instantiate(blood, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                //anim.SetTrigger("die")
+            }
         }
+    }
+
+    protected bool isVulnerable() {
+        return timeToInvulnerability >= invulnerabilityTime;
     }
     
     public void DropLoot()

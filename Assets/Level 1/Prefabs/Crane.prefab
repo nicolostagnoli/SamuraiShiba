@@ -212,6 +212,7 @@ MonoBehaviour:
   lootTable: {fileID: 0}
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 8329192199262974375}
+  invulnerabilityTime: 0.2
   maxHealth: 100
   barScript: {fileID: 0}
 --- !u!61 &6989026283352402259
