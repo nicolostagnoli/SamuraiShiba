@@ -3355,6 +3355,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &492265842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4464706017668918122, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+  m_PrefabInstance: {fileID: 2085396475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &492265849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492265842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &780007552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8549399934173115044, guid: d310f8be54a805f42abd479bb7c636a0, type: 3}
@@ -3928,11 +3947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4464706017668918112, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.47
+      value: -3.65
       objectReference: {fileID: 0}
     - target: {fileID: 4464706017668918112, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 4464706017668918112, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3994,6 +4013,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1305475143}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 492265849}
     - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: _moveSpeed
       value: 1
