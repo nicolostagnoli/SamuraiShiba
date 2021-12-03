@@ -42,6 +42,7 @@ public class CraneMovement : MonoBehaviour {
     public float attackRange;
     public LayerMask whatIsPlayer;
     public float damage;
+    private bool canAttack;
 
     //health
     public float healTreshold;
@@ -60,6 +61,7 @@ public class CraneMovement : MonoBehaviour {
         currentMovement = 0;
         anim = GetComponent<Animator>();
         enemyScript = GetComponent<Enemy>();
+        canAttack = false;
     }
 
     void Update() {
@@ -164,12 +166,13 @@ public class CraneMovement : MonoBehaviour {
             }
 
             //Player collider check
-            Collider2D[] playerToAttack =
-                Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
-            if (playerToAttack.Length > 0)
-            {
-                PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
-                stats.TakeDamage(damage);
+            if (canAttack) {
+                Collider2D[] playerToAttack =
+                    Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
+                if (playerToAttack.Length > 0) {
+                    PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
+                    stats.TakeDamage(damage);
+                }
             }
         }
     }
@@ -235,6 +238,14 @@ public class CraneMovement : MonoBehaviour {
 
     public void OnHealingFinished() {
         canMakeNewMove = true;
+    }
+
+    public void EnableAttackCollider() {
+        canAttack = true;
+    }
+
+    public void DisableAttackCollider() {
+        canAttack = false;
     }
 
     private void OnDrawGizmosSelected() {
