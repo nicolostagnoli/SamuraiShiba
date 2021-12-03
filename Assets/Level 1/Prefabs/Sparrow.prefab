@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4464706017668918127}
   - component: {fileID: 4464706017668918124}
   - component: {fileID: 4464706017668918125}
+  - component: {fileID: 267044622846105996}
   m_Layer: 8
   m_Name: Sparrow
   m_TagString: Enemy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4464706017668918122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.67, y: 2.27, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4464706017987938060}
   - {fileID: 1390529942070886106}
@@ -81,8 +82,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 2.5, y: 2.5}
+  m_DrawMode: 0
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,18 +123,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0060183704, y: 0.0051703453}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.38, y: 0.26}
-    newSize: {x: 2.5, y: 2.5}
+    newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
-    drawMode: 1
+    drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 0.398403, y: 0.2755046}
   m_EdgeRadius: 0
 --- !u!95 &4464706017668918124
 Animator:
@@ -167,19 +168,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: 451ad8409ed6eb549a4f70f2e5ed57d8, type: 2}
-  blood: {fileID: 0}
-  hitEffect: {fileID: 0}
+  blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
+  hitEffect: {fileID: 267044622846105996}
   invulnerabilityTime: 0.2
   _player: {fileID: 0}
   _agroRange: 7
   _attackRange: 5
-  _moveSpeed: 5
+  _moveSpeed: 2
+  initialHealth: 25
   attackPosition: {fileID: 4464706017987938060}
   damage: 10
   player:
     serializedVersion: 2
     m_Bits: 8
-  featherPrefab: {fileID: 0}
+  featherPrefab: {fileID: 7740872756213349240, guid: 92e8487ce5297d04b9d09ec5a213e6f3, type: 3}
+--- !u!114 &267044622846105996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464706017668918122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &4464706017987938061
 GameObject:
   m_ObjectHideFlags: 0

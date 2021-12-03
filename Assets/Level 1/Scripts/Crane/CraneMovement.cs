@@ -169,7 +169,7 @@ public class CraneMovement : MonoBehaviour {
             if (playerToAttack.Length > 0)
             {
                 PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
-                stats.TakeDamage(10);
+                stats.TakeDamage(damage);
             }
         }
     }

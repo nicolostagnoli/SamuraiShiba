@@ -4777,7 +4777,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -23128375
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: -5
   m_RenderMode: 0
   m_SortMode: 0
@@ -4819,8 +4819,8 @@ GameObject:
   - component: {fileID: 3010953476913594263}
   - component: {fileID: 5598778780533556487}
   - component: {fileID: 4930271037381103038}
-  - component: {fileID: 6830801137162050834}
   - component: {fileID: 8442788336162533092}
+  - component: {fileID: 6830801137162050834}
   - component: {fileID: 830587182818759307}
   m_Layer: 3
   m_Name: Shiba
@@ -4992,8 +4992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c895ee690261f46a07b81f8f8f6ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBetweenLightAttacks: 0.3
-  startTimeBetweenHeavyAttacks: 0.8
+  startTimeBetweenLightAttacks: 0.4
+  startTimeBetweenHeavyAttacks: 0.7
   attackPosition: {fileID: 4167753217064836030}
   whatIsEnemy:
     serializedVersion: 2
@@ -5006,6 +5006,24 @@ MonoBehaviour:
   lightAttackStamina: 10
   heavyAttackStamina: 20
   hitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
+--- !u!114 &8442788336162533092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198578693233598302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5584b922da23bc4da101536174115d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMaxStamina: 100
+  PlayerMaxHealth: 100
+  _health: 0
+  _stamina: 0
+  staminaRegenerationSpeed: 10
+  invulnerabilityTime: 0.5
 --- !u!114 &6830801137162050834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5024,24 +5042,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentStack: 00000000000000000000000000000000
---- !u!114 &8442788336162533092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198578693233598302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5584b922da23bc4da101536174115d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerMaxStamina: 100
-  PlayerMaxHealth: 100
-  _health: 0
-  _stamina: 0
-  staminaRegenerationSpeed: 5
-  invulnerabilityTime: 1
 --- !u!114 &830587182818759307
 MonoBehaviour:
   m_ObjectHideFlags: 0

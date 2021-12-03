@@ -45,7 +45,6 @@ public class PlayerAttack : MonoBehaviour
            if (Input.GetKey(KeyCode.J)) {
                 if (_playerStats.getStamina() >= lightAttackStamina) {
                     _playerStats.UseStamina(lightAttackStamina);
-                    Debug.Log(lightAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenLightAttacks;
                     int lightDice = Random.Range(0, 2);
                     if (lightDice == 0)
@@ -70,6 +69,7 @@ public class PlayerAttack : MonoBehaviour
         else {
             _timeBetweenAttacks -= Time.deltaTime;
         }
+
         _timeBetweenCombo -= Time.deltaTime;
 
         if (lightAttackEnabled) {
@@ -115,6 +115,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void DisableLightAttack() {
         lightAttackEnabled = false;
+        heavyAttackEnabled = false;
     }
 
     public void EnableHeavyAttack() {
@@ -122,6 +123,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void DisableHeavyAttack() {
+        lightAttackEnabled = false;
         heavyAttackEnabled = false;
     }
 

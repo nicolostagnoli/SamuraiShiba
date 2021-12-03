@@ -12,7 +12,7 @@ public class FlyingEnemy : Enemy
     private float _attackRange;
     [SerializeField]
     private float _moveSpeed;
-    private float initialHealth=50f;
+    public float initialHealth;
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     public Transform attackPosition;
