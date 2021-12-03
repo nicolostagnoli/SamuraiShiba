@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaRegenerationSpeed: 5
   invulnerabilityTime: 1
+  PlayerInterface: {fileID: 2202309787941737829, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
 --- !u!114 &830587182818759307
 MonoBehaviour:
   m_ObjectHideFlags: 0

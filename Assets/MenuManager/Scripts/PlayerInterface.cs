@@ -33,10 +33,16 @@ using UnityEngine;
 
         public void Pause()
         {
-            Debug.Log("Pause pressed");
+            
             MenuManager.Instance.SetActiveSpecificMenu(PauseMenu.Instance);
             Time.timeScale = 0f;
             _gameIsPaused = true;
+        }
+
+        public static void PlayerDeath()
+        {
+            
+            MenuManager.Instance.SetActiveSpecificMenu(GameOverMenu.Instance);
         }
     }
 

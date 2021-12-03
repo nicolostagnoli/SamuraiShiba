@@ -21,6 +21,8 @@ public class MenuManager : Singleton<MenuManager>
     public PlayerInterface playerInterfacePrefab;
     
     public PauseMenu pauseMenuPrefab;
+    
+    public GameOverMenu gameOverMenu;
 
     private Stack<Menu> _menusStack = new Stack<Menu>();
 
@@ -30,7 +32,7 @@ public class MenuManager : Singleton<MenuManager>
 
     private void InizializeMenu()
     {
-        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab, pauseMenuPrefab};
+        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab, pauseMenuPrefab, gameOverMenu};
 
         if (_menuParent == null)
         {
@@ -142,12 +144,15 @@ public class MenuManager : Singleton<MenuManager>
     {
         SceneManager.LoadScene("Tutorial/Scenes/Tutorial");
     }
+    
+  
 
     public void QuitGame()
     {
         Application.Quit();
     }
 
+   
    
     
     

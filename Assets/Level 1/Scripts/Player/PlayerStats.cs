@@ -7,8 +7,8 @@ public class PlayerStats : MonoBehaviour
 {
     private float _health = PlayerMaxHealth;
     private float _stamina = PlayerMaxStamina;
-    private const float PlayerMaxStamina=100;
-    private const float PlayerMaxHealth=100;
+    public const float PlayerMaxStamina=100;
+    public const float PlayerMaxHealth=30;
     private int _coins=1;
 
     private HealthBarScript healthBarScript;
@@ -19,14 +19,13 @@ public class PlayerStats : MonoBehaviour
     public float invulnerabilityTime;
     private float timeToIvulnerability;
 
-    public GameOverScreen GameOverScreen;
 
     private void Start()
     {
         healthBarScript = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScript>();
         staminaBarScript=GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<StaminaBarScript>();
         //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
-
+        
         
         //_coinCounterTextScript.setCoinsAmount(_coins);
         healthBarScript.SetMaxHealth(PlayerMaxHealth);
@@ -72,7 +71,7 @@ public class PlayerStats : MonoBehaviour
 
     public void GameOver()
     {
-        GameOverScreen.Setup();
+        PlayerInterface.PlayerDeath();
     }
 
     public void setHealth(float health)

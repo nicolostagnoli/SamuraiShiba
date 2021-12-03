@@ -31,8 +31,8 @@ using UnityEngine.SceneManagement;
                 MenuManager.Instance.OpenMenu(CreditScreen.Instance);
             }
         }
-        
-        
+
+      
 
         public override void OnBackPressed()
         {
@@ -43,7 +43,24 @@ using UnityEngine.SceneManagement;
         {
             Application.Quit();
         }
+        public void ReloadCurrentScene()
+        {
+            if (GameOverMenu.Instance != null)
+            MenuManager.Instance.SetNonActiveSpecificMenu(GameOverMenu.Instance);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+        }
         
+        public void LoadMainMenu()
+    
+        {
+            if (GameOverMenu.Instance != null)
+            MenuManager.Instance.SetNonActiveSpecificMenu(GameOverMenu.Instance);
+            MenuManager.Instance.OpenSpecificMenu(MainMenu.Instance);
+            SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
+            
+            
+        }
         
 
     }
