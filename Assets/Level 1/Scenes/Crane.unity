@@ -1280,11 +1280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Name
-      value: HealthBar
+      value: CraneHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_TagString
-      value: HealthBar
+      value: BosshealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374723, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Pivot.x
@@ -1758,6 +1758,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af44cafcff91d2c4da980026bd69280d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1990144204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5956895853402374724, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+  m_PrefabInstance: {fileID: 1304617517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad000ada5c2656847889c510b5262d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2050272261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,6 +1776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: barScript
+      value: 
+      objectReference: {fileID: 1990144204}
     - target: {fileID: 2311140398851363045, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: maxHealth
       value: 100

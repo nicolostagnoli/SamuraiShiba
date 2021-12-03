@@ -9,6 +9,7 @@ TagManager:
   - HealthBar
   - StaminaBar
   - CoinsAmount
+  - BosshealthBar
   layers:
   - Default
   - TransparentFX
