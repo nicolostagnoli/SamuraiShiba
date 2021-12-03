@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     private int _comboCont;
     private float _timeBetweenCombo;
     private PlayerStats _playerStats;
+    private bool lightAttackEnabled;
+    private bool heavyAttackEnabled;
 
     public float startTimeBetweenLightAttacks;
     public float startTimeBetweenHeavyAttacks;
@@ -31,6 +33,8 @@ public class PlayerAttack : MonoBehaviour
         _comboCont = 0;
         _animator = GetComponent<Animator>();
         _playerStats = GetComponent<PlayerStats>();
+        lightAttackEnabled = false;
+        heavyAttackEnabled = false;
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(_timeBetweenAttacks <= 0) {
             //LIGHT ATTACK
-           if (Input.GetKey(KeyCode.N)) {
+           if (Input.GetKey(KeyCode.J)) {
                 if (_playerStats.getStamina() >= lightAttackStamina) {
                     _playerStats.UseStamina(lightAttackStamina);
                     Debug.Log(lightAttackStamina);
@@ -51,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
                 }
 
             } //HEAVY ATTACK
-            else if (Input.GetKey(KeyCode.M)) {
+            else if (Input.GetKey(KeyCode.K)) {
                 if (_playerStats.getStamina() >= heavyAttackStamina) {
                     _playerStats.UseStamina(heavyAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenHeavyAttacks;
@@ -67,44 +71,58 @@ public class PlayerAttack : MonoBehaviour
             _timeBetweenAttacks -= Time.deltaTime;
         }
         _timeBetweenCombo -= Time.deltaTime;
-    }
 
-    public void MakeLightAttack() {
-        Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
-        for (int i = 0; i < enemiesToAttack.Length; i++) {
-            enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
-            Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-            CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
+        if (lightAttackEnabled) {
+            Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
+            for (int i = 0; i < enemiesToAttack.Length; i++) {
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+                Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
+                CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
 
-            //combo counter
-            if (_timeBetweenCombo > 0) {
-                _comboCont++;
+                //combo counter
+                if (_timeBetweenCombo > 0) {
+                    _comboCont++;
+                }
+                else {
+                    _comboCont = 1;
+                }
+                _timeBetweenCombo = comboDuration;
             }
-            else {
-                _comboCont = 1;
+        }
+
+        if (heavyAttackEnabled) {
+            Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
+            for (int i = 0; i < enemiesToAttack.Length; i++) {
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+                Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
+                CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
+
+                //Combo counter
+                if (_timeBetweenCombo > 0) {
+                    _comboCont++;
+                }
+                else {
+                    _comboCont = 1;
+                }
+                _timeBetweenCombo = comboDuration;
             }
-            Debug.Log(_comboCont + " Hit!");
-            _timeBetweenCombo = comboDuration;
         }
     }
 
-    public void MakeHeavyAttack() {
-        Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
-        for (int i = 0; i < enemiesToAttack.Length; i++) {
-            enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
-            Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-            CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
+    public void EnableLightAttack() {
+        lightAttackEnabled = true;
+    }
 
-            //Combo counter
-            if (_timeBetweenCombo > 0) {
-                _comboCont++;
-            }
-            else {
-                _comboCont = 1;
-            }
-            Debug.Log(_comboCont + " Hit!");
-            _timeBetweenCombo = comboDuration;
-        }
+    public void DisableLightAttack() {
+        lightAttackEnabled = false;
+    }
+
+    public void EnableHeavyAttack() {
+        heavyAttackEnabled = true;
+    }
+
+    public void DisableHeavyAttack() {
+        heavyAttackEnabled = false;
     }
 
     private void OnDrawGizmosSelected() {

@@ -108,8 +108,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1441002311
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2932168430236537502, guid: 67a20f491c7ecd84e91539692c5acd9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -194,7 +194,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  damage: 1
+  damage: 3
   healTreshold: 35
   timeBetweenHealings: 120
 --- !u!114 &-1429698849895668920
@@ -212,6 +212,7 @@ MonoBehaviour:
   lootTable: {fileID: 0}
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 8329192199262974375}
+  invulnerabilityTime: 0.2
   maxHealth: 100
   barScript: {fileID: 0}
 --- !u!61 &6989026283352402259

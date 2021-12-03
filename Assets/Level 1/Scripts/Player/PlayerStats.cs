@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     public float staminaRegenerationSpeed;
     public float invulnerabilityTime;
-    private float timeToIvulnerability;
+    private float timeToInvulnerability;
 
 
     private void Start()
@@ -34,17 +34,17 @@ public class PlayerStats : MonoBehaviour
         //_coinCounterTextScript.setCoinsAmount(_coins);
         healthBarScript.SetMaxHealth(PlayerMaxHealth);
         staminaBarScript.SetMaxStamina(PlayerMaxStamina);
-        timeToIvulnerability = invulnerabilityTime;
+        timeToInvulnerability = invulnerabilityTime;
     }
 
     public void Update() {
         setStamina(getStamina() + staminaRegenerationSpeed * Time.deltaTime);
-        timeToIvulnerability += Time.deltaTime;
+        timeToInvulnerability += Time.deltaTime;
     }
 
     public void TakeDamage(float damage)
     {
-        if (timeToIvulnerability > invulnerabilityTime) { //if that time is passed, can take damage
+        if (timeToInvulnerability > invulnerabilityTime) { //if that time is passed, can take damage
             //_animator.SetTrigger("Hit");
             if (_health > 0) {
                 if (_health - damage < 0) setHealth(0);
@@ -55,7 +55,7 @@ public class PlayerStats : MonoBehaviour
                 Destroy(gameObject);
                 // _animator.SetTrigger("Die");
             }
-            timeToIvulnerability = 0;
+            timeToInvulnerability = 0;
         }
     }
     public void UseStamina(float stamina) {
