@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
     public class MainMenu : Menu<MainMenu>
     {
+
+        private bool _gameIsPaused;
         public void OnPlayPressed()
         {
             if (MenuManager.Instance != null && PlayerInterface.Instance != null)
@@ -29,9 +31,19 @@ using UnityEngine.SceneManagement;
                 MenuManager.Instance.OpenMenu(CreditScreen.Instance);
             }
         }
+        
+        
 
         public override void OnBackPressed()
         {
             Application.Quit();
         }
+        
+        public void OnPausePressed()
+        {
+            Application.Quit();
+        }
+        
+        
+
     }
