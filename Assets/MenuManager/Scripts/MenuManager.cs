@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class MenuManager : Singleton<MenuManager>
 {
 
+ 
+    
     public MainMenu mainMenuPrefab;
 
     public SettingsMenu settingsMenuPrefab;
@@ -17,6 +19,8 @@ public class MenuManager : Singleton<MenuManager>
     public CreditScreen creditsMenuPrefab;
     
     public PlayerInterface playerInterfacePrefab;
+    
+    public PauseMenu pauseMenuPrefab;
 
     private Stack<Menu> _menusStack = new Stack<Menu>();
 
@@ -26,7 +30,7 @@ public class MenuManager : Singleton<MenuManager>
 
     private void InizializeMenu()
     {
-        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab};
+        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab, pauseMenuPrefab};
 
         if (_menuParent == null)
         {
@@ -100,7 +104,15 @@ public class MenuManager : Singleton<MenuManager>
         }
     }
 
-
+    public void SetActiveSpecificMenu(Menu menuInstance)
+    {
+        menuInstance.gameObject.SetActive(true);
+    }
+    public void SetNonActiveSpecificMenu(Menu menuInstance)
+    {
+        menuInstance.gameObject.SetActive(false);
+    }
+    
     public void CloseMenu()
     {
         if (_menusStack.Count > 1)
@@ -135,4 +147,8 @@ public class MenuManager : Singleton<MenuManager>
     {
         Application.Quit();
     }
+
+   
+    
+    
 }
