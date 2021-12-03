@@ -46,7 +46,7 @@ public class CraneMovement : MonoBehaviour {
     //health
     public float healTreshold;
     public float timeBetweenHealings;
-    private Boss bossHealth;
+    private Enemy enemyScript;
 
     void Start() {
         canMakeNewMove = true;
@@ -59,6 +59,7 @@ public class CraneMovement : MonoBehaviour {
         _speed = normalSpeed;
         currentMovement = 0;
         anim = GetComponent<Animator>();
+        enemyScript = GetComponent<Enemy>();
     }
 
     void Update() {
@@ -137,7 +138,7 @@ public class CraneMovement : MonoBehaviour {
                 }
 
                 //after new movement, check if healing should override
-                if (bossHealth.getCurrentHealth() < healTreshold && timeToHeal > timeBetweenHealings) {
+                if (enemyScript.GetHealth() < healTreshold && timeToHeal > timeBetweenHealings) {
                     desiredPosition = healPos.position;
                     timeToHeal = 0;
                 }
@@ -155,6 +156,7 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowSingleFeather() {
         GameObject feather = Instantiate(featherPrefab);
+        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
@@ -162,17 +164,20 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowFeathers(int featherGroup) {
         GameObject feather = Instantiate(featherPrefab);
+        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         for(int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
+            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngle * (i+1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
         for (int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
+            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngle * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
@@ -182,12 +187,14 @@ public class CraneMovement : MonoBehaviour {
     void ThrowFeathersFromTop()
     {
         GameObject feather = Instantiate(featherPrefab);
+        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         for (int i = 0; i < 3; i++)
         {
             feather = Instantiate(featherPrefab);
+            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngleTop * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
@@ -195,6 +202,7 @@ public class CraneMovement : MonoBehaviour {
         for (int i = 0; i < 3; i++)
         {
             feather = Instantiate(featherPrefab);
+            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngleTop * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;

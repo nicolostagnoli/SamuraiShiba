@@ -42,9 +42,11 @@ GameObject:
   - component: {fileID: 7537278469565992791}
   - component: {fileID: 7537278469565992790}
   - component: {fileID: 7537278469565992789}
-  - component: {fileID: 7537278469565992788}
   - component: {fileID: 7537278469565992779}
-  - component: {fileID: 2311140398851363045}
+  - component: {fileID: -1429698849895668920}
+  - component: {fileID: 6989026283352402259}
+  - component: {fileID: 802256332196689997}
+  - component: {fileID: 3095063884231675577}
   m_Layer: 13
   m_Name: Crane
   m_TagString: Untagged
@@ -158,32 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7537278469565992788
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7537278469565992778}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.68, y: 1.86}
-    newSize: {x: 1.68, y: 1.86}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &7537278469565992779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +178,7 @@ MonoBehaviour:
   featherVelocity: 3
   minShootTime: 1.5
   maxShootTime: 3
-  featherDamage: 10
+  featherDamage: 5
   player: {fileID: 0}
   ground: {fileID: 0}
   healPos: {fileID: 0}
@@ -212,14 +188,14 @@ MonoBehaviour:
   minHeight: 0
   maxHeight: 6
   attackPosition: {fileID: 7537278469146353469}
-  attackRange: 0.3
+  attackRange: 0.2
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  damage: 3
+  damage: 1
   healTreshold: 35
   timeBetweenHealings: 120
---- !u!114 &2311140398851363045
+--- !u!114 &-1429698849895668920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,4 +207,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c0dbdff6070804497fe7d6b15fd73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  lootTable: {fileID: 0}
+  blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
+  maxHealth: 100
+--- !u!61 &6989026283352402259
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537278469565992778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.2321239}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.68, y: 1.86}
+    newSize: {x: 1.68, y: 1.86}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.68, y: 0.7128207}
+  m_EdgeRadius: 0
+--- !u!61 &802256332196689997
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537278469565992778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6083249, y: 0.7417294}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.68, y: 1.86}
+    newSize: {x: 1.68, y: 1.86}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.46335027, y: 0.37654138}
+  m_EdgeRadius: 0
+--- !u!61 &3095063884231675577
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537278469565992778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005336255, y: -0.50560325}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.68, y: 1.86}
+    newSize: {x: 1.68, y: 1.86}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32460946, y: 0.8487934}
+  m_EdgeRadius: 0

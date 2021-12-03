@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CraneFeather : MonoBehaviour
 {
+    private float damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,15 @@ public class CraneFeather : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetFeatherDamage(float d) {
+        damage = d;
+    }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.GetComponent<PlayerStats>()) {
+            collision.GetComponent<PlayerStats>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

@@ -192,12 +192,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8448
   attackRange: 0.2
-  lightDamage: 0
-  heavyDamage: 0
-  comboDuration: 0
+  lightDamage: 5
+  heavyDamage: 10
+  comboDuration: 1
   comboDamageBoost: 0
-  lightAttackStamina: 0
-  heavyAttackStamina: 0
+  lightAttackStamina: 10
+  heavyAttackStamina: 20
+  hitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
 --- !u!114 &6830801137162050834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5584b922da23bc4da101536174115d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaRegenerationSpeed: 5
+  invulnerabilityTime: 1
 --- !u!114 &830587182818759307
 MonoBehaviour:
   m_ObjectHideFlags: 0

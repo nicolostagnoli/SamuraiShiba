@@ -13,13 +13,12 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        //_animator.SetTrigger("Hit");
-        Debug.Log(_health);
         _health -= damage;
         if (_health <= 0)
         {
             Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            //anim.SetTrigger("die")
         }
     }
     
@@ -38,11 +37,14 @@ public class Enemy : MonoBehaviour
     {
         _health = health;
     }
+
+    public float GetHealth() {
+        return _health;
+    }
     
     public void OnCompleteDieAnimation(){
         DropLoot();
         Destroy(gameObject);
-
     }
     
 }
