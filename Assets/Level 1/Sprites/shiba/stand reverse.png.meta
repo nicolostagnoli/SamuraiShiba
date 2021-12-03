@@ -172,10 +172,10 @@ TextureImporter:
       name: stand reverse_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 18
-        width: 59
-        height: 92
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: stand reverse_1
       rect:
         serializedVersion: 2
-        x: 167
-        y: 17
-        width: 59
-        height: 93
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
