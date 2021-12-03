@@ -86,7 +86,7 @@ public class CraneMovement : MonoBehaviour {
                             break;
                         case 1:
                             anim.SetTrigger("FeatherAttack");
-                            //ThrowFeathers(1);
+                            ThrowFeathers(1);
                             break;
                         default:
                             ThrowSingleFeather();

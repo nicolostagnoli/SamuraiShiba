@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: f149957cc6690c14aa61ad2cd5854388
+guid: 9b50cb34f815ff54ca929c7bed68a92c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3273416491338476328
-    second: Shiba Run sprite sheet_0
+      213: 5425901434557490719
+    second: Shiba Light Attack Sprite Sheet_0
   - first:
-      213: 5342464641097094661
-    second: Shiba Run sprite sheet_1
+      213: 4526527301529950147
+    second: Shiba Light Attack Sprite Sheet_1
   - first:
-      213: 3768316159831510300
-    second: Shiba Run sprite sheet_2
+      213: 6387845679135927753
+    second: Shiba Light Attack Sprite Sheet_2
   - first:
-      213: -9017097927229678834
-    second: Shiba Run sprite sheet_3
+      213: 1973871367420750012
+    second: Shiba Light Attack Sprite Sheet_3
   - first:
-      213: -6683415998710501869
-    second: Shiba Run sprite sheet_4
+      213: 3893858029772624163
+    second: Shiba Light Attack Sprite Sheet_4
   - first:
-      213: 3399835084032406889
-    second: Shiba Run sprite sheet_5
+      213: -8065194923593977233
+    second: Shiba Light Attack Sprite Sheet_5
   - first:
-      213: -5892967537352308775
-    second: Shiba Run sprite sheet_6
-  - first:
-      213: -8734671428374615442
-    second: Shiba Run sprite sheet_7
+      213: -2763154631673953286
+    second: Shiba Light Attack Sprite Sheet_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -92,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,79 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Lumin
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -187,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_0
+      name: Shiba Light Attack Sprite Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ba220a4f28d6d20800000000000000
-      internalID: 3273416491338476328
+      spriteID: f16e4196b9cac4b40800000000000000
+      internalID: 5425901434557490719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_1
+      name: Shiba Light Attack Sprite Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -222,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5065da5194f342a40800000000000000
-      internalID: 5342464641097094661
+      spriteID: 3c7dcc1299471de30800000000000000
+      internalID: 4526527301529950147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_2
+      name: Shiba Light Attack Sprite Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -243,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1d0f1cf49fbb4430800000000000000
-      internalID: 3768316159831510300
+      spriteID: 9cd29e80dcf26a850800000000000000
+      internalID: 6387845679135927753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_3
+      name: Shiba Light Attack Sprite Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -264,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b5096b535dcd280800000000000000
-      internalID: -9017097927229678834
+      spriteID: cb8ad67fc89946b10800000000000000
+      internalID: 1973871367420750012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_4
+      name: Shiba Light Attack Sprite Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -285,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31ea2b63f8cbf33a0800000000000000
-      internalID: -6683415998710501869
+      spriteID: 321566e5f33c90630800000000000000
+      internalID: 3893858029772624163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_5
+      name: Shiba Light Attack Sprite Sheet_5
       rect:
         serializedVersion: 2
         x: 640
@@ -306,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96579aeeef3ae2f20800000000000000
-      internalID: 3399835084032406889
+      spriteID: f62b5eeb2fba21090800000000000000
+      internalID: -8065194923593977233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shiba Run sprite sheet_6
+      name: Shiba Light Attack Sprite Sheet_6
       rect:
         serializedVersion: 2
         x: 768
@@ -327,29 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d7053f3f39f73ea0800000000000000
-      internalID: -5892967537352308775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shiba Run sprite sheet_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6a2af93d9638c680800000000000000
-      internalID: -8734671428374615442
+      spriteID: af34997908d47a9d0800000000000000
+      internalID: -2763154631673953286
       vertices: []
       indices: 
       edges: []
