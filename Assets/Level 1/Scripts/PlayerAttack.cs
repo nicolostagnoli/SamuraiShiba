@@ -74,12 +74,12 @@ public class PlayerAttack : MonoBehaviour
             if (enemiesToAttack[i].gameObject.GetComponent<Enemy>()) {
                 enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
                 Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-
+                CinemachineShake.Instance.ShakeCamera(2f, 0.2f);
             }
             if (enemiesToAttack[i].gameObject.GetComponent<Boss>()) {
                 enemiesToAttack[i].gameObject.GetComponent<Boss>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
                 Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-
+                CinemachineShake.Instance.ShakeCamera(2f, 0.2f);
             }
 
             //combo counter
@@ -102,10 +102,12 @@ public class PlayerAttack : MonoBehaviour
             if (enemiesToAttack[i].gameObject.GetComponent<Enemy>()) {
                 enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
                 Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
+                CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
             }
             if (enemiesToAttack[i].gameObject.GetComponent<Boss>()) {
                 enemiesToAttack[i].gameObject.GetComponent<Boss>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
                 Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
+                CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
             }
 
             //Combo counter
