@@ -41,30 +41,35 @@ public class FlyingEnemy : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
-        if (distanceToPlayer < _agroRange)
+        if (_player != null)
         {
-            ChasePlayer();
-            if (distanceToPlayer <= _attackRange)
+            float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
+            if (distanceToPlayer < _agroRange)
             {
-                inAttackRange = true;
-                StopChasing();
-                if (_timer >_timeBetweenAttacks)
+                ChasePlayer();
+                if (distanceToPlayer <= _attackRange)
                 {
-                    AttackPlayer();
+                    inAttackRange = true;
+                    StopChasing();
+                    if (_timer > _timeBetweenAttacks)
+                    {
+                        AttackPlayer();
+                    }
+
+                    if (_timer < _timeBetweenAttacks + 1)
+                    {
+                        _timer += Time.deltaTime;
+                    }
                 }
-                if(_timer < _timeBetweenAttacks+1){
-                    _timer += Time.deltaTime;
+                else
+                {
+                    inAttackRange = false;
                 }
             }
             else
             {
-                inAttackRange = false;
+                Roam();
             }
-        }
-        else
-        {
-            Roam();
         }
     }
 

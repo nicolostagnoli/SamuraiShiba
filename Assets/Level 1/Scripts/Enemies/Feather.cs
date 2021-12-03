@@ -22,7 +22,7 @@ public class Feather : MonoBehaviour
         if (hit) return;
         //transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
         _lifeTime += Time.deltaTime;
-        if(_lifeTime> _maxLifeTime) gameObject.SetActive(false);
+        if(_lifeTime> _maxLifeTime) Destroy(gameObject);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,29 +33,19 @@ public class Feather : MonoBehaviour
         }
         hit = true;
         _boxCollider2D.enabled = false;
-        //Debug.Log("collision with "+ collision.name);
         Destroy(gameObject);
-        //Deactivate();
-        //_animator.SetTrigger("explode");
     }
     
     public void SetDirection(Vector3 direction)
     {
         hit = false;
         _lifeTime = 0;
-        transform.rotation=Quaternion.FromToRotation(transform.position, -direction + transform.position);
-        GetComponent<Rigidbody2D>().velocity = direction * speed;
+        transform.rotation=Quaternion.FromToRotation(transform.right, direction - transform.position);
+        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         gameObject.SetActive(true);
         _boxCollider2D.enabled = true;
 
-        //float localScaleX = transform.localScale.x;
-        //if (Mathf.Sign(localScaleX) != _direction.x) {localScaleX = -localScaleX;}
-        //transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
     
-    private void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }
     
 }

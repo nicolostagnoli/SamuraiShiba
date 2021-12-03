@@ -3233,6 +3233,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+--- !u!114 &308354158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3067274592794161361, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 308354157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c872cd95f7bc24a9970814b69c7ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &397080781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,7 +3353,7 @@ Transform:
   m_Children:
   - {fileID: 1699738922}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780007552 stripped
 GameObject:
@@ -3510,7 +3521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8549399934173115065, guid: d310f8be54a805f42abd479bb7c636a0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8549399934173115065, guid: d310f8be54a805f42abd479bb7c636a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3825,6 +3836,10 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 308354158}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
 --- !u!1 &1815129880 stripped
@@ -3917,7 +3932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4464706017668918112, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4464706017668918112, guid: b030186259b2ff84f81967a24503bb15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4015,7 +4030,8 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5130016354696087924, guid: b030186259b2ff84f81967a24503bb15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!4 &2085396476 stripped
 Transform:

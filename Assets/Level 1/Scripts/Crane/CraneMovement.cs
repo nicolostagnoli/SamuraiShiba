@@ -63,94 +63,114 @@ public class CraneMovement : MonoBehaviour {
     }
 
     void Update() {
+        if (player != null)
+        {
+            timeToShoot += Time.deltaTime;
+            timeToHeal += Time.deltaTime;
 
-        timeToShoot += Time.deltaTime;
-        timeToHeal += Time.deltaTime;
-
-        //Shoot feathers
-        if (timeToShoot >= maxShootTime) {
-            timeToShoot = 0;
-        }
-        if (timeToShoot >= randomShootTime) {
-            if (canShoot) {
-                int attackType = Random.Range(0, 2);
-                switch (attackType) {
-                    case 0:
-                        ThrowSingleFeather();
-                        break;
-                    case 1:
-                        anim.SetTrigger("FeatherAttack");
-                        //ThrowFeathers(1);
-                        break;
-                    default:
-                        ThrowSingleFeather();
-                        break;
-                }
-                randomShootTime = Random.Range(minShootTime, maxShootTime);
+            //Shoot feathers
+            if (timeToShoot >= maxShootTime)
+            {
                 timeToShoot = 0;
             }
-        }
 
-        //face right direction
-        if(transform.position.x > player.position.x) {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
+            if (timeToShoot >= randomShootTime)
+            {
+                if (canShoot)
+                {
+                    int attackType = Random.Range(0, 2);
+                    switch (attackType)
+                    {
+                        case 0:
+                            ThrowSingleFeather();
+                            break;
+                        case 1:
+                            anim.SetTrigger("FeatherAttack");
+                            //ThrowFeathers(1);
+                            break;
+                        default:
+                            ThrowSingleFeather();
+                            break;
+                    }
 
-        //follow desired position
-        rb.position = Vector2.MoveTowards(rb.position, desiredPosition, _speed * Time.deltaTime);
-
-        //when desired position is reached
-        if (Vector2.Distance(rb.position, desiredPosition) <= 0.001) {
-
-            //based on previuos desired position, do something
-            switch (currentMovement) {
-                case 2: //make attack from top
-                    anim.SetTrigger("FeatherAttackFromTop");
-                    break;
-                case 3: //heal
-                    StartHealing();
-                    break;
-                default: break;
-            }
-
-            //make new move
-            if (canMakeNewMove) {
-                currentMovement = Random.Range(0, 3);
-                switch (currentMovement) {
-                    case 0: //random fly
-                        desiredPosition = new Vector3(player.position.x, Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
-                        _speed = normalSpeed;
-                        break;
-                    case 1: //swoop attack
-                        desiredPosition = player.position;
-                        _speed = swoopSpeed;
-                        break;
-                    case 2: //attack from top
-                        desiredPosition = featherAttackPos1.position;
-                        break;
-                    default: //random fly
-                        desiredPosition = new Vector3(player.position.x, Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
-                        _speed = normalSpeed;
-                        break;
-                }
-
-                //after new movement, check if healing should override
-                if (enemyScript.GetHealth() < healTreshold && timeToHeal > timeBetweenHealings) {
-                    desiredPosition = healPos.position;
-                    timeToHeal = 0;
+                    randomShootTime = Random.Range(minShootTime, maxShootTime);
+                    timeToShoot = 0;
                 }
             }
 
-            
-        }
-        //Player collider check
-        Collider2D[] playerToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
-        if (playerToAttack.Length > 0) {
-            PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
-            stats.TakeDamage(10);
+            //face right direction
+            if (transform.position.x > player.position.x)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+
+            //follow desired position
+            rb.position = Vector2.MoveTowards(rb.position, desiredPosition, _speed * Time.deltaTime);
+
+            //when desired position is reached
+            if (Vector2.Distance(rb.position, desiredPosition) <= 0.001)
+            {
+
+                //based on previuos desired position, do something
+                switch (currentMovement)
+                {
+                    case 2: //make attack from top
+                        anim.SetTrigger("FeatherAttackFromTop");
+                        break;
+                    case 3: //heal
+                        StartHealing();
+                        break;
+                    default: break;
+                }
+
+                //make new move
+                if (canMakeNewMove)
+                {
+                    currentMovement = Random.Range(0, 3);
+                    switch (currentMovement)
+                    {
+                        case 0: //random fly
+                            desiredPosition = new Vector3(player.position.x,
+                                Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
+                            _speed = normalSpeed;
+                            break;
+                        case 1: //swoop attack
+                            desiredPosition = player.position;
+                            _speed = swoopSpeed;
+                            break;
+                        case 2: //attack from top
+                            desiredPosition = featherAttackPos1.position;
+                            break;
+                        default: //random fly
+                            desiredPosition = new Vector3(player.position.x,
+                                Random.Range(ground.position.y + minHeight, ground.position.y + maxHeight), 0);
+                            _speed = normalSpeed;
+                            break;
+                    }
+
+                    //after new movement, check if healing should override
+                    if (enemyScript.GetHealth() < healTreshold && timeToHeal > timeBetweenHealings)
+                    {
+                        desiredPosition = healPos.position;
+                        timeToHeal = 0;
+                    }
+                }
+
+
+            }
+
+            //Player collider check
+            Collider2D[] playerToAttack =
+                Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsPlayer);
+            if (playerToAttack.Length > 0)
+            {
+                PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
+                stats.TakeDamage(10);
+            }
         }
     }
 

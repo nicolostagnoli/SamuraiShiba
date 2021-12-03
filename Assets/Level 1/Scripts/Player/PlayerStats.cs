@@ -19,17 +19,18 @@ public class PlayerStats : MonoBehaviour
     public float invulnerabilityTime;
     private float timeToIvulnerability;
 
+    public GameOverScreen GameOverScreen;
+
     private void Start()
     {
         healthBarScript = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScript>();
         staminaBarScript=GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<StaminaBarScript>();
-        _coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
+        //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
 
         
-        _coinCounterTextScript.setCoinsAmount(_coins);
+        //_coinCounterTextScript.setCoinsAmount(_coins);
         healthBarScript.SetMaxHealth(PlayerMaxHealth);
         staminaBarScript.SetMaxStamina(PlayerMaxStamina);
-        Debug.Log(healthBarScript);
         timeToIvulnerability = invulnerabilityTime;
     }
 
@@ -47,6 +48,8 @@ public class PlayerStats : MonoBehaviour
                 setHealth(_health - damage);
             }
             if (_health <= 0) {
+                GameOver();
+                Destroy(gameObject);
                 // _animator.SetTrigger("Die");
             }
             timeToIvulnerability = 0;
@@ -62,6 +65,15 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public bool IsAlive()
+    {
+        return _health>0;
+    }
+
+    public void GameOver()
+    {
+        GameOverScreen.Setup();
+    }
 
     public void setHealth(float health)
     {
