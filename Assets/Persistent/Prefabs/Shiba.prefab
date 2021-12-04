@@ -5020,9 +5020,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMaxStamina: 100
   PlayerMaxHealth: 100
-  _health: 0
-  _stamina: 0
   staminaRegenerationSpeed: 10
+  healthRegenerationSpeed: 2
   invulnerabilityTime: 0.5
 --- !u!114 &6830801137162050834
 MonoBehaviour:

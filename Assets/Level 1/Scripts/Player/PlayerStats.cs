@@ -9,15 +9,14 @@ public class PlayerStats : MonoBehaviour
     public float PlayerMaxStamina;
     public float PlayerMaxHealth;
     private int _coins=1;
-    [SerializeField]
     private float _health;
-    [SerializeField]
     private float _stamina;
     private HealthBarScript healthBarScript;
     private StaminaBarScript staminaBarScript;
     private CoinCounterTextScript _coinCounterTextScript;
 
     public float staminaRegenerationSpeed;
+    public float healthRegenerationSpeed;
     public float invulnerabilityTime;
     private float timeToInvulnerability;
 
@@ -39,6 +38,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Update() {
         setStamina(getStamina() + staminaRegenerationSpeed * Time.deltaTime);
+        setHealth(getHealth()+healthRegenerationSpeed* Time.deltaTime);
         timeToInvulnerability += Time.deltaTime;
     }
 
