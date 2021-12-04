@@ -4971,7 +4971,7 @@ MonoBehaviour:
   feetPos: {fileID: 5592129962551712864}
   anim: {fileID: 0}
   dust: {fileID: 380765881808693270}
-  speed: 2
+  speed: 3
   jumpForce: 8
   checkRadius: 0.3
   jumpTime: 0.25

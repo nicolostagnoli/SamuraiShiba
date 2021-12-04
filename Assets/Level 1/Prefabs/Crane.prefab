@@ -193,7 +193,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  damage: 5
+  damage: 10
   healTreshold: 35
   timeBetweenHealings: 120
 --- !u!114 &-1429698849895668920
