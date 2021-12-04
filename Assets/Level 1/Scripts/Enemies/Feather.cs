@@ -32,6 +32,7 @@ public class Feather : MonoBehaviour
             collision.GetComponent<PlayerStats>().TakeDamage(_projectileDamage);
         }
         hit = true;
+        Debug.Log("collides with: "+ collision.name);
         _boxCollider2D.enabled = false;
         Destroy(gameObject);
     }
@@ -40,8 +41,10 @@ public class Feather : MonoBehaviour
     {
         hit = false;
         _lifeTime = 0;
-        transform.rotation=Quaternion.FromToRotation(transform.right, direction - transform.position);
-        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+        Vector3 dir = (direction- transform.position).normalized;
+        Vector3 temp = transform.position-direction;
+        transform.rotation= Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y,180+Mathf.Atan2(temp.y,temp.x)*Mathf.Rad2Deg);
+        GetComponent<Rigidbody2D>().velocity = dir * speed;
         gameObject.SetActive(true);
         _boxCollider2D.enabled = true;
 
