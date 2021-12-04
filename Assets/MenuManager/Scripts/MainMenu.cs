@@ -38,7 +38,10 @@ using UnityEngine.SceneManagement;
         }
 
        
-        
+        public void Quit()
+        {
+            Application.Quit();
+        }
         
         
         public void ReloadCurrentScene()
