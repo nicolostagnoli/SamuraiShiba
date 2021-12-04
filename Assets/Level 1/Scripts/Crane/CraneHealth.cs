@@ -17,4 +17,14 @@ public class CraneHealth : Enemy
         base.TakeDamage(damage);
         barScript.SetHealth(GetHealth() - damage); //boss health bar
     }
+
+    public override void SetHealth(float health) {
+        base.SetHealth(health);
+        barScript.SetHealth(health);
+    }
+
+    public override void OnCompleteDieAnimation() {
+        base.OnCompleteDieAnimation();
+        PlayerInterface.Instance.Pause();
+    }
 }

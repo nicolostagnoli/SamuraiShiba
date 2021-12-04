@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public void SetHealth(float health)
+    public virtual void SetHealth(float health)
     {
         _health = health;
     }
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         return _health;
     }
     
-    public void OnCompleteDieAnimation(){
+    public virtual void OnCompleteDieAnimation(){
         DropLoot();
         Destroy(gameObject);
     }
