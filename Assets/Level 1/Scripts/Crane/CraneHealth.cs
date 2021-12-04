@@ -14,6 +14,9 @@ public class CraneHealth : Enemy
     }
 
     public override void TakeDamage(float damage) {
+        if (GetHealth() - damage <= 0) {
+            PlayerInterface.Instance.Invoke("Pause", 3f);
+        }
         base.TakeDamage(damage);
         barScript.SetHealth(GetHealth() - damage); //boss health bar
     }
@@ -21,10 +24,5 @@ public class CraneHealth : Enemy
     public override void SetHealth(float health) {
         base.SetHealth(health);
         barScript.SetHealth(health);
-    }
-
-    public override void OnCompleteDieAnimation() {
-        base.OnCompleteDieAnimation();
-        PlayerInterface.Instance.Pause();
     }
 }

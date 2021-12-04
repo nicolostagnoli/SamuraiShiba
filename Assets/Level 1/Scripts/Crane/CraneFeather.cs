@@ -24,7 +24,9 @@ public class CraneFeather : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.GetComponent<PlayerStats>()) {
             collision.GetComponent<PlayerStats>().TakeDamage(damage);
-            Destroy(gameObject);
+            if (!collision.GetComponent<PlayerStats>().GetInvulnerability()) {
+                Destroy(gameObject);
+            }
         }
     }
 }

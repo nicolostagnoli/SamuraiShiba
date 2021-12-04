@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2869717501238291894}
   - component: {fileID: 2860362915593880117}
   - component: {fileID: 397627749389885263}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,8 +146,8 @@ GameObject:
   - component: {fileID: 1970454843791941737}
   - component: {fileID: 1970454843791941742}
   - component: {fileID: 367069374756227885}
-  m_Layer: 10
-  m_Name: CreditsScreen
+  m_Layer: 5
+  m_Name: CreditsScreen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 1970454843941006046}
   - component: {fileID: 1970454843941006047}
   - component: {fileID: 1970454843941006044}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 1970454843945822278}
   - component: {fileID: 1970454843945822272}
   - component: {fileID: 1970454843945822273}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: TitleBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 1970454844097237119}
   - component: {fileID: 1970454844097237113}
   - component: {fileID: 1970454844097237118}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970454844581796863}
   - component: {fileID: 1970454844581796862}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: ButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 1970454844693799079}
   - component: {fileID: 1970454844693799073}
   - component: {fileID: 8990597936256442954}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dfbcc96b08bcf3740a8e23a228b369dc, type: 3}
-    m_FontSize: 117
+    m_FontSize: 96
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -629,8 +629,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Thanks to everyone who helped us testing and developing the game.\n\nDevelopers:\nChenmin
-    Luo, Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele ..., Deep ...,\nMusic Artist:\n...\n"
+  m_Text: "Thanks to everyone who helped us testing and developing the game.\n\nProgrammers:
+    Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele Ziza, Pardeep Khumar\n\nArtist: Chenmin
+    Luo\n\nMusic Artist: Tarek Bouguerra\n"
 --- !u!1 &1970454844763331219
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +643,7 @@ GameObject:
   - component: {fileID: 1970454844763331218}
   - component: {fileID: 1970454844763331212}
   - component: {fileID: 1970454844763331213}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970454845054694494}
   - component: {fileID: 1970454845054694489}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: CreditsArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +783,7 @@ GameObject:
   - component: {fileID: 1591605466705680862}
   - component: {fileID: 516550539780766540}
   - component: {fileID: 737026389718599720}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Footer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +859,7 @@ GameObject:
   - component: {fileID: 1791603970184738978}
   - component: {fileID: 4288248323743672540}
   - component: {fileID: 3294605950117832922}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +938,7 @@ GameObject:
   - component: {fileID: 6950242822277102139}
   - component: {fileID: 1330985623580575845}
   - component: {fileID: 3445720613116954183}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

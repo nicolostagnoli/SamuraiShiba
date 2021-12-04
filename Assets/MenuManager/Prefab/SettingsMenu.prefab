@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4135036449981153066}
   - component: {fileID: 4135036449981153067}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: ButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4135036449993235786}
   - component: {fileID: 4135036449993235785}
   - component: {fileID: 4135036449993235784}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 4135036450042451278}
   - component: {fileID: 4135036450042451272}
   - component: {fileID: 159687093396028822}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: BackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 4135036450133706594}
   - component: {fileID: 4135036450133706593}
   - component: {fileID: 4135036450133706592}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: MasterVolumeButoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 4135036450166267672}
   - component: {fileID: 4135036450166267674}
   - component: {fileID: 4135036450166267673}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: TitleBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 4135036450208042573}
   - component: {fileID: 4135036450208042575}
   - component: {fileID: 4135036450208042574}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 4135036450311640623}
   - component: {fileID: 4135036450311640622}
   - component: {fileID: 4135036450311640621}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: MusicVolumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 4135036450368527123}
   - component: {fileID: 4135036450368527117}
   - component: {fileID: 4135036450368527116}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 4135036450831270626}
   - component: {fileID: 4135036450831270684}
   - component: {fileID: 4135036450831270627}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: MasterVolumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 4135036450885200974}
   - component: {fileID: 4135036450885200968}
   - component: {fileID: 5222313303464888482}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 4135036451029903557}
   - component: {fileID: 4135036451029903556}
   - component: {fileID: -3527050457494538089}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 4135036451047237949}
   - component: {fileID: 4135036451047237951}
   - component: {fileID: 4135036451047237950}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: MusicVolumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 4135036451151389036}
   - component: {fileID: 4135036451151389043}
   - component: {fileID: 4135036451151389042}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 4135036451208916061}
   - component: {fileID: 4135036451208916060}
   - component: {fileID: 4135036451208916003}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: FXVolumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 4135036451249849112}
   - component: {fileID: 4135036451249849114}
   - component: {fileID: 4135036451249849113}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: FXVolumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
