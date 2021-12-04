@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     private StaminaBarScript staminaBarScript;
     private CoinCounterTextScript _coinCounterTextScript;
 
+    public HitEffect hitEffect;
     public float staminaRegenerationSpeed;
     public float healthRegenerationSpeed;
     public float invulnerabilityTime;
@@ -45,6 +46,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float damage, bool giveInvulnerability = true)
     {
         if (!_invulnerable) {
+            hitEffect.Flash();
             if (timeToInvulnerability > invulnerabilityTime) { //if that time is passed, can take damage
                                                                //_animator.SetTrigger("Hit");
                 if (_health > 0) {

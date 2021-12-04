@@ -4822,6 +4822,7 @@ GameObject:
   - component: {fileID: 8442788336162533092}
   - component: {fileID: 6830801137162050834}
   - component: {fileID: 830587182818759307}
+  - component: {fileID: 3709326142677595105}
   m_Layer: 3
   m_Name: Shiba
   m_TagString: Player
@@ -5020,6 +5021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMaxStamina: 100
   PlayerMaxHealth: 100
+  hitEffect: {fileID: 3709326142677595105}
   staminaRegenerationSpeed: 10
   healthRegenerationSpeed: 1.5
   invulnerabilityTime: 0.4
@@ -5056,6 +5058,20 @@ MonoBehaviour:
   _attackCooldown: 2
   firePoint: {fileID: 4167753217064836030}
   shurikens: []
+--- !u!114 &3709326142677595105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198578693233598302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &4725420922580101074
 GameObject:
   m_ObjectHideFlags: 0
