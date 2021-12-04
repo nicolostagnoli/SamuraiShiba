@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2118199766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!1 &166672441
@@ -661,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2118199766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!1 &1146893762
@@ -1030,6 +1038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2118199766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!1001 &1502204403
@@ -1087,6 +1099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2118199766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!1 &1699738921
@@ -1477,6 +1493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow
       objectReference: {fileID: 0}
+    - target: {fileID: 4464706017668918125, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2118199766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!4 &2118199766 stripped

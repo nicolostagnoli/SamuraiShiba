@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     public float healthRegenerationSpeed;
     public float invulnerabilityTime;
     private float timeToInvulnerability;
-
+    private bool _invulnerable; //Independent from invulnerability time
 
     private void Start()
     {
@@ -42,22 +42,38 @@ public class PlayerStats : MonoBehaviour
         timeToInvulnerability += Time.deltaTime;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool giveInvulnerability = true)
     {
-        if (timeToInvulnerability > invulnerabilityTime) { //if that time is passed, can take damage
-            //_animator.SetTrigger("Hit");
-            if (_health > 0) {
-                if (_health - damage < 0) setHealth(0);
-                setHealth(_health - damage);
+        if (!_invulnerable) {
+            if (timeToInvulnerability > invulnerabilityTime) { //if that time is passed, can take damage
+                                                               //_animator.SetTrigger("Hit");
+                if (_health > 0) {
+                    if (_health - damage < 0) setHealth(0);
+                    setHealth(_health - damage);
+                }
+                if (_health <= 0) {
+                    GameOver();
+                    Destroy(gameObject);
+                    // _animator.SetTrigger("Die");
+                }
+                if (giveInvulnerability) {
+                    timeToInvulnerability = 0;
+                }
             }
-            if (_health <= 0) {
-                GameOver();
-                Destroy(gameObject);
-                // _animator.SetTrigger("Die");
-            }
-            timeToInvulnerability = 0;
         }
     }
+    public void SetInvulnerability(int value) {
+        if(value != 0) {
+            _invulnerable = true;
+            return;
+        }
+        _invulnerable = false;
+    }
+
+    public bool GetInvulnerability() {
+        return _invulnerable;
+    }
+
     public void UseStamina(float stamina) {
         if (_stamina > 0) {
             if (_stamina - stamina < 0) setStamina(0);
