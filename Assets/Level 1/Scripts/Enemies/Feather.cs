@@ -47,8 +47,5 @@ public class Feather : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = dir * speed;
         gameObject.SetActive(true);
         _boxCollider2D.enabled = true;
-
     }
-    
-    
 }
