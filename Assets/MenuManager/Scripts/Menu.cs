@@ -21,6 +21,7 @@ using UnityEngine;
 
     }
 
+
     public abstract class Menu<T> : Menu where T : Menu<T>
     {
         private static T _instance;

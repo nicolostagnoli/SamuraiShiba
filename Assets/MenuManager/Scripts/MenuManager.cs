@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MenuManager : Singleton<MenuManager>
 {
 
- 
+    public AudioManager AudioManager;
     
     public MainMenu mainMenuPrefab;
 
