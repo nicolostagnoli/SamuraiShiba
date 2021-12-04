@@ -5021,8 +5021,8 @@ MonoBehaviour:
   PlayerMaxStamina: 100
   PlayerMaxHealth: 100
   staminaRegenerationSpeed: 10
-  healthRegenerationSpeed: 2
-  invulnerabilityTime: 0.5
+  healthRegenerationSpeed: 1.5
+  invulnerabilityTime: 0.4
 --- !u!114 &6830801137162050834
 MonoBehaviour:
   m_ObjectHideFlags: 0
