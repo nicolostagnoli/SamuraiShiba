@@ -262,7 +262,7 @@ MonoBehaviour:
     - .......Well......I guess I need first to teach you something.......
   - name: Golden Shadow
     sentences:
-    - '(Press W/D to move LEFT/RIGHT)
+    - '(Press A/D to move LEFT/RIGHT)
 
       (Press SPACEBAR to JUMP)'
   - name: Golden Shadow
