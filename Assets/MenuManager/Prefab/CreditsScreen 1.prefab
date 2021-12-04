@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1970454843791941742}
   - component: {fileID: 367069374756227885}
   m_Layer: 10
-  m_Name: CreditsScreen
+  m_Name: CreditsScreen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,7 +630,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Thanks to everyone who helped us testing and developing the game.\n\nDevelopers:\nChenmin
-    Luo, Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele ..., Deep ...,\nMusic Artist:\n...\n"
+    Luo, Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele Ziza, Pardeep Khumar,\nMusic
+    Artist:\nTarek Bouguerra\n"
 --- !u!1 &1970454844763331219
 GameObject:
   m_ObjectHideFlags: 0
