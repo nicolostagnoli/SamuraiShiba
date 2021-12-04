@@ -14,6 +14,7 @@ public class CraneMovement : MonoBehaviour {
     private float _speed;
     private int currentMovement;
     private bool canMakeNewMove;
+    private bool isHealing;
 
     private Animator anim;
 
@@ -47,7 +48,7 @@ public class CraneMovement : MonoBehaviour {
     //health
     public float healTreshold;
     public float timeBetweenHealings;
-    private Enemy enemyScript;
+    private CraneHealth craneHealth;
 
     void Awake() {
         canMakeNewMove = true;
@@ -60,11 +61,15 @@ public class CraneMovement : MonoBehaviour {
         _speed = normalSpeed;
         currentMovement = 0;
         anim = GetComponent<Animator>();
-        enemyScript = GetComponent<Enemy>();
+        craneHealth = GetComponent<CraneHealth>();
         canAttack = false;
     }
 
     void Update() {
+        if (isHealing) {
+            craneHealth.SetHealth(craneHealth.GetHealth() + 2f * Time.deltaTime);
+        }
+
         if (player != null)
         {
             timeToShoot += Time.deltaTime;
@@ -125,6 +130,7 @@ public class CraneMovement : MonoBehaviour {
                         break;
                     case 3: //heal
                         StartHealing();
+                        anim.SetBool("Heal", true);
                         break;
                     default: break;
                 }
@@ -155,7 +161,7 @@ public class CraneMovement : MonoBehaviour {
                     }
 
                     //after new movement, check if healing should override
-                    if (enemyScript.GetHealth() < healTreshold && timeToHeal > timeBetweenHealings)
+                    if (craneHealth.GetHealth() < healTreshold && timeToHeal > timeBetweenHealings)
                     {
                         desiredPosition = healPos.position;
                         timeToHeal = 0;
@@ -206,38 +212,18 @@ public class CraneMovement : MonoBehaviour {
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
     }
-    
-    void ThrowFeathersFromTop()
-    {
-        GameObject feather = Instantiate(featherPrefab);
-        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
-        feather.transform.position = transform.position;
-        feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
-        feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
-        for (int i = 0; i < 3; i++)
-        {
-            feather = Instantiate(featherPrefab);
-            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
-            feather.transform.position = transform.position;
-            feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngleTop * (i + 1));
-            feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
-        }
-        for (int i = 0; i < 3; i++)
-        {
-            feather = Instantiate(featherPrefab);
-            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
-            feather.transform.position = transform.position;
-            feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngleTop * (i + 1));
-            feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
-        }
-    }
 
     public void StartHealing() {
         canMakeNewMove = false;
+        canShoot = false;
+        isHealing = true;
     }
 
     public void OnHealingFinished() {
         canMakeNewMove = true;
+        canShoot = true;
+        isHealing = false;
+        anim.SetBool("Heal", false);
     }
 
     public void EnableAttackCollider() {
