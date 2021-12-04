@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ using UnityEngine.SceneManagement;
     {
 
         private bool _gameIsPaused;
+       
+
+        
+
         public void OnPlayPressed()
         {
             if (MenuManager.Instance != null && PlayerInterface.Instance != null)
@@ -32,8 +37,9 @@ using UnityEngine.SceneManagement;
             }
         }
 
-      
-
+       
+        
+        
         public override void OnBackPressed()
         {
             Application.Quit();
