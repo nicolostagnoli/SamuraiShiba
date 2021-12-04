@@ -22,8 +22,8 @@ public class PauseMenu : Menu<PauseMenu>
     {
         _audioManager.AddVolume();
     }
-    public void MainMenuButton()
+    public void Quit()
     {
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 }

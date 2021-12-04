@@ -30,7 +30,7 @@ public class MenuManager : Singleton<MenuManager>
 
     private Transform _menuParent;
 
-    private void InizializeMenu()
+    public void InizializeMenu()
     {
         Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab, pauseMenuPrefab, gameOverMenu};
 

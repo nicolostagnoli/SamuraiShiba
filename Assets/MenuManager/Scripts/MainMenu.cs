@@ -40,15 +40,7 @@ using UnityEngine.SceneManagement;
        
         
         
-        public override void OnBackPressed()
-        {
-            Application.Quit();
-        }
         
-        public void OnPausePressed()
-        {
-            Application.Quit();
-        }
         public void ReloadCurrentScene()
         {
             if (GameOverMenu.Instance != null)

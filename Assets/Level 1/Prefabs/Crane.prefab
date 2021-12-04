@@ -179,7 +179,7 @@ MonoBehaviour:
   featherVelocity: 3
   minShootTime: 1.5
   maxShootTime: 4
-  featherDamage: 8
+  featherDamage: 12
   player: {fileID: 0}
   ground: {fileID: 0}
   healPos: {fileID: 0}
