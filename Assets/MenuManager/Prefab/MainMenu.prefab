@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5529145325635585942}
   - component: {fileID: 5529145325635585940}
   - component: {fileID: 644897543970981749}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: QuitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5529145325647725896}
   - component: {fileID: 5529145325647725894}
   - component: {fileID: 5270074365300054733}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 5529145325701182024}
   - component: {fileID: 5529145325701182022}
   - component: {fileID: 5529145325701182025}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 5529145325985314771}
   - component: {fileID: 5529145325985314769}
   - component: {fileID: 5529145325985314768}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: TitleBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 5529145326027546634}
   - component: {fileID: 5529145326027546632}
   - component: {fileID: 4694750838545918054}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 5529145326501832436}
   - component: {fileID: 5529145326501832434}
   - component: {fileID: 6380553494682916941}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: SettingsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 5529145326574520457}
   - component: {fileID: 5529145326574520456}
   - component: {fileID: 7723690275407746386}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: MainMenu
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 5529145326663783815}
   - component: {fileID: 5529145326663783814}
   - component: {fileID: 5529145326663783817}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 5529145326710532244}
   - component: {fileID: 5529145326710532247}
   - component: {fileID: 5529145326710532245}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 5529145326790922213}
   - component: {fileID: 5529145326790922211}
   - component: {fileID: 5529145326790922210}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 5529145327057375283}
   - component: {fileID: 5529145327057375281}
   - component: {fileID: 8935698728046697922}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: PlayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   - component: {fileID: 5529145327170490399}
   - component: {fileID: 5529145327170490398}
   - component: {fileID: 5529145327170490369}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 5529145327199679535}
   - component: {fileID: 5529145327199679534}
   - component: {fileID: 5529145327199679505}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 5529145327322917618}
   - component: {fileID: 5529145327322917621}
   - component: {fileID: 5529145327322917620}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: PlayButoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5529145327530482140}
   - component: {fileID: 5529145327530482141}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: ButtonsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 881413779755340132}
   - component: {fileID: 881413779755340135}
   - component: {fileID: 881413779755340133}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 881413780412068217}
   - component: {fileID: 881413780412068216}
   - component: {fileID: 2202309787941737829}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: PlayerInterface
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 6454898957154096208}
   - component: {fileID: 7338663713598063951}
   - component: {fileID: 405980996659562080}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 3154514269193608070}
   - component: {fileID: 2214857800038953241}
   - component: {fileID: 4375051318319776325}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 8174253326034596126}
   - component: {fileID: 232007790164535593}
   - component: {fileID: 3067274592794161361}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304456882014706060}
   - component: {fileID: 4304456882014706061}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: BarsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 2549091173839388288}
   - component: {fileID: 6040610709026300796}
   - component: {fileID: 5993001152790785424}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 7671289074974640809}
   - component: {fileID: 6950867195404358076}
   - component: {fileID: 5469770607365352245}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 1087685239887404273}
   - component: {fileID: 3856278144138684841}
   - component: {fileID: 5273811433160282024}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 6408768925178550298}
   - component: {fileID: 2775716882507265724}
   - component: {fileID: 7576484322849020682}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 329087138142314342}
   - component: {fileID: 4872556978912042999}
   - component: {fileID: 3369701593337043823}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,6 +1279,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaminaBar
       objectReference: {fileID: 0}
+    - target: {fileID: 2915046846434439665, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915046846712345508, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915046846712345511, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915046846712345511, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915046846722342799, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915046848010531473, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ba57512db7fe3499bcd55778245da8, type: 3}
 --- !u!224 &4304456881642253823 stripped
@@ -1293,6 +1317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4304456882014706060}
     m_Modifications:
+    - target: {fileID: 5956895852786043469, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5956895852786043470, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1301,9 +1329,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5956895852930424397, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956895853246131263, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374723, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Pivot.x
