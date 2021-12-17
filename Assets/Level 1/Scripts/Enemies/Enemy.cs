@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     private float _health=50;
     public LootTable lootTable;
-    private int dropAmount = 5;
+    private int dropAmount = 1;
     public GameObject blood;
     public HitEffect hitEffect;
 
@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
             _health -= damage;
             if (_health <= 0) {
                 Instantiate(blood, transform.position, Quaternion.identity);
+                DropLoot();
                 Destroy(gameObject);
                 //anim.SetTrigger("die")
             }

@@ -177,7 +177,7 @@ MonoBehaviour:
   _moveSpeed: 2
   initialHealth: 25
   attackPosition: {fileID: 4464706017987938060}
-  damage: 10
+  damage: 7
   player:
     serializedVersion: 2
     m_Bits: 8

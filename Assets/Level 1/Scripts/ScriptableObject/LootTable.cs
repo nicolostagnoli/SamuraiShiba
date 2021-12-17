@@ -14,10 +14,11 @@ public class Loot
 public class LootTable : ScriptableObject
 {
     public Loot[] loots;
-    private List<Item> droppedItems=new List<Item>();
+    private List<Item> droppedItems;
 
     public List<Item> itemPowerup(int dropAmount)
     {
+        droppedItems= new List<Item>();
         for (int k = 0; k < dropAmount; k++)
         {
             int cumProb=0;
@@ -25,6 +26,7 @@ public class LootTable : ScriptableObject
             for (int i = 0; i < loots.Length; i++)
             {
                 cumProb += loots[i].lootChanche;
+
                 if (currentProb <= cumProb)
                 {
                     droppedItems.Add(loots[i].item);

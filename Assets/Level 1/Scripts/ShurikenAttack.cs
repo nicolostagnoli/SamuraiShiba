@@ -14,7 +14,7 @@ public class ShurikenAttack : MonoBehaviour
     [SerializeField]
     private Transform firePoint;
     [SerializeField]
-    private GameObject[] shurikens;
+    public GameObject shurikenPrefab;
     private float _cooldownTimer= Mathf.Infinity;
 
 
@@ -35,8 +35,10 @@ public class ShurikenAttack : MonoBehaviour
     public  void Attack()
     {
         _cooldownTimer = 0;
-        shurikens[FindShuriken()].transform.position = firePoint.position;
-        shurikens[FindShuriken()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localRotation.y));
+        Instantiate(shurikenPrefab,firePoint.position, Quaternion.identity);
+        //Debug.Log(transform.eulerAngles.y);
+        Vector2 direction = new Vector2( transform.eulerAngles.y == 0 ? 1 : -1,0);
+        shurikenPrefab.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localRotation.y));
     }
 
     public  bool canAttack()
@@ -44,16 +46,4 @@ public class ShurikenAttack : MonoBehaviour
         return _cooldownTimer > _attackCooldown && _playerController.CanUseShuriken();
     }
 
-    
-    private int FindShuriken()
-    {
-        for (int i = 0; i < shurikens.Length; i++)
-        {
-            if (!shurikens[i].activeSelf)
-                return i;
-        }
-
-        return 0;
-    }
-    
 }

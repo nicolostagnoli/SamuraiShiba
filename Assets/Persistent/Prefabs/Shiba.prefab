@@ -5057,7 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackCooldown: 2
   firePoint: {fileID: 4167753217064836030}
-  shurikens: []
+  shurikenPrefab: {fileID: 4847237043305194295, guid: 9b85776e6cf57d54d9e16bc4ee62b604, type: 3}
 --- !u!114 &3709326142677595105
 MonoBehaviour:
   m_ObjectHideFlags: 0
