@@ -18,8 +18,6 @@ public class MenuManager : Singleton<MenuManager>
 
     public CreditScreen creditsMenuPrefab;
     
-    public PlayerInterface playerInterfacePrefab;
-    
     public PauseMenu pauseMenuPrefab;
     
     public GameOverMenu gameOverMenu;
@@ -32,7 +30,7 @@ public class MenuManager : Singleton<MenuManager>
 
     public void InizializeMenu()
     {
-        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, playerInterfacePrefab, pauseMenuPrefab, gameOverMenu};
+        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, pauseMenuPrefab, gameOverMenu};
 
         if (_menuParent == null)
         {
