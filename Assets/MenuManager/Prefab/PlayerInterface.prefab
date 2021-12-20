@@ -1195,6 +1195,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881413780412068215}
     m_Modifications:
+    - target: {fileID: 131776166897422441, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: quantity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: key
       value: 51
@@ -1303,9 +1311,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5360047905120105750, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: slot number
+      objectReference: {fileID: 0}
     - target: {fileID: 6552840545066731691, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697915892654952767, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
@@ -1321,6 +1337,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881413780412068215}
     m_Modifications:
+    - target: {fileID: 131776166897422441, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: quantity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: key
       value: 52
@@ -1429,9 +1453,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5360047905120105750, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: slot number
+      objectReference: {fileID: 0}
     - target: {fileID: 6552840545066731691, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697915892654952767, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
@@ -1447,6 +1479,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881413780412068215}
     m_Modifications:
+    - target: {fileID: 131776166897422441, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: quantity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: key
       value: 49
@@ -1551,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot
       objectReference: {fileID: 0}
+    - target: {fileID: 5360047905120105750, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: slot number
+      objectReference: {fileID: 0}
     - target: {fileID: 6552840545066731691, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -1569,6 +1613,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881413780412068215}
     m_Modifications:
+    - target: {fileID: 131776166897422441, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: quantity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: key
       value: 50
@@ -1677,9 +1729,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5360047905120105750, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_Name
+      value: slot number
+      objectReference: {fileID: 0}
     - target: {fileID: 6552840545066731691, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697915892654952767, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_text
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}

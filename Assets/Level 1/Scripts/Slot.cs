@@ -47,10 +47,11 @@ public class Slot : MonoBehaviour
             {
                 _item.UseItem();
                 _inventory.currentStack[slotNumber]--;
-                GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
+                Debug.Log(_inventory.currentStack[slotNumber]);
+                updateItemQuantityText();
                 if (_inventory.currentStack[slotNumber] == 0)
                 {
-                    for (int i = 1; i < transform.childCount; i++)
+                    for (int i = 2; i < transform.childCount; i++)
                     {
                         Destroy(transform.GetChild(i).gameObject);
                     }
@@ -58,5 +59,11 @@ public class Slot : MonoBehaviour
             }
 
         }
+    }
+
+    private void updateItemQuantityText()
+    {
+        if (_inventory.currentStack[slotNumber] == 0) GetComponentInChildren<TextMeshProUGUI>().text = "";
+        else GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
     }
 }
