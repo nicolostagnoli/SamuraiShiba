@@ -14,8 +14,9 @@ public class MonkeyMovement : MonoBehaviour {
     private float _jumpInterval; //generated between min and max randomly
     private float _timeToJump;
 
-    //follow player
+    //move around
     public Transform player;
+    public Vector3 desiredPosition;
     public float speed;
     public float chargeSpeed;
     public float timeBetweenMovements;
@@ -63,26 +64,23 @@ public class MonkeyMovement : MonoBehaviour {
         if (!isHanging) {
             //jump
             if (_isGrounded && _timeToJump >= _jumpInterval) {
-                _timeToJump = 0;
                 _jumpInterval = Random.Range(minTimeBetweenJumps, maxTimeBetweenJumps);
-                _rb.velocity += Vector2.up * (jumpForce + Random.Range(-1f, 1f) * jumpForceVariance);
+                _rb.velocity += Vector2.up * (jumpForce + Random.Range(0, 1f) * jumpForceVariance);
+                Invoke("LandOnPlayer", 0.5f);
+                Invoke("LandOnPlayer", 1f);
+                _timeToJump = 0;
             }
 
+            //move toward desired position
+            _rb.position += (Vector2)((desiredPosition - transform.position).normalized) * speed * Time.deltaTime;
+
             //follow player
-            if (_timeToMovement < timeBetweenMovements) { //just walk
-                _rb.position += (Vector2)((player.position - transform.position).normalized) * speed * Time.deltaTime;
-            }
-            else { //jump and land on player
-                if (!_isJumping) {
-                    _rb.velocity += Vector2.up * (jumpForce + Random.Range(-1f, 1f) * jumpForceVariance);
-                    Invoke("LandOnPlayer", 0.5f);
-                    Invoke("LandOnPlayer", 1f);
-                    _timeToMovement = 0;
-                    _timeToJump = 0;
-                }
+            if (_timeToMovement > timeBetweenMovements) { //just walk
+                desiredPosition = PickRandomPosition(50);
+                _timeToMovement = 0;
             }
         }
-        else {
+        else { //here hanging on the tree
             _timeToGoDown += Time.deltaTime;
 
             if(_timeToGoDown >= hangTime) { //detach from Tree
@@ -109,6 +107,13 @@ public class MonkeyMovement : MonoBehaviour {
         if (!isHanging) {
             _rb.velocity += ((Vector2)((player.position - transform.position).normalized) * chargeSpeed);
         }
+    }
+    private Vector3 PickRandomPosition(float randomRange) {
+        Vector3 ret = player.transform.position;
+        ret.x += Random.Range(-randomRange, +randomRange);
+        ret.y = transform.position.y;
+        ret.z = 0;
+        return ret;
     }
 
 }
