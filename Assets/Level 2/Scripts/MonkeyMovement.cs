@@ -36,6 +36,7 @@ public class MonkeyMovement : MonoBehaviour {
     private void Start() {
         _rb = GetComponent<Rigidbody2D>();
         _jumpInterval = maxTimeBetweenJumps;
+        _timeToHang = timeBetweenHangs;
     }
     private void FixedUpdate() {
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -66,7 +67,6 @@ public class MonkeyMovement : MonoBehaviour {
             if (_isGrounded && _timeToJump >= _jumpInterval) {
                 _jumpInterval = Random.Range(minTimeBetweenJumps, maxTimeBetweenJumps);
                 _rb.velocity += Vector2.up * (jumpForce + Random.Range(0, 1f) * jumpForceVariance);
-                Invoke("LandOnPlayer", 0.5f);
                 Invoke("LandOnPlayer", 1f);
                 _timeToJump = 0;
             }
@@ -75,9 +75,8 @@ public class MonkeyMovement : MonoBehaviour {
             _rb.position += (Vector2)((desiredPosition - transform.position).normalized) * speed * Time.deltaTime;
 
             //follow player
-            if (_timeToMovement > timeBetweenMovements) { //just walk
-                desiredPosition = PickRandomPosition(50);
-                _timeToMovement = 0;
+            if (Mathf.Abs(transform.position.x - desiredPosition.x) <= 1) {
+                desiredPosition = PickRandomPosition(5);
             }
         }
         else { //here hanging on the tree
@@ -89,6 +88,9 @@ public class MonkeyMovement : MonoBehaviour {
                 _isJumping = false;
                 _timeToGoDown = 0;
                 _timeToHang = 0;
+
+                //make a jump when detaching
+                _rb.velocity += Vector2.up * (jumpForce + Random.Range(0, 0.2f) * jumpForceVariance) + (Vector2)transform.right * jumpForce/2;
             }
         }
     }
