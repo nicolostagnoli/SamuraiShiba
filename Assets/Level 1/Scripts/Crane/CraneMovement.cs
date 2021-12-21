@@ -48,7 +48,7 @@ public class CraneMovement : MonoBehaviour {
     //health
     public float healTreshold;
     public float timeBetweenHealings;
-    private CraneHealth craneHealth;
+    private BossHealth craneHealth;
 
     void Awake() {
         canMakeNewMove = true;
@@ -61,7 +61,7 @@ public class CraneMovement : MonoBehaviour {
         _speed = normalSpeed;
         currentMovement = 0;
         anim = GetComponent<Animator>();
-        craneHealth = GetComponent<CraneHealth>();
+        craneHealth = GetComponent<BossHealth>();
         canAttack = false;
     }
 

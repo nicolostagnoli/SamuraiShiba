@@ -76,7 +76,7 @@ public class PlayerAttack : MonoBehaviour
             Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
             for (int i = 0; i < enemiesToAttack.Length; i++) {
                 enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
-                if (enemiesToAttack[i].gameObject.GetComponent<CraneHealth>() != null)
+                if (enemiesToAttack[i].gameObject.GetComponent<BossHealth>() != null)
                 {
                     Instantiate(hitEffect, attackPosition.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
                 }
