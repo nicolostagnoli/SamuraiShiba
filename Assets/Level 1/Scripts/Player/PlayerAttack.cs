@@ -6,7 +6,10 @@ public class PlayerAttack : MonoBehaviour
 {
     private float _timeBetweenAttacks;
     private Animator _animator;
-    private int _comboCont;
+    [SerializeField]
+    private int _comboContLight;
+    [SerializeField]
+    private int _comboContHeavy;
     private float _timeBetweenCombo;
     private PlayerStats _playerStats;
     private bool lightAttackEnabled;
@@ -30,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start() {
         _timeBetweenAttacks = 0;
         _timeBetweenCombo = 0;
-        _comboCont = 0;
+        _comboContHeavy = 0;
         _animator = GetComponent<Animator>();
         _playerStats = GetComponent<PlayerStats>();
         lightAttackEnabled = false;
@@ -46,11 +49,9 @@ public class PlayerAttack : MonoBehaviour
                 if (_playerStats.getStamina() >= lightAttackStamina) {
                     _playerStats.UseStamina(lightAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenLightAttacks;
-                    int lightDice = Random.Range(0, 2);
-                    if (lightDice == 0)
-                        _animator.SetTrigger("Light1");
-                    else
-                        _animator.SetTrigger("Light2");
+                    string attack = ((_comboContLight % 3) + 1).ToString();
+                    _animator.SetTrigger("Light" + attack);
+                    comboCounter(true);
                 }
 
             } //HEAVY ATTACK
@@ -58,11 +59,9 @@ public class PlayerAttack : MonoBehaviour
                 if (_playerStats.getStamina() >= heavyAttackStamina) {
                     _playerStats.UseStamina(heavyAttackStamina);
                     _timeBetweenAttacks = startTimeBetweenHeavyAttacks;
-                    int heavyDice = Random.Range(0, 2);
-                    if( heavyDice == 0)
-                        _animator.SetTrigger("Heavy1");
-                    else
-                        _animator.SetTrigger("Heavy2");
+                    string attack = ((_comboContHeavy % 2) + 1).ToString();
+                    _animator.SetTrigger("Heavy" + attack);
+                    comboCounter(false);
                 }
             }
         }
@@ -71,49 +70,43 @@ public class PlayerAttack : MonoBehaviour
         }
 
         _timeBetweenCombo -= Time.deltaTime;
+        if(_timeBetweenCombo < 0) {
+            _comboContLight = 0;
+            _comboContHeavy = 0;
+        }
 
         if (lightAttackEnabled) {
             Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
             for (int i = 0; i < enemiesToAttack.Length; i++) {
-                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
-                if (enemiesToAttack[i].gameObject.GetComponent<BossHealth>() != null)
-                {
-                    Instantiate(hitEffect, attackPosition.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-                }
-                else
-                {
-                    Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
-                }
-                CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
-
-                //combo counter
-                if (_timeBetweenCombo > 0) {
-                    _comboCont++;
-                }
-                else {
-                    _comboCont = 1;
-                }
-                _timeBetweenCombo = comboDuration;
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboContHeavy * comboDamageBoost);
+                Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
+                CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f); 
             }
         }
 
         if (heavyAttackEnabled) {
             Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
             for (int i = 0; i < enemiesToAttack.Length; i++) {
-                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboCont * comboDamageBoost);
+                enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(heavyDamage + _comboContHeavy * comboDamageBoost);
                 Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
                 CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
-
-                //Combo counter
-                if (_timeBetweenCombo > 0) {
-                    _comboCont++;
-                }
-                else {
-                    _comboCont = 1;
-                }
-                _timeBetweenCombo = comboDuration;
             }
         }
+    }
+    private void comboCounter(bool light) {
+        if (_timeBetweenCombo > 0) {
+            if (light)
+                _comboContLight++;
+            else
+                _comboContHeavy++;
+        }
+        else {
+            if (light)
+                _comboContLight = 1;
+            else
+                _comboContHeavy = 1;
+        }
+        _timeBetweenCombo = comboDuration;
     }
 
     public void EnableLightAttack() {

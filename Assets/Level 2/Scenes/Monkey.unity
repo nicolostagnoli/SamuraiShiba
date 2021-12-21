@@ -3412,7 +3412,7 @@ MonoBehaviour:
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 1850143741}
   invulnerabilityTime: 0.2
-  maxHealth: 150
+  maxHealth: 300
   barScript: {fileID: 1990144204}
 --- !u!61 &1850143743
 BoxCollider2D:

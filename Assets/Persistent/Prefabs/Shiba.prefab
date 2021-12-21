@@ -4993,19 +4993,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c895ee690261f46a07b81f8f8f6ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBetweenLightAttacks: 0.4
-  startTimeBetweenHeavyAttacks: 0.7
+  _comboContLight: 0
+  _comboContHeavy: 0
+  startTimeBetweenLightAttacks: 0.8
+  startTimeBetweenHeavyAttacks: 1.2
   attackPosition: {fileID: 4167753217064836030}
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 8448
   attackRange: 0.3
   lightDamage: 5
-  heavyDamage: 10
-  comboDuration: 1
-  comboDamageBoost: 0
-  lightAttackStamina: 10
-  heavyAttackStamina: 20
+  heavyDamage: 15
+  comboDuration: 2
+  comboDamageBoost: 0.7
+  lightAttackStamina: 15
+  heavyAttackStamina: 25
   hitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
 --- !u!114 &8442788336162533092
 MonoBehaviour:
