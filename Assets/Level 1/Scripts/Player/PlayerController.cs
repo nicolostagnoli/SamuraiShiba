@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
 
   public bool CanUseShuriken()
   {
-    return _isGrounded && _moveInput == 0;
+    return true;
   }
 
   private void CheckDash()

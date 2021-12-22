@@ -7,7 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float direction;
+    [SerializeField] private Vector3 direction;
     private bool hit;
     private float _lifeTime;
     private float _maxLifeTime=3;
@@ -29,15 +29,13 @@ public class Projectile : MonoBehaviour
     {
         if (hit) return;
         _lifeTime += Time.deltaTime;
-        //transform.Translate(new Vector3(speed*Time.deltaTime*-direction,0));
-        //transform.Translate(new Vector2(1f, 0f) *speed* Time.deltaTime*direction);
-        _rigidbody2D.velocity=new Vector2(speed*direction,0 );
-        //Debug.Log("direction " + direction);
+        _rigidbody2D.velocity = direction*speed;
         if(_lifeTime> _maxLifeTime) Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.name);
         if (collision.GetComponent<Enemy>())
         {
             collision.GetComponent<Enemy>().TakeDamage(_projectileDamage);
@@ -46,15 +44,11 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SetDirection(float _direction)
+    public void SetDirection(Vector3 _direction)
     {
         hit = false;
         _lifeTime = 0;
         direction = _direction;
-        Debug.Log("direction " +direction);
-        float localScaleX = transform.localScale.x;
-        if (Mathf.Sign(localScaleX) != _direction) {localScaleX = -localScaleX;}
-        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
         gameObject.SetActive(true);
 
     }

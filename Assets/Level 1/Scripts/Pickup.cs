@@ -49,6 +49,7 @@ public class Pickup : MonoBehaviour
                 _inventory.currentStack[firstFreeSlot]++;
                 Instantiate(itemButton, _inventory.slots[firstFreeSlot].transform, false);
                 _inventory.slots[firstFreeSlot].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[firstFreeSlot].ToString();
+                _inventory.slots[firstFreeSlot].SetItemButton(itemButton);
                 Destroy(gameObject);
             }
         }

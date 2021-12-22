@@ -13,6 +13,7 @@ public class Slot : MonoBehaviour
     private UsableItem _item;
     public KeyCode key;
     private Button button;
+    private GameObject _itemButton;
     private void Start()
     {
         _inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -47,7 +48,6 @@ public class Slot : MonoBehaviour
             {
                 _item.UseItem();
                 _inventory.currentStack[slotNumber]--;
-                Debug.Log(_inventory.currentStack[slotNumber]);
                 updateItemQuantityText();
                 if (_inventory.currentStack[slotNumber] == 0)
                 {
@@ -65,5 +65,15 @@ public class Slot : MonoBehaviour
     {
         if (_inventory.currentStack[slotNumber] == 0) GetComponentInChildren<TextMeshProUGUI>().text = "";
         else GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[slotNumber].ToString();
+    }
+
+    public GameObject GetItemButton()
+    {
+        return _itemButton;
+    }
+
+    public void SetItemButton(GameObject item)
+    {
+        _itemButton = item;
     }
 }

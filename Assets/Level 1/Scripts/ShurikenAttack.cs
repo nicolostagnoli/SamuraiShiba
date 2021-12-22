@@ -35,10 +35,8 @@ public class ShurikenAttack : MonoBehaviour
     public  void Attack()
     {
         _cooldownTimer = 0;
+        shurikenPrefab.GetComponent<Projectile>().SetDirection(gameObject.transform.right);
         Instantiate(shurikenPrefab,firePoint.position, Quaternion.identity);
-        //Debug.Log(transform.eulerAngles.y);
-        Vector2 direction = new Vector2( transform.eulerAngles.y == 0 ? 1 : -1,0);
-        shurikenPrefab.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localRotation.y));
     }
 
     public  bool canAttack()

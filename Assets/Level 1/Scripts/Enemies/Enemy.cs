@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     private float _health=50;
     public LootTable lootTable;
-    private int dropAmount = 1;
+    private int dropAmount = 5;
     public GameObject blood;
     public HitEffect hitEffect;
 

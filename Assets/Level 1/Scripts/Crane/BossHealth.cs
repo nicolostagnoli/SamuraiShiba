@@ -18,7 +18,8 @@ public class BossHealth : Enemy
             PlayerInterface.Instance.Invoke("Pause", 3f);
         }
         base.TakeDamage(damage);
-        barScript.SetHealth(GetHealth() - damage); //boss health bar
+        barScript.SetHealth(GetHealth());
+        //boss health bar
     }
 
     public override void SetHealth(float health) {

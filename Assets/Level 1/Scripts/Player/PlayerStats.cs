@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    
     public float PlayerMaxStamina;
     public float PlayerMaxHealth;
     private int _coins=1;
@@ -14,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     private HealthBarScript healthBarScript;
     private StaminaBarScript staminaBarScript;
     private CoinCounterTextScript _coinCounterTextScript;
+    private Inventory _inventory;
+    private Inventory _playerInventory;
+    private const int TotalSlots=4;
 
     public HitEffect hitEffect;
     public float staminaRegenerationSpeed;
@@ -21,17 +24,35 @@ public class PlayerStats : MonoBehaviour
     public float invulnerabilityTime;
     private float timeToInvulnerability;
     private bool _invulnerable; //Independent from invulnerability time
-
+    
     private void Start()
     {
-        _health = PlayerMaxHealth;
-        _stamina = PlayerMaxStamina;
         healthBarScript = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScript>();
         staminaBarScript=GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<StaminaBarScript>();
-        //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
-        
-        
-        //_coinCounterTextScript.setCoinsAmount(_coins);
+        _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        if (StateNameController.playerHealth != 0 && StateNameController.playerStamina != 0)
+        {
+            _health = StateNameController.playerHealth;
+            _stamina = StateNameController.playerStamina;
+            _inventory=Inventory.CreateInventory(gameObject,StateNameController.playerInventory.slots,
+                StateNameController.playerInventory.currentStack);
+            for (int i = 0; i < TotalSlots; i++)
+            {
+                if (_inventory.slots[i].GetItemButton() != null)
+                {
+                    Instantiate(_inventory.slots[i].GetItemButton(), _playerInventory.slots[i].transform, false);
+                    _playerInventory.slots[i].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[i].ToString();
+                    _playerInventory.currentStack[i] = StateNameController.playerInventory.currentStack[i];
+                }
+            }
+        }
+        else
+        {
+            _health = PlayerMaxHealth;
+            _stamina = PlayerMaxStamina;
+            //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
+            //_coinCounterTextScript.setCoinsAmount(_coins);
+        }
         healthBarScript.SetMaxHealth(PlayerMaxHealth);
         staminaBarScript.SetMaxStamina(PlayerMaxStamina);
         timeToInvulnerability = invulnerabilityTime;

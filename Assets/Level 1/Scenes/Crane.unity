@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConfineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 453161259685357319, guid: 7ece2086250d90943ad5003febb7fef2, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 453161259685357321, guid: 7ece2086250d90943ad5003febb7fef2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -478,6 +482,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+--- !u!114 &240045416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4829148568792076748, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c7ee6cfce77b409ee7dbf1c916967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240045417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4891362734064124734, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c7ee6cfce77b409ee7dbf1c916967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240045418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7267175181688064035, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c7ee6cfce77b409ee7dbf1c916967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240045419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7870898053444794679, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c7ee6cfce77b409ee7dbf1c916967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &345270343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2033,6 +2081,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiba
       objectReference: {fileID: 0}
+    - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: slots.Array.data[0]
+      value: 
+      objectReference: {fileID: 240045419}
+    - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: slots.Array.data[1]
+      value: 
+      objectReference: {fileID: 240045418}
+    - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: slots.Array.data[2]
+      value: 
+      objectReference: {fileID: 240045417}
+    - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: slots.Array.data[3]
+      value: 
+      objectReference: {fileID: 240045416}
     - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: GameOverScreen
       value: 
