@@ -7,7 +7,7 @@ public class ShurikenAttack : MonoBehaviour
 {
 
     [SerializeField]
-    private float _attackCooldown;
+    private float _attackCooldown=0.5f;
     //animazione del personaggio che lancia lo shuriken
     private Animator _animator;
     private PlayerController _playerController;

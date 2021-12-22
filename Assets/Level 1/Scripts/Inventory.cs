@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
 {
    public Slot[] slots;
    public int[] currentStack;
+
    public static Inventory CreateInventory(GameObject where, Slot[] _slots, int[] _currentStack)
    {
       Inventory myInventory = where.AddComponent<Inventory>();

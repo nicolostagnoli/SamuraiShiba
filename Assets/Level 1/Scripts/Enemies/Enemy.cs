@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
             List<Item> current = lootTable.itemPowerup(dropAmount);
             foreach (Item item in current)
             {
-                Instantiate(item.gameObject, transform.position+new Vector3(Random.Range(-2f,2f), Random.Range(0, 1)), Quaternion.identity);
+                Instantiate(item.gameObject, transform.position+new Vector3(Random.Range(-1f,1f), Random.Range(0.1f, 0.1f)), Quaternion.identity);
             }
         }
     }

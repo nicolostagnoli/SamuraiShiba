@@ -50,6 +50,5 @@ public class Projectile : MonoBehaviour
         _lifeTime = 0;
         direction = _direction;
         gameObject.SetActive(true);
-
     }
 }

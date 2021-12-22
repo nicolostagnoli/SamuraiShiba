@@ -14,10 +14,12 @@ public class Slot : MonoBehaviour
     public KeyCode key;
     private Button button;
     private GameObject _itemButton;
+    private ItemName _slotItem;
     private void Start()
     {
         _inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         button = GetComponent<Button>();
+        _slotItem = Item.getItemBySlot(slotNumber);
     }
 
     private void Update()
