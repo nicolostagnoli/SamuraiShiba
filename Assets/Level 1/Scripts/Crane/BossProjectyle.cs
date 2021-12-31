@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraneFeather : MonoBehaviour
+public class BossProjectyle : MonoBehaviour
 {
     private float damage;
 
@@ -18,7 +18,7 @@ public class CraneFeather : MonoBehaviour
         
     }
 
-    public void SetFeatherDamage(float d) {
+    public void SetDamage(float d) {
         damage = d;
     }
     private void OnTriggerEnter2D(Collider2D collision) {

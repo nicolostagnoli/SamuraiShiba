@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 4451650e6ec51084180f53d0a143f088
+guid: 64fcb9a4339b89d4383d458c97bbbfb0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3257982759799349347
-    second: Run Shiba_0
+      213: -5650252757917863234
+    second: Heavy Attack Shiba (Slice 256x256)_0
   - first:
-      213: 5836488221053884922
-    second: Run Shiba_1
+      213: -1157101462563813696
+    second: Heavy Attack Shiba (Slice 256x256)_1
   - first:
-      213: 8671717741888424225
-    second: Run Shiba_2
+      213: 1286514364171502355
+    second: Heavy Attack Shiba (Slice 256x256)_2
   - first:
-      213: 3886614926784009707
-    second: Run Shiba_3
+      213: -5754166933158473909
+    second: Heavy Attack Shiba (Slice 256x256)_3
   - first:
-      213: -943643455565668719
-    second: Run Shiba_4
+      213: -7859499677393895873
+    second: Heavy Attack Shiba (Slice 256x256)_4
   - first:
-      213: -1325143862102080785
-    second: Run Shiba_5
-  - first:
-      213: -5966527844761528959
-    second: Run Shiba_6
-  - first:
-      213: -9188127983657875752
-    second: Run Shiba_7
+      213: -4634609799029929182
+    second: Heavy Attack Shiba (Slice 256x256)_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run Shiba_0
+      name: Heavy Attack Shiba (Slice 256x256)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,41 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9f10d501f159c2d0800000000000000
-      internalID: -3257982759799349347
+      spriteID: eb272219d054691b0800000000000000
+      internalID: -5650252757917863234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run Shiba_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af91baf2d1f5ff050800000000000000
-      internalID: 5836488221053884922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run Shiba_2
+      name: Heavy Attack Shiba (Slice 256x256)_1
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,41 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12946bd6751285870800000000000000
-      internalID: 8671717741888424225
+      spriteID: 0c68cc2b95621ffe0800000000000000
+      internalID: -1157101462563813696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run Shiba_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be511b90fa700f530800000000000000
-      internalID: 3886614926784009707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run Shiba_4
+      name: Heavy Attack Shiba (Slice 256x256)_2
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,41 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ed26cd64187e2f0800000000000000
-      internalID: -943643455565668719
+      spriteID: 31341ea7ffd9ad110800000000000000
+      internalID: 1286514364171502355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run Shiba_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe2cd17ada42c9de0800000000000000
-      internalID: -1325143862102080785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run Shiba_6
+      name: Heavy Attack Shiba (Slice 256x256)_3
       rect:
         serializedVersion: 2
         x: 768
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18513868982a23da0800000000000000
-      internalID: -5966527844761528959
+      spriteID: b4f4ac249a71520b0800000000000000
+      internalID: -5754166933158473909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run Shiba_7
+      name: Heavy Attack Shiba (Slice 256x256)_4
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1024
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d60f3797463d7080800000000000000
-      internalID: -9188127983657875752
+      spriteID: f3eb3a05fa27de290800000000000000
+      internalID: -7859499677393895873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heavy Attack Shiba (Slice 256x256)_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22bc64861fe8eafb0800000000000000
+      internalID: -4634609799029929182
       vertices: []
       indices: 
       edges: []

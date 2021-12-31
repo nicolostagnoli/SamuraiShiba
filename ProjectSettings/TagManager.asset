@@ -56,6 +56,9 @@ TagManager:
   - name: Enemy
     uniqueID: 1441002311
     locked: 0
+  - name: EnemyProjectyle
+    uniqueID: 3412525279
+    locked: 0
   - name: Player
     uniqueID: 4271838921
     locked: 0

@@ -185,7 +185,7 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowSingleFeather() {
         GameObject feather = Instantiate(featherPrefab);
-        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
+        feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
@@ -193,20 +193,20 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowFeathers(int featherGroup) {
         GameObject feather = Instantiate(featherPrefab);
-        feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
+        feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         for(int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
-            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
+            feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngle * (i+1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
         for (int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
-            feather.GetComponent<CraneFeather>().SetFeatherDamage(featherDamage);
+            feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngle * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;

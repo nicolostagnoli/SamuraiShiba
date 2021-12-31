@@ -29,6 +29,13 @@ public class MonkeyMovement : MonoBehaviour {
     private float _timeToGoDown;
     private float _timeToHang;
 
+    //throw bananas
+    public GameObject bananaPrefab;
+    public float shootTime;
+    private float _timeBetweenBananas;
+    public float bananaDamage;
+    public float bananaVelocity;
+
     public Transform feetPos;
     public LayerMask whatIsGround;
     private Rigidbody2D _rb;
@@ -81,8 +88,14 @@ public class MonkeyMovement : MonoBehaviour {
         }
         else { //here hanging on the tree
             _timeToGoDown += Time.deltaTime;
+            _timeBetweenBananas += Time.deltaTime;
 
-            if(_timeToGoDown >= hangTime) { //detach from Tree
+            if(_timeBetweenBananas >= shootTime) {
+                ThrowBanana();
+                _timeBetweenBananas = 0;
+            }
+
+            if(_timeToGoDown >= hangTime) { //when detach from Tree
                 _rb.isKinematic = false;
                 isHanging = false;
                 _isJumping = false;
@@ -116,6 +129,14 @@ public class MonkeyMovement : MonoBehaviour {
         ret.y = transform.position.y;
         ret.z = 0;
         return ret;
+    }
+
+    void ThrowBanana() {
+        GameObject banana = Instantiate(bananaPrefab);
+        banana.GetComponent<BossProjectyle>().SetDamage(bananaDamage);
+        banana.transform.position = transform.position;
+        banana.transform.rotation = Quaternion.FromToRotation(banana.transform.right, player.transform.position - banana.transform.position) * Quaternion.Euler(0, 0, Random.Range(-10, 10));
+        banana.GetComponent<Rigidbody2D>().velocity = banana.transform.right * bananaVelocity;
     }
 
 }
