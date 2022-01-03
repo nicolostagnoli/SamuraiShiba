@@ -4777,7 +4777,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -23128375
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -5
   m_RenderMode: 0
   m_SortMode: 0
@@ -4941,7 +4941,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -23128375
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2779023822413464520, guid: ec946a3521a9fe34db853ada6f2c373b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4995,13 +4995,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comboContLight: 0
   _comboContHeavy: 0
-  startTimeBetweenLightAttacks: 0.6
-  startTimeBetweenHeavyAttacks: 1
+  startTimeBetweenLightAttacks: 0.5
+  startTimeBetweenHeavyAttacks: 0.7
   attackPosition: {fileID: 4167753217064836030}
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 8448
-  attackRange: 0.3
+  attackRange: 0.4
   lightDamage: 5
   heavyDamage: 15
   comboDuration: 1.5
@@ -5128,7 +5128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8235343316875281393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.388, y: 0, z: 0}
+  m_LocalPosition: {x: 0.413, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 776701246383168937}

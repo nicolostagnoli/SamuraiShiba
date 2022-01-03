@@ -7,8 +7,9 @@ public class ParallaxBackground : MonoBehaviour
 {
     [SerializeField]
 private Transform cameraTransform;
+public float parallaxEffectMultiplier = .9f;
 
-private Vector3 lastCameraPosition;
+    private Vector3 lastCameraPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,6 @@ private Vector3 lastCameraPosition;
     private void FixedUpdate()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
-        float parallaxEffectMultiplier = .9f;
         transform.position += deltaMovement * parallaxEffectMultiplier;
         lastCameraPosition = cameraTransform.position;
     }

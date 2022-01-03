@@ -2105,6 +2105,10 @@ PrefabInstance:
       propertyPath: GameOverScreen
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: invulnerabilityTime
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
 --- !u!114 &1990144204 stripped
@@ -2129,6 +2133,14 @@ PrefabInstance:
       propertyPath: barScript
       value: 
       objectReference: {fileID: 1990144204}
+    - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: maxHealth
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: invulnerabilityTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7537278469565992778, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: m_Name
       value: Crane
@@ -2145,6 +2157,10 @@ PrefabInstance:
       propertyPath: healPos
       value: 
       objectReference: {fileID: 822842995}
+    - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+      propertyPath: maxHeight
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7537278469565992779, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: featherAttackPos1
       value: 

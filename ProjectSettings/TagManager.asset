@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 1248505815
     locked: 0
+  - name: Water
+    uniqueID: 2878358001
+    locked: 0
   - name: Tiles
     uniqueID: 11151385
     locked: 0
