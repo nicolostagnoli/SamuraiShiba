@@ -12,9 +12,15 @@ public class WolfMovement : MonoBehaviour
     public Transform feetPos;
     //private bool _isShibaInRange;
     private bool _isGrounded;
-    private float _timeToAttack = 5f;
+    private bool _isReadyToAttack;
+    private float _timeToAttack = 3f;
     
-    //DashAttack
+    //Teleport
+    [Header("Teleport")]
+    public List<GameObject> teleportPoints = new List<GameObject>();
+    private float _timeToTeleport = 5f;
+
+        //DashAttack
     [Header("DashAttack")]
     //private float checkRadius = 0.5f;
     //private float _timeDashing;
@@ -34,15 +40,16 @@ public class WolfMovement : MonoBehaviour
     //Clones
     [Header("Clones")]
     public GameObject wolfClonePrefab;
-    private float _radiusSpawner;
+    private float _radiusSpawner = 10f;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        
+        _isReadyToAttack = true;
     }
     void Update()
     {
         _timeToAttack += Time.deltaTime;
+        _timeToTeleport += Time.deltaTime;
 
         if (transform.position.x > shiba.transform.position.x)
         {
@@ -55,9 +62,16 @@ public class WolfMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
         
+        //Teleport in a random spot every 5 seconds
+        if (_timeToTeleport >= 10f)
+        {
+            Teleport();
+        }
+        
+        
         //Choose a random attack from DASH, CLONES, KUNAI
 
-        if (_timeToAttack >= 5f)
+        if (_timeToAttack >= 4f && _isReadyToAttack)
         {
             //check distance from Shiba
             float distFromShiba = Vector3.Distance(shiba.transform.position,transform.position);
@@ -66,6 +80,8 @@ public class WolfMovement : MonoBehaviour
                 float randomValue = Random.Range(0, 2);
                 if (randomValue == 0)
                 {
+                    _timeToAttack = 0f;
+                    print("KUNAI");
                     ThrowShadowKunai();
                 }
                 else
@@ -73,6 +89,8 @@ public class WolfMovement : MonoBehaviour
                     //Clone courutine
                     print("CLONES");
                     _timeToAttack = 0f;
+                    SpawnClones(5);
+                    
                 }
             }
             else if (distFromShiba <= 1f)
@@ -81,12 +99,28 @@ public class WolfMovement : MonoBehaviour
                 _timeToAttack = 0f;
                 //Melee attack
             }
-            else
+            else 
             {
+                print("DASH");
+                _timeToAttack = 0f;
                 DashAttack();
             }
         }
     }
+    
+    
+    //Teleport in a different location then chose an attack
+    void Teleport()
+    {
+        _isReadyToAttack = false;
+        print("Teletrasporto");
+        _timeToTeleport = 0f;
+        int pointIndex = Random.Range(0, teleportPoints.Count);
+        transform.position = teleportPoints[pointIndex].transform.position;
+        //The bool _isReadyToAttack must be changed based on the animation
+        _isReadyToAttack = true;
+    }
+    
 
     void DashAttack()
     {
@@ -110,8 +144,8 @@ public class WolfMovement : MonoBehaviour
         for (int i = 1; i <= numClones; i++)
         {
             GameObject wolfClone = Instantiate(wolfClonePrefab);
-            float spawnPoint = Random.Range(0f, _radiusSpawner);
-            wolfClone.transform.position = new Vector3(transform.position.x + spawnPoint, transform.position.y,
+            float spawnPoint = Random.Range(-_radiusSpawner, _radiusSpawner);
+            wolfClone.transform.position = new Vector3(shiba.transform.position.x + spawnPoint, transform.position.y,
                 transform.position.z);
         }
     }
