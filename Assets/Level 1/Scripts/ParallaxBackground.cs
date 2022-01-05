@@ -17,7 +17,7 @@ public float parallaxEffectMultiplier = .9f;
         lastCameraPosition = cameraTransform.position;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
         transform.position += deltaMovement * parallaxEffectMultiplier;
