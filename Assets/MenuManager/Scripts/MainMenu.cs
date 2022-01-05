@@ -15,9 +15,9 @@ using UnityEngine.SceneManagement;
 
         public void OnPlayPressed()
         {
-            if (MenuManager.Instance != null && PlayerInterface.Instance != null)
-            MenuManager.Instance.OpenMenu(PlayerInterface.Instance);
-            //MenuManager.Instance.CloseSpecificMenu(MainMenu.Instance);
+            if (MenuManager.Instance != null)
+            //MenuManager.Instance.OpenMenu(PlayerInterface.Instance);
+            MenuManager.Instance.CloseMenu();
             SceneManager.LoadScene("Tutorial/Scenes/Tutorial");
         }
 
