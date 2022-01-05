@@ -26,6 +26,7 @@ public class CraneMovement : MonoBehaviour {
     public float minShootTime;
     public float maxShootTime;
     public float featherDamage;
+    private bool featherDarkMode;
 
     public Transform player;
     public Transform ground;
@@ -185,6 +186,7 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowSingleFeather() {
         GameObject feather = Instantiate(featherPrefab);
+        if(featherDarkMode )feather.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
         feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
@@ -193,12 +195,14 @@ public class CraneMovement : MonoBehaviour {
 
     void ThrowFeathers(int featherGroup) {
         GameObject feather = Instantiate(featherPrefab);
+        if(featherDarkMode )feather.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
         feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
         feather.transform.position = transform.position;
         feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position);
         feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         for(int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
+            if(featherDarkMode )feather.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
             feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, featherAngle * (i+1));
@@ -206,11 +210,13 @@ public class CraneMovement : MonoBehaviour {
         }
         for (int i = 0; i < featherGroup; i++) {
             feather = Instantiate(featherPrefab);
+            if(featherDarkMode )feather.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
             feather.GetComponent<BossProjectyle>().SetDamage(featherDamage);
             feather.transform.position = transform.position;
             feather.transform.rotation = Quaternion.FromToRotation(feather.transform.right, player.transform.position - feather.transform.position) * Quaternion.Euler(0, 0, -featherAngle * (i + 1));
             feather.GetComponent<Rigidbody2D>().velocity = feather.transform.right * featherVelocity;
         }
+
     }
 
     public void StartHealing() {
@@ -237,5 +243,14 @@ public class CraneMovement : MonoBehaviour {
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosition.position, attackRange);
+    }
+
+    public void TriggerDarkMode(float damage, float speed, float featherDamage)
+    {
+        this.damage = damage;
+        _speed = speed;
+        this.featherDamage = featherDamage;
+        featherDarkMode = true;
+        featherPrefab.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
     }
 }
