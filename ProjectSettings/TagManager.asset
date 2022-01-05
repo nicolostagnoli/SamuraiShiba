@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Platform
   - Enemy
-  - HealthBar
-  - StaminaBar
   - CoinsAmount
   - BosshealthBar
   layers:

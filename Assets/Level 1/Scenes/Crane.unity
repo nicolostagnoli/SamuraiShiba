@@ -558,6 +558,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491c7ee6cfce77b409ee7dbf1c916967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &240045420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863042546422650891, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d909a57449570a44a83fce08736ca8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &240045421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542846014149323046, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 240045415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad000ada5c2656847889c510b5262d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &345270343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2336,6 +2358,14 @@ PrefabInstance:
       propertyPath: GameOverScreen
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: healthBarScript
+      value: 
+      objectReference: {fileID: 240045421}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: staminaBarScript
+      value: 
+      objectReference: {fileID: 240045420}
     - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: invulnerabilityTime
       value: 0.6

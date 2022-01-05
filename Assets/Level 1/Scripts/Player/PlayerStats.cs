@@ -11,8 +11,8 @@ public class PlayerStats : MonoBehaviour
     private int _coins=1;
     private float _health;
     private float _stamina;
-    private HealthBarScript healthBarScript;
-    private StaminaBarScript staminaBarScript;
+    public HealthBarScript healthBarScript;
+    public StaminaBarScript staminaBarScript;
     private CoinCounterTextScript _coinCounterTextScript;
     private Inventory _inventory;
     private Inventory _playerInventory;
@@ -27,8 +27,6 @@ public class PlayerStats : MonoBehaviour
     
     private void Start()
     {
-        healthBarScript = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBarScript>();
-        staminaBarScript=GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<StaminaBarScript>();
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         if (StateNameController.playerHealth != 0 && StateNameController.playerStamina != 0)
         {
@@ -84,6 +82,8 @@ public class PlayerStats : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log("player health: "+_health);
     }
     public void SetInvulnerability(int value) {
         if(value != 0) {
