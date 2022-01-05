@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class WolfMovement : MonoBehaviour
@@ -75,7 +76,7 @@ public class WolfMovement : MonoBehaviour
         {
             //check distance from Shiba
             float distFromShiba = Vector3.Distance(shiba.transform.position,transform.position);
-            if (distFromShiba >= 5f)
+            if (distFromShiba >= 3f)
             {
                 float randomValue = Random.Range(0, 2);
                 if (randomValue == 0)
@@ -89,7 +90,7 @@ public class WolfMovement : MonoBehaviour
                     //Clone courutine
                     print("CLONES");
                     _timeToAttack = 0f;
-                    SpawnClones(5);
+                    SpawnClones(4);
                     
                 }
             }
@@ -116,12 +117,33 @@ public class WolfMovement : MonoBehaviour
         print("Teletrasporto");
         _timeToTeleport = 0f;
         int pointIndex = Random.Range(0, teleportPoints.Count);
-        transform.position = teleportPoints[pointIndex].transform.position;
+        bool _isInScreen = false;
+        while (!_isInScreen)
+        {
+            Renderer renderer = teleportPoints[pointIndex].GetComponent<Renderer>();
+            if (renderer.isVisible)
+            {
+                print("Il punto era visibile mi teletrasporto");
+                transform.position = teleportPoints[pointIndex].transform.position;
+                _isInScreen = true;
+            }
+            else
+            {
+                print("Il punto non era a schermo, ne scelgo un altro");
+                pointIndex = Random.Range(0, teleportPoints.Count);
+                _isInScreen = false;
+            }
+            
+        }
+        
         //The bool _isReadyToAttack must be changed based on the animation
         _isReadyToAttack = true;
     }
-    
 
+    /*void MeleeAttack()
+    {
+        //Add the animation of melee attack
+    }*/
     void DashAttack()
     {
         _timeToAttack = 0f;
