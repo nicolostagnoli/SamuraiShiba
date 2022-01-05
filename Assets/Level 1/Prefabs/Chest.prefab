@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1803442379638019482}
   - component: {fileID: -2223157256891301987}
   - component: {fileID: 5652912065795118593}
+  - component: {fileID: 7873503647809829952}
   m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9100316239940630846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.68, y: -2.43, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -125,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: 451ad8409ed6eb549a4f70f2e5ed57d8, type: 2}
+  blood: {fileID: 6912025550447371134, guid: 38c22ae445f386746a5b40e8caf41c5d, type: 3}
+  hitEffect: {fileID: 7873503647809829952}
+  invulnerabilityTime: 0
 --- !u!50 &-2223157256891301987
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +169,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7873503647809829952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100316239940630846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 1
