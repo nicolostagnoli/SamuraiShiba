@@ -31,6 +31,9 @@ public class EnemyScript : Enemy
     private bool inAttackRange;
     public float teletrasportRange;
     private bool firstTeletrasport;
+    public Transform pointA;
+    public Transform pointB;
+    private bool isInvisible;
 
 
 
@@ -55,17 +58,15 @@ public class EnemyScript : Enemy
         float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
         if (distanceToPlayer < _agroRange)
         {
-            Debug.Log("distance to player: "+ distanceToPlayer);
-            ChasePlayer();
+            //ChasePlayer();
             if (distanceToPlayer <= _attackRange)
             {
-                inAttackRange = true;
+                //inAttackRange = true;
                 invisibilityAttackCooldown -= Time.deltaTime;
                 if(invisibilityAttackCooldown<=0)
                 {
                     if(!firstTeletrasport) InvisibilityActivated();
-                    invisibilityDurationCooldown -= Time.deltaTime;
-                    if(invisibilityDurationCooldown<=0) RandomTeletrasport();
+
 
                 }
                 /*
@@ -78,6 +79,11 @@ public class EnemyScript : Enemy
                 }
                 */
             }
+            if (isInvisible)
+            {
+                invisibilityDurationCooldown -= Time.deltaTime;
+                if(invisibilityDurationCooldown<=0) RandomTeletrasport(); 
+            }
             else
             {
                 inAttackRange = false;
@@ -85,10 +91,11 @@ public class EnemyScript : Enemy
         }
         else
         {
-            Roam();
+            //Roam();
         }
     }
 
+    /*
     private void Roam()
     {
         float reachedPositionDistance = 1f;
@@ -106,7 +113,9 @@ public class EnemyScript : Enemy
             roamPosition = GetRoamingPosition();
         }
     }
+    */
     
+    /*
     private void ChasePlayer()
     {
         if (!inAttackRange)
@@ -124,6 +133,7 @@ public class EnemyScript : Enemy
             }
         }
     }
+    */
 
     private void StopChasing()
     {
@@ -158,13 +168,14 @@ public class EnemyScript : Enemy
 
     private void InvisibilityActivated()
     {
+        isInvisible = true;
         firstTeletrasport = true;
         Color tmp = GetComponent<SpriteRenderer>().color;
         tmp.a = 0f;
         GetComponent<SpriteRenderer>().color = tmp;
         float randomNumber = Random.Range(0f, 1f);
-        if(randomNumber>0.5f) transform.position = _player.transform.position + new Vector3(teletrasportRange, 0);
-        else transform.position = _player.transform.position + new Vector3(-teletrasportRange, 0);
+        if(randomNumber>0.5f) transform.position = pointA.position;
+        else transform.position = pointB.position;
         //gameObject.SetActive(false);
         //GetComponent<BoxCollider2D>().enabled = false;
         // when the invisibility ends
@@ -175,8 +186,8 @@ public class EnemyScript : Enemy
         invisibilityDurationCooldown = invisibilityDuration ;
         //Random position within the player
         float randomNumber = Random.Range(0f, 1f);
-        if(randomNumber>0.5f) transform.position = _player.transform.position + new Vector3(teletrasportRange, 0);
-        else transform.position = _player.transform.position + new Vector3(-teletrasportRange, 0);
+        if(randomNumber>0.5f) transform.position = pointA.position;
+        else transform.position = pointB.position;
         ThrowKunai();
 
     }
@@ -187,6 +198,7 @@ public class EnemyScript : Enemy
         Color tmp = GetComponent<SpriteRenderer>().color;
         tmp.a = 1f;
         GetComponent<SpriteRenderer>().color = tmp;
+        isInvisible = false;
         
         //GetComponent<BoxCollider2D>().enabled = true;
         if (transform.position.x < _player.position.x)

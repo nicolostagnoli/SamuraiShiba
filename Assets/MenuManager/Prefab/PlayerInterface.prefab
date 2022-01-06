@@ -1203,9 +1203,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078614116857244861, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: key
-      value: 51
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 5234288314880579542, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: slotNumber
@@ -1241,11 +1249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1289,11 +1297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 267.2
+      value: 1715
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -188
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1321,7 +1329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7697915892654952767, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_text
-      value: 3
+      value: H
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
@@ -1453,6 +1461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5235866721479255487, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5360047905120105750, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_Name
       value: slot number
@@ -1521,11 +1533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1659,11 +1671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1707,7 +1719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 167.20001
+      value: 187.2
       objectReference: {fileID: 0}
     - target: {fileID: 5235866721479255486, guid: c59618f4a145e304798b6a6ce29007d8, type: 3}
       propertyPath: m_AnchoredPosition.y

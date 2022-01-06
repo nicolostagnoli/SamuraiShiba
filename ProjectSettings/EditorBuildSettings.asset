@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level 1/Scenes/Crane.unity
     guid: 81fcf263a736676428fe3ddd8e5ea0e7
+  - enabled: 1
+    path: Assets/Level 2/Scenes/Level2.unity
+    guid: 57e5bb87f50ad1241b641621ccecde40
+  - enabled: 1
+    path: Assets/Level 2/Scenes/Monkey.unity
+    guid: 3f7288009c1e5354087bf14c9b87eecb
+  - enabled: 1
+    path: Assets/Level 3/Wolf.unity
+    guid: c86f28c90d8e4944d80743c5aa0ec8ab
   m_configObjects: {}

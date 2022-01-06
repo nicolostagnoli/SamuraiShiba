@@ -8,8 +8,8 @@ public class BossHealth : Enemy
     public float maxHealth;
     public HealthBarScript barScript;
     public GameObject chest;
-    public bool singleDrop;
     public Transform chestSpawnPosition;
+    public NextLevel nextLevel;
 
     void Start()
     {
@@ -23,8 +23,8 @@ public class BossHealth : Enemy
         if (GetHealth() <= 0)
         {
             PlayerInterface.Instance.Invoke("Pause", 3f);
-
-            if(!singleDrop) dropChest();
+            dropChest();
+            nextLevel.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         //boss health bar
@@ -33,7 +33,6 @@ public class BossHealth : Enemy
     public void dropChest()
     {
         Instantiate(chest, chestSpawnPosition.position, Quaternion.identity);
-        singleDrop = true;
     }
 
     public override void SetHealth(float health) {

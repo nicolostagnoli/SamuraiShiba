@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     private int dropAmount = 5;
     public GameObject blood;
     public HitEffect hitEffect;
+    public HealthBarScript _healthBarScript;
+
 
     public float invulnerabilityTime;
     private float timeToInvulnerability;
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
 
             hitEffect.Flash();
             _health -= damage;
+            if(_healthBarScript!= null)_healthBarScript.SetHealth(GetHealth());
             if (_health <= 0) {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 DropLoot();
@@ -50,7 +53,7 @@ public class Enemy : MonoBehaviour
             List<Item> current = lootTable.itemPowerup(dropAmount);
             foreach (Item item in current)
             {
-                Instantiate(item.gameObject, transform.position+new Vector3(Random.Range(-1f,1f), Random.Range(0.1f, 0.1f)), Quaternion.identity);
+                Instantiate(item.gameObject, transform.position+new Vector3(Random.Range(-0.2f,0.2f), Random.Range(0f, 0f)), Quaternion.identity);
             }
         }
     }
