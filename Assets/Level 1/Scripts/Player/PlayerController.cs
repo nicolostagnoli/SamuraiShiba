@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     //_animator = anim.GetComponent<Animator>();
     _animator = GetComponent<Animator>();
         _stats = GetComponent<PlayerStats>();
+        jumpForce = StateNameController.jumpForce;
   }
 
   private void FixedUpdate()

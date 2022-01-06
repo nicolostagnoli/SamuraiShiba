@@ -36,6 +36,10 @@ public class Enemy : MonoBehaviour
             if (_health <= 0) {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 DropLoot();
+                if (gameObject.name == "Crane")
+                {
+                    StateNameController.jumpForce = 10f;
+                }
                 Destroy(gameObject);
                 //anim.SetTrigger("die")
             }
