@@ -26,6 +26,7 @@ public class CraneMovement : MonoBehaviour {
     public float minShootTime;
     public float maxShootTime;
     public float featherDamage;
+    public int featherGroup;
     private bool featherDarkMode;
 
     public Transform player;
@@ -58,7 +59,7 @@ public class CraneMovement : MonoBehaviour {
         timeToHeal = 0;
         canShoot = true;
         rb = GetComponent<Rigidbody2D>();
-        desiredPosition = rb.position;
+        desiredPosition = featherAttackPos1.position;
         _speed = normalSpeed;
         currentMovement = 0;
         anim = GetComponent<Animator>();
@@ -94,7 +95,7 @@ public class CraneMovement : MonoBehaviour {
                             break;
                         case 1:
                             anim.SetTrigger("FeatherAttack");
-                            ThrowFeathers(1);
+                            ThrowFeathers(featherGroup);
                             break;
                         default:
                             ThrowSingleFeather();
@@ -219,6 +220,13 @@ public class CraneMovement : MonoBehaviour {
 
     }
 
+    public void FeatherAttack() {
+        if (!featherDarkMode)
+            ThrowFeathers(1);
+        else
+            ThrowFeathers(2);
+    }
+
     public void StartHealing() {
         canMakeNewMove = false;
         canShoot = false;
@@ -252,5 +260,6 @@ public class CraneMovement : MonoBehaviour {
         this.featherDamage = featherDamage;
         featherDarkMode = true;
         featherPrefab.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
+        featherGroup = 3;
     }
 }
