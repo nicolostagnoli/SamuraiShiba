@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   direction: {x: 1, y: 0, z: 0}
-  _projectileDamage: 100
+  _projectileDamage: 40
 --- !u!61 &3792283568433451139
 BoxCollider2D:
   m_ObjectHideFlags: 0
