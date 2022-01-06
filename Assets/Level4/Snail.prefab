@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1221647851756269211}
   - component: {fileID: 1221647851756269209}
   - component: {fileID: 1221647851756269208}
+  - component: {fileID: 6708006991447121829}
   m_Layer: 8
   m_Name: Snail
   m_TagString: Enemy
@@ -173,3 +174,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
   duration: 0.2
+--- !u!111 &6708006991447121829
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221647851756269215}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0199b930db889fe4d92bbb6ee83d65e1, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0199b930db889fe4d92bbb6ee83d65e1, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - CoinsAmount
   - BosshealthBar
+  - HealthBar
+  - StaminaBar
   layers:
   - Default
   - TransparentFX
@@ -68,4 +70,7 @@ TagManager:
     locked: 0
   - name: Pickable
     uniqueID: 1241258651
+    locked: 0
+  - name: Particle effects
+    uniqueID: 2512596455
     locked: 0
