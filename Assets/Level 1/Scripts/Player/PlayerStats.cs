@@ -82,8 +82,6 @@ public class PlayerStats : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("player health: "+_health);
     }
     public void SetInvulnerability(int value) {
         if(value != 0) {

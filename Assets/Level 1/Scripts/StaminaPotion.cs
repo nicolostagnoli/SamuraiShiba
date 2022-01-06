@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StaminaPotion : UsableItem
 {
-    private int _potionValue=20;
+    private int _potionValue=50;
     private PlayerStats _playerStats;
     private void Start()
     {

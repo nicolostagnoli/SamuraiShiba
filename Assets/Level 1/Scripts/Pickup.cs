@@ -22,7 +22,6 @@ public class Pickup : MonoBehaviour
     {
         _itemName = GetComponent<UsableItem>().GetItemName();
         _slotNumber = Item.getSlotNumberByItem(_itemName);
-        Debug.Log(_itemName);
         if (other.CompareTag("Player"))
         {
             //Item not found in the inventory

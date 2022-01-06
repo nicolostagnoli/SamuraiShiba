@@ -614,7 +614,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1248505815
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eff3b3fe0cc6a3b4381162f8bd4931fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1043,6 +1043,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7868184804301458270, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
   m_PrefabInstance: {fileID: 1350621393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1350621398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863042546422650891, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 1350621393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d909a57449570a44a83fce08736ca8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1350621399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542846014149323046, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 1350621393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad000ada5c2656847889c510b5262d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360097099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2217,14 @@ PrefabInstance:
       propertyPath: slots.Array.data[3]
       value: 
       objectReference: {fileID: 1350621394}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: healthBarScript
+      value: 
+      objectReference: {fileID: 1350621399}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: staminaBarScript
+      value: 
+      objectReference: {fileID: 1350621398}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
 --- !u!1839735485 &2141296669
