@@ -330,6 +330,47 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 453161259685357318, guid: 7ece2086250d90943ad5003febb7fef2, type: 3}
   m_PrefabInstance: {fileID: 2087972048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &190872550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4352962358290764683, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+  m_PrefabInstance: {fileID: 4352962357977108117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &190872555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190872550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c0dbdff6070804497fe7d6b15fd73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 0}
+  dropAmount: 5
+  blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
+  hitEffect: {fileID: 190872556}
+  invulnerabilityTime: 0.2
+  maxHealth: 1500
+  barScript: {fileID: 540976908}
+  chest: {fileID: 0}
+  singleDrop: 0
+  chestSpawnPosition: {fileID: 0}
+--- !u!114 &190872556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190872550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &271930972
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +699,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540976908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542846014149323046, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 115821448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad000ada5c2656847889c510b5262d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596770214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1054,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1300582680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863042546422650891, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+  m_PrefabInstance: {fileID: 115821448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d909a57449570a44a83fce08736ca8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1343983976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,6 +1120,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiba
       objectReference: {fileID: 0}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: healthBarScript
+      value: 
+      objectReference: {fileID: 540976908}
+    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: staminaBarScript
+      value: 
+      objectReference: {fileID: 1300582680}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
 --- !u!1 &1639351644

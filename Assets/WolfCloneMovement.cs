@@ -6,7 +6,8 @@ using UnityEngine;
 public class WolfCloneMovement : MonoBehaviour
 {
     private GameObject _shiba;
-    private float _movementSpeed = 2f; 
+    private float _constY = -2.34f;
+    private float _movementSpeed = 1.5f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class WolfCloneMovement : MonoBehaviour
     void ChaseShiba()
     {
         
-        transform.position = Vector2.MoveTowards(transform.position, _shiba.transform.position, _movementSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(_shiba.transform.position.x, _constY), _movementSpeed * Time.deltaTime);
         
          if (transform.position.x < _shiba.transform.position.x)
          {

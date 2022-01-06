@@ -19,7 +19,8 @@ public class WolfMovement : MonoBehaviour
     //Teleport
     [Header("Teleport")]
     public List<GameObject> teleportPoints = new List<GameObject>();
-    private float _timeToTeleport = 5f;
+    private float _timeToTeleport = 3f;
+    private Renderer _wolfRenderer;
 
         //DashAttack
     [Header("DashAttack")]
@@ -46,12 +47,18 @@ public class WolfMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _isReadyToAttack = true;
+        _wolfRenderer = GetComponentInChildren<Renderer>();
     }
     void Update()
     {
         _timeToAttack += Time.deltaTime;
         _timeToTeleport += Time.deltaTime;
+        print("Time to teleport: " + _timeToTeleport);
 
+        //check distance from Shiba
+        float distFromShiba = Vector3.Distance(shiba.transform.position,transform.position);
+        print("DIST from Shiba: " + distFromShiba);
+        
         if (transform.position.x > shiba.transform.position.x)
         {
             _facingDirection = -1f;
@@ -62,9 +69,14 @@ public class WolfMovement : MonoBehaviour
             _facingDirection = 1f;
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
+        if (distFromShiba >= 7f)
+        {
+            _timeToTeleport = 6f;
+        }
         
         //Teleport in a random spot every 5 seconds
-        if (_timeToTeleport >= 10f)
+        if (_timeToTeleport >= 6f)
         {
             Teleport();
         }
@@ -74,64 +86,47 @@ public class WolfMovement : MonoBehaviour
 
         if (_timeToAttack >= 4f && _isReadyToAttack)
         {
-            //check distance from Shiba
-            float distFromShiba = Vector3.Distance(shiba.transform.position,transform.position);
-            if (distFromShiba >= 3f)
+            if (distFromShiba > 2f)
             {
                 float randomValue = Random.Range(0, 2);
                 if (randomValue == 0)
                 {
                     _timeToAttack = 0f;
-                    print("KUNAI");
                     ThrowShadowKunai();
                 }
                 else
                 {
-                    //Clone courutine
-                    print("CLONES");
                     _timeToAttack = 0f;
                     SpawnClones(4);
-                    
                 }
             }
-            else if (distFromShiba <= 1f)
+            else
             {
-                print("MELEE");
                 _timeToAttack = 0f;
                 //Melee attack
             }
-            else 
-            {
-                print("DASH");
-                _timeToAttack = 0f;
-                DashAttack();
-            }
         }
     }
-    
     
     //Teleport in a different location then chose an attack
     void Teleport()
     {
         _isReadyToAttack = false;
-        print("Teletrasporto");
         _timeToTeleport = 0f;
         int pointIndex = Random.Range(0, teleportPoints.Count);
-        bool _isInScreen = false;
-        while (!_isInScreen)
+        bool isInScreen = false;
+        while (!isInScreen)
         {
             Renderer renderer = teleportPoints[pointIndex].GetComponent<Renderer>();
             if (renderer.isVisible)
             {
-                print("Il punto era visibile mi teletrasporto");
                 transform.position = teleportPoints[pointIndex].transform.position;
-                _isInScreen = true;
+                print("Teletrasporto");
+                isInScreen = true;
             }
             else
             {
-                print("Il punto non era a schermo, ne scelgo un altro");
                 pointIndex = Random.Range(0, teleportPoints.Count);
-                _isInScreen = false;
             }
             
         }
@@ -144,12 +139,12 @@ public class WolfMovement : MonoBehaviour
     {
         //Add the animation of melee attack
     }*/
-    void DashAttack()
+    /*void DashAttack()
     {
         _timeToAttack = 0f;
         Vector2 dashDirection = shiba.transform.position - transform.position;
         _rb.AddForce(dashDirection * _dashSpeed, ForceMode2D.Impulse);
-    }
+    }*/
 
     void ThrowShadowKunai()
     {
