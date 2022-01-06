@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Crane
+{
+	
 
 [System.Serializable]
 public class Dialogue {
@@ -12,4 +15,4 @@ public class Dialogue {
 	public string[] sentences;
 
 }
-	
+}
