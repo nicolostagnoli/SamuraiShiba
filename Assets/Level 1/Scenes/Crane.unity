@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1660974785}
   dialogueText: {fileID: 1565244954}
-  continueText: {fileID: 0}
+  continueText: {fileID: 646662090}
   animator: {fileID: 1068402624}
   craneDialogue: {fileID: 592423805}
   buttonA: {fileID: 0}
@@ -1605,6 +1605,23 @@ MonoBehaviour:
   - name: GYACrane
     sentences:
     - GYAAAAAAAAAAAAAAAA
+  - name: Crane
+    sentences:
+    - darkness
+  - name: Crane
+    sentences:
+    - is coming
+  - name: Crane
+    sentences:
+    - help
+  - name: Crane
+    sentences:
+    - GYAAAAA
+  - name: Crane
+    sentences:
+    - I'm dead
+    - gg
+    - cya
   dialogue1:
     name: 
     sentences: []
@@ -2862,7 +2879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currenTime: 0
-  startingTime: 60
+  startingTime: 10
   bossScript: {fileID: 822372895}
   feather: {fileID: 9089927028098948925, guid: dfed3e2bf9c867b4e96821d5720b248d, type: 3}
   countDownText: {fileID: 1901428305}
@@ -3070,7 +3087,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d5f3affce0ea2be46a8419b5b7fde04f, type: 2}
     - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: maxHealth
-      value: 750
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: nextLevel

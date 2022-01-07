@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour {
 		{
 			
 			darkModeDialogueShown = true;
+			print(_dialoguesCounter);
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
 			craneDialogue.TriggerDialogue(_dialoguesCounter);
 			
