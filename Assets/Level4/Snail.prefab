@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1441002311
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: -6973556099081250430, guid: 781e879f8230082408871dd270e9b50c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,7 +153,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1221647851756269208}
   woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 333583756629432579}
-  invulnerabilityTime: 0.1
+  invulnerabilityTime: 0.2
   _player: {fileID: 0}
   _agroRange: 3
   _moveSpeed: 1
@@ -186,7 +186,7 @@ Animator:
   m_GameObject: {fileID: 1221647851756269215}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4bbecc7565eb1ff4fa991f8c1d843c50, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

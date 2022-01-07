@@ -27,6 +27,8 @@ public class WalkingEnemy : Enemy
 
     // Update is called once per frame
     void Update() {
+        base.Update();
+
         if (_player != null) {
             float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
             if (distanceToPlayer < _agroRange) {
