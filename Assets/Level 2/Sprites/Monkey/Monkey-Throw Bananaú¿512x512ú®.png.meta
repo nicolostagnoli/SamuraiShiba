@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 7292870677c111b40b347df7a45d702d
+guid: e341b91e45c966e4ab256ea86dd3cf3b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7880809402547972533
+    second: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_0"
+  - first:
+      213: 8670336353125677971
+    second: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_1"
+  - first:
+      213: 7026514125340542393
+    second: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_2"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +77,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +98,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_0"
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 128
+        width: 143
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b92e65b5624e5d60800000000000000
+      internalID: 7880809402547972533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_1"
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 128
+        width: 122
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b363bc9f8335870800000000000000
+      internalID: 8670336353125677971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Monkey-Throw Banana\xFA\xBF512x512\xFA\xAE_2"
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 128
+        width: 220
+        height: 315
+      alignment: 9
+      pivot: {x: 0.65909094, y: 0.4952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b500327e51338160800000000000000
+      internalID: 7026514125340542393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -9,18 +9,12 @@ public class MonkeyMovement : MonoBehaviour {
     private float checkRadius = 0.5f;
     private bool _isGrounded;
     private bool _isJumping;
-    public float minTimeBetweenJumps;
-    public float maxTimeBetweenJumps;
-    private float _jumpInterval; //generated between min and max randomly
-    private float _timeToJump;
 
     //move around
     public Transform player;
     public Vector3 desiredPosition;
     public float speed;
     public float chargeSpeed;
-    public float timeBetweenMovements;
-    private float _timeToMovement;
 
     //hang on tree
     private bool isHanging;
@@ -36,14 +30,28 @@ public class MonkeyMovement : MonoBehaviour {
     public float bananaDamage;
     public float bananaVelocity;
 
+    //attack
+    public float minTimeBetweenJumps;
+    public float maxTimeBetweenJumps;
+    private float _jumpInterval; //generated between min and max randomly
+    private float _timeToJump;
+    private bool attackEnabled;
+    public Transform attackPosition;
+    public float attackRange;
+    public float damage;
+    public float attackProbability;
+
     public Transform feetPos;
     public LayerMask whatIsGround;
     private Rigidbody2D _rb;
+    private Animator anim;
 
     private void Start() {
         _rb = GetComponent<Rigidbody2D>();
         _jumpInterval = maxTimeBetweenJumps;
         _timeToHang = timeBetweenHangs;
+        anim = GetComponent<Animator>();
+        attackEnabled = false;
     }
     private void FixedUpdate() {
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -57,15 +65,22 @@ public class MonkeyMovement : MonoBehaviour {
 
     void Update() {
         _timeToJump += Time.deltaTime;
-        _timeToMovement += Time.deltaTime;
         _timeToHang += Time.deltaTime;
 
         //face right direction
         if (transform.position.x > player.position.x) {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localScale = new Vector2(1, 1);
         }
         else {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.localScale = new Vector2(-1, 1);
+        }
+
+        //make damage if attack enabled
+        if (attackEnabled) {
+            Collider2D[] coll = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, LayerMask.GetMask("Player"));
+            if(coll.Length > 0) {
+                coll[0].gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            }
         }
 
 
@@ -74,7 +89,10 @@ public class MonkeyMovement : MonoBehaviour {
             if (_isGrounded && _timeToJump >= _jumpInterval) {
                 _jumpInterval = Random.Range(minTimeBetweenJumps, maxTimeBetweenJumps);
                 _rb.velocity += Vector2.up * (jumpForce + Random.Range(0, 1f) * jumpForceVariance);
-                Invoke("LandOnPlayer", 1f);
+                float rand = Random.Range(0f, 1f);
+                if (rand > attackProbability) { 
+                    Invoke("LandOnPlayer", 1f);
+                }
                 _timeToJump = 0;
             }
 
@@ -98,6 +116,7 @@ public class MonkeyMovement : MonoBehaviour {
             if(_timeToGoDown >= hangTime) { //when detach from Tree
                 _rb.isKinematic = false;
                 isHanging = false;
+                anim.SetBool("isHanging", false);
                 _isJumping = false;
                 _timeToGoDown = 0;
                 _timeToHang = 0;
@@ -111,6 +130,7 @@ public class MonkeyMovement : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision) {
         if (_isJumping && collision.gameObject.layer == LayerMask.NameToLayer("HangTree") && _timeToHang >= timeBetweenHangs) {
             isHanging = true;
+            anim.SetBool("isHanging", true);
             _isJumping = false;
             _timeToHang = 0;
             _rb.isKinematic = true;
@@ -121,6 +141,7 @@ public class MonkeyMovement : MonoBehaviour {
     private void LandOnPlayer() {
         if (!isHanging) {
             _rb.velocity += ((Vector2)((player.position - transform.position).normalized) * chargeSpeed);
+            anim.SetTrigger("Attack");
         }
     }
     private Vector3 PickRandomPosition(float randomRange) {
@@ -135,8 +156,15 @@ public class MonkeyMovement : MonoBehaviour {
         GameObject banana = Instantiate(bananaPrefab);
         banana.GetComponent<BossProjectyle>().SetDamage(bananaDamage);
         banana.transform.position = transform.position;
-        banana.transform.rotation = Quaternion.FromToRotation(banana.transform.right, player.transform.position - banana.transform.position) * Quaternion.Euler(0, 0, Random.Range(-10, 10));
+        banana.transform.rotation = Quaternion.FromToRotation(banana.transform.right, player.transform.position - banana.transform.position) * Quaternion.Euler(0, 0, Random.Range(-20, 20));
         banana.GetComponent<Rigidbody2D>().velocity = banana.transform.right * bananaVelocity;
     }
 
+    public void EnableAttack() {
+        attackEnabled = true;
+    }
+
+    public void DisableAttack() {
+        attackEnabled = false;
+    }
 }
