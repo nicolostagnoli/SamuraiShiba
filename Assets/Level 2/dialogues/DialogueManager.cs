@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Crane
+namespace Monkey
 {
 
 
@@ -19,24 +19,23 @@ public class DialogueManager : MonoBehaviour {
 	private int _dialoguesCounter = 0;
 	
 	private Queue<string> _sentences;
-	public CraneDialogue craneDialogue;
+	public MonkeyDialogue monkeyDialogue;
 	public GameObject buttonA;
 	public DarkParticleEffect DarkParticleEffect;
 	public BossHealth BossHealth;
+	public GameObject bossHealthBar;
+	private Slider bossHealthBarSlider;
 	
 
 	private bool darkModeDialogueShown = false;
 	private bool bossHealthDialogueShown = false;
-	public GameObject GoldenShadow;
-
-	
-	public GameObject goldenShadowTrigger;
 
 	// Use this for initialization
 	void Start () {
 		_sentences = new Queue<string>();
 		TriggerDialogue();
 		Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
+		bossHealthBarSlider = bossHealthBar.GetComponent<Slider>();
 	}
 	
 	
@@ -46,7 +45,7 @@ public class DialogueManager : MonoBehaviour {
 	private void TriggerDialogue()
 	{
 		
-		craneDialogue.TriggerDialogue(_dialoguesCounter);
+		monkeyDialogue.TriggerDialogue(_dialoguesCounter);
 	}
 	
 
@@ -64,27 +63,18 @@ public class DialogueManager : MonoBehaviour {
 			darkModeDialogueShown = true;
 			print(_dialoguesCounter);
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			monkeyDialogue.TriggerDialogue(_dialoguesCounter);
 			
 
 		}
 		
-		if (BossHealth.bossDead == true && bossHealthDialogueShown == false)
+		if (bossHealthBarSlider.value <= 0 && bossHealthDialogueShown == false)
 		{
-			darkModeDialogueShown = true;
 			_dialoguesCounter = 7;
 			bossHealthDialogueShown = true;
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
-			goldenShadowTrigger.GetComponent<BoxCollider2D>().enabled = true;
+			monkeyDialogue.TriggerDialogue(_dialoguesCounter);
 			
-		}
-		
-		if (goldenShadowTrigger.GetComponent<goldenShadowAppear>().is_colliding == true)
-		{
-			GoldenShadow.gameObject.SetActive(true);
-			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
 		}
 		
 
@@ -118,11 +108,10 @@ public class DialogueManager : MonoBehaviour {
 
 		if (_sentences.Count == 0)
 		{
-			if ((_dialoguesCounter == 2) || (_dialoguesCounter == 6) || (_dialoguesCounter == 7))
+			if ((_dialoguesCounter == 2) || (_dialoguesCounter == 6))
 			{
 				animator.SetBool("IsOpen", false);
 				_dialoguesCounter++;
-				Time.timeScale = 1f;
 				return;
 			}
 			else
@@ -178,11 +167,6 @@ public class DialogueManager : MonoBehaviour {
 		if (_dialoguesCounter == 8)
 		{
 			Time.timeScale = 1f;
-			
-			
-			//GoldenSpirit.gameObject.SetActive(true);
-			
-			//Invoke("DisplayNextSentence", 1.5f);
 			
 		}
 		
