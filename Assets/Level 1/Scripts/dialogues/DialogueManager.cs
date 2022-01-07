@@ -27,8 +27,9 @@ public class DialogueManager : MonoBehaviour {
 
 	private bool darkModeDialogueShown = false;
 	private bool bossHealthDialogueShown = false;
+	private bool goldenShadowDialogueShown = false;
 	public GameObject GoldenShadow;
-
+	public GameObject arrow;
 	
 	public GameObject goldenShadowTrigger;
 
@@ -52,7 +53,7 @@ public class DialogueManager : MonoBehaviour {
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return) && (_dialoguesCounter ==0 | _dialoguesCounter ==1 | _dialoguesCounter ==3 |_dialoguesCounter ==4 | _dialoguesCounter ==5| _dialoguesCounter ==7) )
+		if (Input.GetKeyDown(KeyCode.Return) && (_dialoguesCounter ==0 | _dialoguesCounter ==1 | _dialoguesCounter ==3 |_dialoguesCounter ==4 | _dialoguesCounter ==5| _dialoguesCounter ==7| _dialoguesCounter ==9 ) )
 		{
 			
 			DisplayNextSentence();
@@ -80,11 +81,14 @@ public class DialogueManager : MonoBehaviour {
 			
 		}
 		
-		if (goldenShadowTrigger.GetComponent<goldenShadowAppear>().is_colliding == true)
+		if (goldenShadowTrigger.GetComponent<goldenShadowAppear>().is_colliding == true && goldenShadowDialogueShown==false)
 		{
+			goldenShadowDialogueShown = true;
 			GoldenShadow.gameObject.SetActive(true);
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
 			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			_dialoguesCounter++;
+			arrow.gameObject.SetActive(true);
 		}
 		
 
@@ -174,17 +178,13 @@ public class DialogueManager : MonoBehaviour {
 			Time.timeScale = 1f;
 			Invoke("DisplayNextSentence", 1.5f);
 		}
-
-		if (_dialoguesCounter == 8)
+		if (_dialoguesCounter ==10)
 		{
 			Time.timeScale = 1f;
-			
-			
-			//GoldenSpirit.gameObject.SetActive(true);
-			
-			//Invoke("DisplayNextSentence", 1.5f);
-			
+			Invoke("DisplayNextSentence", 1.5f);
 		}
+
+		
 		
 
 	}

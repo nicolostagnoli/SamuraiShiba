@@ -8,13 +8,13 @@ public class goldenShadowAppear : MonoBehaviour
 {
     public bool is_colliding = false;
     // Start is called before the first frame update
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
         is_colliding = true;
         Debug.Log("OnCollisionEnter2D");
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerExit2D(Collider2D collision) 
     {
         is_colliding = false;
         Debug.Log("OnCollisionEnter2D");

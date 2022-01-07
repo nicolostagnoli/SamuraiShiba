@@ -14,6 +14,14 @@ public class DarkParticleEffect : MonoBehaviour
 
     private bool darkModeisTrigger;
 
+    private PolygonCollider2D col;
+
+    private void Start()
+    {
+        col = GetComponent<PolygonCollider2D>();
+
+    }
+
     void Update()
     {
         timeSinceLastSpawn += Time.deltaTime;
@@ -27,17 +35,19 @@ public class DarkParticleEffect : MonoBehaviour
 
     void SpawnDarkAlongOutline()
     {
-        PolygonCollider2D col = GetComponent<PolygonCollider2D>();
-        int pathIndex = Random.Range(0, col.pathCount);
-        Vector2[] points = col.GetPath(pathIndex);
-        int pointIndex = Random.Range(0, points.Length);
-        
-        Vector2 pointA = points[pointIndex];
-        Vector2 pointB = points[(pointIndex+1) % points.Length];
+        if (col != null)
+        {
+            int pathIndex = Random.Range(0, col.pathCount);
+            Vector2[] points = col.GetPath(pathIndex);
+            int pointIndex = Random.Range(0, points.Length);
 
-        Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
+            Vector2 pointA = points[pointIndex];
+            Vector2 pointB = points[(pointIndex + 1) % points.Length];
 
-        SpawnDarkAtPosition(spawnPoint+(Vector2)transform.position);
+            Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
+
+            SpawnDarkAtPosition(spawnPoint + (Vector2) transform.position);
+        }
     }
 
     void SpawnDarkAtPosition(Vector2 position)
@@ -47,7 +57,6 @@ public class DarkParticleEffect : MonoBehaviour
 
     public void activateDarkMode()
     {
-        Debug.Log("dark mode is activated");
         darkModeisTrigger = true;
     }
 
@@ -55,5 +64,5 @@ public class DarkParticleEffect : MonoBehaviour
     {
         return darkModeisTrigger;
     }
-    
+
 }

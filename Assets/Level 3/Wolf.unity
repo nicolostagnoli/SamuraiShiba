@@ -454,7 +454,7 @@ MonoBehaviour:
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 190872556}
   woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
-  _healthBarScript: {fileID: 540976908}
+  _healthBarScript: {fileID: 0}
   invulnerabilityTime: 0.2
   maxHealth: 1500
   barScript: {fileID: 694598734}

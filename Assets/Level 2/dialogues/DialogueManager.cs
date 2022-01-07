@@ -29,6 +29,10 @@ public class DialogueManager : MonoBehaviour {
 
 	private bool darkModeDialogueShown = false;
 	private bool bossHealthDialogueShown = false;
+	private bool goldenShadowDialogueShown = false;
+	public GameObject GoldenShadow;
+	public GameObject arrow;
+	public GameObject goldenShadowTrigger;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +55,7 @@ public class DialogueManager : MonoBehaviour {
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return) && (_dialoguesCounter ==0 | _dialoguesCounter ==1 | _dialoguesCounter ==3 |_dialoguesCounter ==4 | _dialoguesCounter ==5| _dialoguesCounter ==7) )
+		if (Input.GetKeyDown(KeyCode.Return) && (_dialoguesCounter ==0 | _dialoguesCounter ==1 | _dialoguesCounter ==3 |_dialoguesCounter ==4 | _dialoguesCounter ==5| _dialoguesCounter ==7| _dialoguesCounter ==9 ) )
 		{
 			
 			DisplayNextSentence();
@@ -74,9 +78,19 @@ public class DialogueManager : MonoBehaviour {
 			bossHealthDialogueShown = true;
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
 			monkeyDialogue.TriggerDialogue(_dialoguesCounter);
+			goldenShadowTrigger.GetComponent<BoxCollider2D>().enabled = true;
 			
 		}
 		
+		if (goldenShadowTrigger.GetComponent<goldenShadowAppear>().is_colliding == true && goldenShadowDialogueShown==false)
+		{
+			goldenShadowDialogueShown = true;
+			GoldenShadow.gameObject.SetActive(true);
+			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
+			monkeyDialogue.TriggerDialogue(_dialoguesCounter);
+			_dialoguesCounter++;
+			arrow.gameObject.SetActive(true);
+		}
 
 	}
 
@@ -108,10 +122,11 @@ public class DialogueManager : MonoBehaviour {
 
 		if (_sentences.Count == 0)
 		{
-			if ((_dialoguesCounter == 2) || (_dialoguesCounter == 6))
+			if ((_dialoguesCounter == 2) || (_dialoguesCounter == 6)|| (_dialoguesCounter == 7))
 			{
 				animator.SetBool("IsOpen", false);
 				_dialoguesCounter++;
+				Time.timeScale = 1f;
 				return;
 			}
 			else
@@ -164,10 +179,10 @@ public class DialogueManager : MonoBehaviour {
 			Invoke("DisplayNextSentence", 1.5f);
 		}
 
-		if (_dialoguesCounter == 8)
+		if (_dialoguesCounter ==10)
 		{
 			Time.timeScale = 1f;
-			
+			Invoke("DisplayNextSentence", 1.5f);
 		}
 		
 

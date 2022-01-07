@@ -21,6 +21,8 @@ public class CountDownTimer : MonoBehaviour
     private DarkParticleEffect _darkParticleEffect;
     private DarkParticleEffect _projectileDarkParticleEffect;
 
+    private BossHealth _bossHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class CountDownTimer : MonoBehaviour
         _bossMovement=bossScript.GetComponent<BossMovement>();
         _darkParticleEffect = bossScript.GetComponentInChildren<DarkParticleEffect>();
         _projectileDarkParticleEffect = feather.GetComponentInChildren<DarkParticleEffect>();
+        _bossHealth = _bossMovement.gameObject.GetComponent<BossHealth>();
     }
 
     // Update is called once per frame
@@ -40,11 +43,12 @@ public class CountDownTimer : MonoBehaviour
         {
             countDownText.color = Color.red;
         }
-        
+
         if (currenTime <= 0)
         {
             currenTime = 0;
-            TriggerDarkMode();
+            if(_bossHealth.GetHealth()>0) TriggerDarkMode();
+
         }
     }
 

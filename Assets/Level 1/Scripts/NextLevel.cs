@@ -17,7 +17,7 @@ public class NextLevel : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().setSlots(StateNameController.playerInventory.slots);
             StateNameController.playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             StateNameController.playerInventory.setSlots(GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().slots);
-            SceneManager.LoadScene("Level 2/Scenes/Level2");
+            SceneManager.LoadScene(scene);
         }
     }
 }
