@@ -10,6 +10,7 @@ public class BossHealth : Enemy
     public GameObject chest;
     public Transform chestSpawnPosition;
     public NextLevel nextLevel;
+    public bool bossDead = false;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class BossHealth : Enemy
             PlayerInterface.Instance.Invoke("Pause", 3f);
             dropChest();
             nextLevel.GetComponent<BoxCollider2D>().enabled = true;
+            bossDead = true;
         }
 
         //boss health bar

@@ -13,13 +13,20 @@ public class DialogueManager : MonoBehaviour {
 
 	public Text nameText;
 	public Text dialogueText;
+	public Text continueText;
 
 	public Animator animator;
 	private int _dialoguesCounter = 0;
+	
 	private Queue<string> _sentences;
 	public CraneDialogue craneDialogue;
 	public GameObject buttonA;
+	public DarkParticleEffect DarkParticleEffect;
+	public BossHealth BossHealth;
 	
+
+	private bool darkModeDialogueShown = false;
+	private bool bossHealthDialogueShown = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,28 +43,36 @@ public class DialogueManager : MonoBehaviour {
 	{
 		
 		craneDialogue.TriggerDialogue(_dialoguesCounter);
-		if (_dialoguesCounter == 1)
-		{
-			buttonA.SetActive(true);
-		
-
-			//StartCoroutine(WaitForKeyYoBePressed1());
-			
-
-		}
-		
-		
 	}
 	
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.Return) && (_dialoguesCounter ==0 | _dialoguesCounter ==1 | _dialoguesCounter ==3 |_dialoguesCounter ==4 | _dialoguesCounter ==5| _dialoguesCounter ==7) )
 		{
 			
 			DisplayNextSentence();
 		}
+
+		if (DarkParticleEffect.darkModeisTrigger == true && darkModeDialogueShown == false)
+		{
+			
+			darkModeDialogueShown = true;
+			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
+			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			
+
+		}
 		
+		if (BossHealth.bossDead == true && bossHealthDialogueShown == false)
+		{
+			_dialoguesCounter = 7;
+			bossHealthDialogueShown = true;
+			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
+			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			
+		}
+
 	}
 
 	public void StartDialogue (Dialogue dialogue)
@@ -78,10 +93,28 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence ()
 	{
+		continueText.text = "Press enter to continue...";
+		if (_dialoguesCounter == 2 | _dialoguesCounter == 6)
+		{
+			continueText.text = "GET READY";
+		}
+
+
+
 		if (_sentences.Count == 0)
 		{
-			EndDialogue();
-			return;
+			if ((_dialoguesCounter == 2) || (_dialoguesCounter == 6))
+			{
+				animator.SetBool("IsOpen", false);
+				_dialoguesCounter++;
+				return;
+			}
+			else
+			{
+				EndDialogue();
+				return;
+			}
+			
 		}
 
 		string sentence = _sentences.Dequeue();
@@ -115,6 +148,22 @@ public class DialogueManager : MonoBehaviour {
 			Invoke("DisplayNextSentence", 1.5f);
 		}
 
+		if (_dialoguesCounter ==3)
+		{
+			Time.timeScale = 1f;
+			Invoke("DisplayNextSentence", 1.5f);
+		}
+		if (_dialoguesCounter ==6)
+		{
+			Time.timeScale = 1f;
+			Invoke("DisplayNextSentence", 1.5f);
+		}
+
+		if (_dialoguesCounter == 8)
+		{
+			Time.timeScale = 1f;
+			
+		}
 		
 
 	}

@@ -12,7 +12,7 @@ public class DarkParticleEffect : MonoBehaviour
 
     private float timeSinceLastSpawn = 0;
 
-    private bool darkModeisTrigger;
+    public bool darkModeisTrigger;
 
     void Update()
     {
