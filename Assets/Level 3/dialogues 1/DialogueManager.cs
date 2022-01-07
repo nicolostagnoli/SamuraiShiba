@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Crane
+namespace Wolf
 {
 
 
@@ -19,10 +19,10 @@ public class DialogueManager : MonoBehaviour {
 	private int _dialoguesCounter = 0;
 	
 	private Queue<string> _sentences;
-	public CraneDialogue craneDialogue;
+	public WolfDialogue wolfDialogue;
 	public GameObject buttonA;
 	public DarkParticleEffect DarkParticleEffect;
-	public BossHealth BossHealth;
+	private Slider bossHealthBarSlider;
 	
 
 	private bool darkModeDialogueShown = false;
@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour {
 	private bool goldenShadowDialogueShown = false;
 	public GameObject GoldenShadow;
 	public GameObject arrow;
+	public GameObject bossHealthBar;
 	
 	public GameObject goldenShadowTrigger;
 
@@ -38,6 +39,7 @@ public class DialogueManager : MonoBehaviour {
 		_sentences = new Queue<string>();
 		TriggerDialogue();
 		Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
+		bossHealthBarSlider = bossHealthBar.GetComponent<Slider>();
 	}
 	
 	
@@ -47,7 +49,7 @@ public class DialogueManager : MonoBehaviour {
 	private void TriggerDialogue()
 	{
 		
-		craneDialogue.TriggerDialogue(_dialoguesCounter);
+		wolfDialogue.TriggerDialogue(_dialoguesCounter);
 	}
 	
 
@@ -65,18 +67,18 @@ public class DialogueManager : MonoBehaviour {
 			darkModeDialogueShown = true;
 			print(_dialoguesCounter);
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			wolfDialogue.TriggerDialogue(_dialoguesCounter);
 			
 
 		}
 		
-		if (BossHealth.bossDead == true && bossHealthDialogueShown == false)
+		if (bossHealthBarSlider.value <= 0  && bossHealthDialogueShown == false)
 		{
 			darkModeDialogueShown = true;
 			_dialoguesCounter = 7;
 			bossHealthDialogueShown = true;
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			wolfDialogue.TriggerDialogue(_dialoguesCounter);
 			goldenShadowTrigger.GetComponent<BoxCollider2D>().enabled = true;
 			
 		}
@@ -86,7 +88,7 @@ public class DialogueManager : MonoBehaviour {
 			goldenShadowDialogueShown = true;
 			GoldenShadow.gameObject.SetActive(true);
 			Time.timeScale = 0.0000000000000000000000000000000000000000000001f;
-			craneDialogue.TriggerDialogue(_dialoguesCounter);
+			wolfDialogue.TriggerDialogue(_dialoguesCounter);
 			_dialoguesCounter++;
 			arrow.gameObject.SetActive(true);
 		}
