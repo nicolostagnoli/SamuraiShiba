@@ -400,9 +400,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1660974785}
   dialogueText: {fileID: 1565244954}
+  continueText: {fileID: 0}
   animator: {fileID: 1068402624}
   craneDialogue: {fileID: 592423805}
   buttonA: {fileID: 0}
+  DarkParticleEffect: {fileID: 822372907}
+  BossHealth: {fileID: 822372900}
 --- !u!4 &161595718
 Transform:
   m_ObjectHideFlags: 0
@@ -1809,6 +1812,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7537278469565992778, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
   m_PrefabInstance: {fileID: 2050272261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &822372900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
+  m_PrefabInstance: {fileID: 2050272261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822372895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c0dbdff6070804497fe7d6b15fd73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &822372905
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1905,6 +1919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
   Rate: 750
+  darkModeisTrigger: 0
 --- !u!1 &822842994
 GameObject:
   m_ObjectHideFlags: 0
