@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour {
 			DisplayNextSentence();
 		}
 
-		if (DarkParticleEffect.darkModeisTrigger == true && darkModeDialogueShown == false)
+		if (DarkParticleEffect.IsDarkModeTriggered() && darkModeDialogueShown == false)
 		{
 			
 			darkModeDialogueShown = true;

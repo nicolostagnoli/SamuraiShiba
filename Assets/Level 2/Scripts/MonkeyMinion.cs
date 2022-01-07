@@ -12,7 +12,6 @@ public class MonkeyMinion : Enemy
     private float _attackRange;
     [SerializeField]
     private float _moveSpeed;
-    public float initialHealth;
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     public Transform attackPosition;
@@ -34,7 +33,6 @@ public class MonkeyMinion : Enemy
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
         roamPosition = GetRoamingPosition();
-        SetHealth(initialHealth);
         _timeBetweenAttacks = 0.8f;
         animator = GetComponent<Animator>();
     }

@@ -12,7 +12,7 @@ public class DarkParticleEffect : MonoBehaviour
 
     private float timeSinceLastSpawn = 0;
 
-    public bool darkModeisTrigger;
+    private bool darkModeisTrigger;
 
     void Update()
     {
@@ -47,7 +47,13 @@ public class DarkParticleEffect : MonoBehaviour
 
     public void activateDarkMode()
     {
+        Debug.Log("dark mode is activated");
         darkModeisTrigger = true;
+    }
+
+    public bool IsDarkModeTriggered()
+    {
+        return darkModeisTrigger;
     }
     
 }

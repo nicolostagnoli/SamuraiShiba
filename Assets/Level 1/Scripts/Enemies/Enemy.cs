@@ -19,10 +19,10 @@ public class Enemy : MonoBehaviour
     public float invulnerabilityTime;
     private float timeToInvulnerability;
     private void Start() {
-        timeToInvulnerability = 0; 
+        timeToInvulnerability = invulnerabilityTime; 
     }
 
-    private void Update() {
+    public void Update() {
         timeToInvulnerability += Time.deltaTime;
     }
 

@@ -18,8 +18,10 @@ public class WolfMovement : BossMovement
     private float _timeToAttack = 3f;
     
     //DarkMode
-    [Header("DarkMode")]
-
+    [Header("DarkMode")] 
+    private bool _kunaiDarkMode;
+    private float _timeBetweenAttacks = 4f;
+    private float _meleeTime = 3.6f;
     //Teleport
     [Header("Teleport")]
     public List<GameObject> teleportPoints = new List<GameObject>();
@@ -39,7 +41,7 @@ public class WolfMovement : BossMovement
     [Header("ShadowKunai")] 
     public GameObject shadowKunaiPrefab;
     public float shadowKunaiVelocity;
-    //public float shadowKunaiDamage;
+    public float shadowKunaiDamage;
     //public float maxShootTime;
     //public float minShootTime;
     
@@ -47,6 +49,7 @@ public class WolfMovement : BossMovement
     [Header("Clones")]
     public GameObject wolfClonePrefab;
     private float _radiusSpawner = 10f;
+    public int numClones;
     
     //Melee Attack
     [Header("MeleeAttack")]
@@ -109,7 +112,7 @@ public class WolfMovement : BossMovement
         
         //Choose a random attack from DASH, CLONES, KUNAI
 
-        if (_timeToAttack >= 4f && _isReadyToAttack)
+        if (_timeToAttack >= _timeBetweenAttacks && _isReadyToAttack)
         {
             if (distFromShiba > 2f)
             {
@@ -127,7 +130,7 @@ public class WolfMovement : BossMovement
             }
             else
             {
-                _timeToAttack = 3.2f;
+                _timeToAttack = _meleeTime;
                 anim.SetTrigger("Melee");
             }
         }
@@ -179,12 +182,14 @@ public class WolfMovement : BossMovement
     {
         _timeToAttack = 0f;
         GameObject shadowKunai = Instantiate(shadowKunaiPrefab);
+        if(_kunaiDarkMode) shadowKunai.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
+        shadowKunai.GetComponent<BossProjectyle>().SetDamage(shadowKunaiDamage);
         shadowKunai.transform.position = transform.position;
         shadowKunai.transform.rotation = Quaternion.FromToRotation(shadowKunai.transform.right, shiba.transform.position - shadowKunai.transform.position);
         shadowKunai.GetComponent<Rigidbody2D>().velocity = shadowKunai.transform.right * shadowKunaiVelocity;
     }
 
-    void SpawnClones(int numClones)
+    void SpawnClones()
     {
         _timeToAttack = 0f;
         for (int i = 1; i <= numClones; i++)
@@ -202,8 +207,13 @@ public class WolfMovement : BossMovement
         Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
     }
 
-    public override void TriggerDarkMode(float damage, float speed, float prjectileDamage)
+    public override void TriggerDarkMode(float damage, float speed, float projectileDamage)
     {
-        //this.meleeDamage = damage;
+        meleeDamage = damage;
+        shadowKunaiDamage = projectileDamage;
+        _kunaiDarkMode = true;
+        numClones = 5;
+        _timeBetweenAttacks = 3f;
+        _meleeTime = 2.7f;
     }
 }

@@ -437,7 +437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
   Rate: 750
-  darkModeisTrigger: 0
 --- !u!114 &190872555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,10 +453,11 @@ MonoBehaviour:
   dropAmount: 5
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 190872556}
+  woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 540976908}
   invulnerabilityTime: 0.2
   maxHealth: 1500
-  barScript: {fileID: 540976908}
+  barScript: {fileID: 694598734}
   chest: {fileID: 0}
   chestSpawnPosition: {fileID: 0}
   nextLevel: {fileID: 0}
@@ -1015,6 +1015,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &694598734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5956895853402374724, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+  m_PrefabInstance: {fileID: 1853497491}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad000ada5c2656847889c510b5262d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793838967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1198578693233598302, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
@@ -1932,7 +1943,15 @@ PrefabInstance:
     - target: {fileID: 1479974992863114561, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5837209449844961135, guid: 8befa66a2d89d8b45b0366d6cceae694, type: 3}
+      objectReference: {fileID: -952761984627393443, guid: a9c9ce8a81ba65540a6c49757ad8fa8e, type: 3}
+    - target: {fileID: 3142524508882364610, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142524508882364610, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 3142524508882364610, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9797524
@@ -2011,7 +2030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_Name
-      value: CraneHealthBar
+      value: WolfHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 5956895853402374722, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
       propertyPath: m_TagString
@@ -2421,6 +2440,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 793838967}
     - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: numClones
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: meleeRange
       value: 0.6
       objectReference: {fileID: 0}
@@ -2436,6 +2459,10 @@ PrefabInstance:
       propertyPath: wolfClonePrefab
       value: 
       objectReference: {fileID: 9017634088001411057, guid: ae88b64736e50f94f9a4642fac394464, type: 3}
+    - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: shadowKunaiDamage
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: shadowKunaiPrefab
       value: 
