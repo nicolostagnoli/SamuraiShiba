@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonkeyMovement : MonoBehaviour {
+public class MonkeyMovement : BossMovement {
     //Jump
     public float jumpForce;
     public float jumpForceVariance;
@@ -45,6 +45,8 @@ public class MonkeyMovement : MonoBehaviour {
     public LayerMask whatIsGround;
     private Rigidbody2D _rb;
     private Animator anim;
+
+    private bool featherDarkMode;
 
     private void Start() {
         _rb = GetComponent<Rigidbody2D>();
@@ -154,6 +156,7 @@ public class MonkeyMovement : MonoBehaviour {
 
     void ThrowBanana() {
         GameObject banana = Instantiate(bananaPrefab);
+        if(featherDarkMode )banana.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
         banana.GetComponent<BossProjectyle>().SetDamage(bananaDamage);
         banana.transform.position = transform.position;
         banana.transform.rotation = Quaternion.FromToRotation(banana.transform.right, player.transform.position - banana.transform.position) * Quaternion.Euler(0, 0, Random.Range(-20, 20));
@@ -166,5 +169,10 @@ public class MonkeyMovement : MonoBehaviour {
 
     public void DisableAttack() {
         attackEnabled = false;
+    }
+
+    public override void TriggerDarkMode(float damage, float speed, float projectileDamage)
+    {
+        featherDarkMode = true;
     }
 }
