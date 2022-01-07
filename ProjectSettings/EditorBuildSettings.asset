@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level 3/Scenes/Wolf.unity
     guid: c86f28c90d8e4944d80743c5aa0ec8ab
+  - enabled: 1
+    path: Assets/Level4/Level4.unity
+    guid: f85ef0b5ba252c548a983e05c72d50ec
   m_configObjects: {}
