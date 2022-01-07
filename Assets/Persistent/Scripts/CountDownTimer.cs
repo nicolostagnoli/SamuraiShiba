@@ -14,20 +14,20 @@ public class CountDownTimer : MonoBehaviour
     public GameObject bossScript;
     public GameObject feather;
 
-    private CraneMovement _craneMovement;
+    private BossMovement _bossMovement;
 
     [SerializeField] Text countDownText;
 
     private DarkParticleEffect _darkParticleEffect;
-    private DarkParticleEffect _featherDarkParticleEffect;
+    private DarkParticleEffect _projectileDarkParticleEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         currenTime = startingTime;
-        _craneMovement=bossScript.GetComponent<CraneMovement>();
+        _bossMovement=bossScript.GetComponent<BossMovement>();
         _darkParticleEffect = bossScript.GetComponentInChildren<DarkParticleEffect>();
-        _featherDarkParticleEffect = feather.GetComponentInChildren<DarkParticleEffect>();
+        _projectileDarkParticleEffect = feather.GetComponentInChildren<DarkParticleEffect>();
     }
 
     // Update is called once per frame
@@ -50,8 +50,8 @@ public class CountDownTimer : MonoBehaviour
 
     void TriggerDarkMode()
     {
-        _craneMovement.TriggerDarkMode(30,4,20);
-        _featherDarkParticleEffect.activateDarkMode();
+        _bossMovement.TriggerDarkMode(30,4,20);
+        _projectileDarkParticleEffect.activateDarkMode();
         _darkParticleEffect.activateDarkMode();
         countDownText.fontSize = 30;
         countDownText.text = "THE CRANE IS ON DARK MODE";

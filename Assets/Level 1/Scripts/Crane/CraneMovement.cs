@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CraneMovement : MonoBehaviour {
+public class CraneMovement : BossMovement {
 
     private float timeToHeal;
     private float timeToShoot;
@@ -253,11 +253,11 @@ public class CraneMovement : MonoBehaviour {
         Gizmos.DrawWireSphere(attackPosition.position, attackRange);
     }
 
-    public void TriggerDarkMode(float damage, float speed, float featherDamage)
+    public override void TriggerDarkMode(float damage, float speed, float projectileDamage)
     {
         this.damage = damage;
         _speed = speed;
-        this.featherDamage = featherDamage;
+        this.featherDamage = projectileDamage;
         featherDarkMode = true;
         featherPrefab.GetComponentInChildren<DarkParticleEffect>().activateDarkMode();
         featherGroup = 3;
