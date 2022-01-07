@@ -9,6 +9,7 @@ public class WolfMovement : MonoBehaviour
 {
     public GameObject shiba;
     private Rigidbody2D _rb;
+    private Animator anim;
     public LayerMask whatIsGround;
     public Transform feetPos;
     //private bool _isShibaInRange;
@@ -48,6 +49,7 @@ public class WolfMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _isReadyToAttack = true;
         _wolfRenderer = GetComponentInChildren<Renderer>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -78,7 +80,8 @@ public class WolfMovement : MonoBehaviour
         //Teleport in a random spot every 5 seconds
         if (_timeToTeleport >= 6f)
         {
-            Teleport();
+            anim.SetTrigger("Teleport");
+            //Teleport();
         }
         
         
@@ -92,17 +95,20 @@ public class WolfMovement : MonoBehaviour
                 if (randomValue == 0)
                 {
                     _timeToAttack = 0f;
-                    ThrowShadowKunai();
+                    anim.SetTrigger("Kunai");
+                    //ThrowShadowKunai();
                 }
                 else
                 {
                     _timeToAttack = 0f;
-                    SpawnClones(4);
+                    anim.SetTrigger("Clone");
+                    //SpawnClones(4);
                 }
             }
             else
             {
-                _timeToAttack = 0f;
+                _timeToAttack = 3.2f;
+                anim.SetTrigger("Melee");
                 //Melee attack
             }
         }

@@ -351,12 +351,14 @@ MonoBehaviour:
   dropAmount: 5
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 190872556}
+  _healthBarScript: {fileID: 0}
   invulnerabilityTime: 0.2
   maxHealth: 1500
   barScript: {fileID: 540976908}
   chest: {fileID: 0}
-  singleDrop: 0
   chestSpawnPosition: {fileID: 0}
+  nextLevel: {fileID: 0}
+  bossDead: 0
 --- !u!114 &190872556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,6 +1693,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32287390094823832, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b7156683f971331489523ce59be14203, type: 2}
     - target: {fileID: 4352962358290764682, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1748,6 +1754,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9017634088001411057, guid: ae88b64736e50f94f9a4642fac394464, type: 3}
     - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: shadowKunaiPrefab
+      value: 
+      objectReference: {fileID: 4147787978139971670, guid: 30d483a0f49bdd24a8cb457e75bad39d, type: 3}
+    - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: teleportPoints.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -1787,5 +1797,17 @@ PrefabInstance:
       propertyPath: teleportPoints.Array.data[8]
       value: 
       objectReference: {fileID: 2107430403}
+    - target: {fileID: 5309733745672493985, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309733745672493985, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309733745672493985, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1441002311
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
