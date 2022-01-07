@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private int dropAmount = 5;
     public GameObject blood;
     public HitEffect hitEffect;
+    public GameObject woodenHitEffect;
     public HealthBarScript _healthBarScript;
 
 
@@ -32,7 +33,8 @@ public class Enemy : MonoBehaviour
 
             hitEffect.Flash();
             _health -= damage;
-            if(_healthBarScript!= null)_healthBarScript.SetHealth(GetHealth());
+            Instantiate(woodenHitEffect, transform.position, Quaternion.identity, transform);
+            if (_healthBarScript!= null)_healthBarScript.SetHealth(GetHealth());
             if (_health <= 0) {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 DropLoot();
