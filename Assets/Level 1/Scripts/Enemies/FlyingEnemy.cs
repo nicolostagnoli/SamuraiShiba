@@ -19,7 +19,7 @@ public class FlyingEnemy : Enemy
     public int damage;
     public LayerMask player;
     private float _timer;
-    private float _timeBetweenAttacks;
+    public float _timeBetweenAttacks;
     private bool inAttackRange;
     public GameObject featherPrefab;
 

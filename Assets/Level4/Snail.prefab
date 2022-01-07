@@ -153,7 +153,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1221647851756269208}
   woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 333583756629432579}
-  invulnerabilityTime: 0.2
+  invulnerabilityTime: 0.4
   _player: {fileID: 0}
   _agroRange: 3
   _moveSpeed: 1

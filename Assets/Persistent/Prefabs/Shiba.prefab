@@ -4995,8 +4995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comboContLight: 0
   _comboContHeavy: 0
-  startTimeBetweenLightAttacks: 0.5
-  startTimeBetweenHeavyAttacks: 0.7
+  startTimeBetweenLightAttacks: 0.55
+  startTimeBetweenHeavyAttacks: 0.75
   attackPosition: {fileID: 4167753217064836030}
   whatIsEnemy:
     serializedVersion: 2
@@ -5008,7 +5008,6 @@ MonoBehaviour:
   comboDamageBoost: 0.7
   lightAttackStamina: 10
   heavyAttackStamina: 20
-  hitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
 --- !u!114 &8442788336162533092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5023,6 +5022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMaxStamina: 100
   PlayerMaxHealth: 100
+  healthBarScript: {fileID: 0}
+  staminaBarScript: {fileID: 0}
   hitEffect: {fileID: 3709326142677595105}
   staminaRegenerationSpeed: 10
   healthRegenerationSpeed: 1.5
@@ -5057,7 +5058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee91630c987ba4fa6c78c7bdc04c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCooldown: 2
+  _attackCooldown: 0.5
   firePoint: {fileID: 4167753217064836030}
   shurikenPrefab: {fileID: 4847237043305194295, guid: 9b85776e6cf57d54d9e16bc4ee62b604, type: 3}
 --- !u!114 &3709326142677595105

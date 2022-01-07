@@ -11932,7 +11932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675474345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.26, y: -0.04, z: 0}
+  m_LocalPosition: {x: -1.26, y: 0.19, z: 0}
   m_LocalScale: {x: 1.5618304, y: 1.532732, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14220,7 +14220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862131647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2828, y: 0.017, z: 0}
+  m_LocalPosition: {x: -1.2828, y: 0.19, z: 0}
   m_LocalScale: {x: 29.94498, y: 16.53627, z: 10.05}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14370,7 +14370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currenTime: 0
-  startingTime: 10
+  startingTime: 60
   bossScript: {fileID: 1850143736}
   feather: {fileID: 9089927028098948925, guid: 47644300333eec447a72d9a587f4fe33, type: 3}
   countDownText: {fileID: 123913809}

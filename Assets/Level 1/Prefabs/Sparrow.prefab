@@ -308,15 +308,16 @@ MonoBehaviour:
   _healthBarScript: {fileID: 2205427794825405208}
   invulnerabilityTime: 0.2
   _player: {fileID: 0}
-  _agroRange: 7
-  _attackRange: 5
-  _moveSpeed: 2
+  _agroRange: 8
+  _attackRange: 3.5
+  _moveSpeed: 2.5
   initialHealth: 25
   attackPosition: {fileID: 4464706017987938060}
   damage: 7
   player:
     serializedVersion: 2
     m_Bits: 8
+  _timeBetweenAttacks: 1.2
   featherPrefab: {fileID: 7740872756213349240, guid: 92e8487ce5297d04b9d09ec5a213e6f3, type: 3}
 --- !u!114 &267044622846105996
 MonoBehaviour:
