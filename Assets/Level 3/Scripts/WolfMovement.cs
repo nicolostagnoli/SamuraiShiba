@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
-public class WolfMovement : MonoBehaviour
+public class WolfMovement : BossMovement
 {
     public GameObject shiba;
     private Rigidbody2D _rb;
@@ -17,6 +17,9 @@ public class WolfMovement : MonoBehaviour
     private bool _isReadyToAttack;
     private float _timeToAttack = 3f;
     
+    //DarkMode
+    [Header("DarkMode")]
+
     //Teleport
     [Header("Teleport")]
     public List<GameObject> teleportPoints = new List<GameObject>();
@@ -44,6 +47,14 @@ public class WolfMovement : MonoBehaviour
     [Header("Clones")]
     public GameObject wolfClonePrefab;
     private float _radiusSpawner = 10f;
+    
+    //Melee Attack
+    [Header("MeleeAttack")]
+    public Transform attackPoint;
+    public float meleeRange;
+    private bool _canMeleeAttack;
+    public LayerMask whatIsPlayer;
+    public float meleeDamage;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -56,6 +67,17 @@ public class WolfMovement : MonoBehaviour
         _timeToAttack += Time.deltaTime;
         _timeToTeleport += Time.deltaTime;
         print("Time to teleport: " + _timeToTeleport);
+        
+        //Check for melee attack
+        if (_canMeleeAttack)
+        {
+            Collider2D[] playerToAttack = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, whatIsPlayer);
+            if (playerToAttack.Length > 0)
+            {
+                PlayerStats stats = playerToAttack[0].GetComponent<PlayerStats>();
+                stats.TakeDamage(meleeDamage);
+            }
+        }
 
         //check distance from Shiba
         float distFromShiba = Vector3.Distance(shiba.transform.position,transform.position);
@@ -96,24 +118,20 @@ public class WolfMovement : MonoBehaviour
                 {
                     _timeToAttack = 0f;
                     anim.SetTrigger("Kunai");
-                    //ThrowShadowKunai();
                 }
                 else
                 {
                     _timeToAttack = 0f;
                     anim.SetTrigger("Clone");
-                    //SpawnClones(4);
                 }
             }
             else
             {
                 _timeToAttack = 3.2f;
                 anim.SetTrigger("Melee");
-                //Melee attack
             }
         }
     }
-    
     //Teleport in a different location then chose an attack
     void Teleport()
     {
@@ -141,10 +159,15 @@ public class WolfMovement : MonoBehaviour
         _isReadyToAttack = true;
     }
 
-    /*void MeleeAttack()
+    void EnableMeleeCollider()
     {
-        //Add the animation of melee attack
-    }*/
+        _canMeleeAttack = true;
+    }
+
+    void DisableMeleeCollider()
+    {
+        _canMeleeAttack = false;
+    }
     /*void DashAttack()
     {
         _timeToAttack = 0f;
@@ -171,5 +194,16 @@ public class WolfMovement : MonoBehaviour
             wolfClone.transform.position = new Vector3(shiba.transform.position.x + spawnPoint, transform.position.y,
                 transform.position.z);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
+    }
+
+    public override void TriggerDarkMode(float damage, float speed, float prjectileDamage)
+    {
+        //this.meleeDamage = damage;
     }
 }
