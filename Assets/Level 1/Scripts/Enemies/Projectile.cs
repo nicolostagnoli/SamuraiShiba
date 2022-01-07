@@ -35,7 +35,6 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
         if (collision.GetComponent<Enemy>())
         {
             collision.GetComponent<Enemy>().TakeDamage(_projectileDamage);

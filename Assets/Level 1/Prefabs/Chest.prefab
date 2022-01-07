@@ -126,9 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: 451ad8409ed6eb549a4f70f2e5ed57d8, type: 2}
+  dropAmount: 5
   blood: {fileID: 6912025550447371134, guid: 38c22ae445f386746a5b40e8caf41c5d, type: 3}
   hitEffect: {fileID: 7873503647809829952}
+  _healthBarScript: {fileID: 0}
   invulnerabilityTime: 0
+  initialHealth: 100
 --- !u!50 &-2223157256891301987
 Rigidbody2D:
   serializedVersion: 4

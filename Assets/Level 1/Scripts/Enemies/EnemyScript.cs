@@ -34,6 +34,7 @@ public class EnemyScript : Enemy
     public Transform pointA;
     public Transform pointB;
     private bool isInvisible;
+    public GameObject canvas;
 
 
 
@@ -169,6 +170,7 @@ public class EnemyScript : Enemy
     private void InvisibilityActivated()
     {
         isInvisible = true;
+        canvas.SetActive(false);
         firstTeletrasport = true;
         Color tmp = GetComponent<SpriteRenderer>().color;
         tmp.a = 0f;
@@ -199,16 +201,17 @@ public class EnemyScript : Enemy
         tmp.a = 1f;
         GetComponent<SpriteRenderer>().color = tmp;
         isInvisible = false;
+        canvas.SetActive(true);
         
         //GetComponent<BoxCollider2D>().enabled = true;
         if (transform.position.x < _player.position.x)
         {
-            TurnRight();
+            TurnLeft();
 
         }
         else if(transform.position.x > _player.position.x)
         {
-            TurnLeft();
+            TurnRight();
         }
         GameObject feather = Instantiate(kunai,transform.position, Quaternion.identity);
         //da cambiare con il kunai 

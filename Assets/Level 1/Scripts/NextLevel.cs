@@ -14,8 +14,8 @@ public class NextLevel : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().getHealth();
             StateNameController.playerStamina =
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().getStamina();
-            StateNameController.playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponents<Inventory>()[0];
-            Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>());
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().setSlots(StateNameController.playerInventory.slots);
+            StateNameController.playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             StateNameController.playerInventory.setSlots(GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().slots);
             SceneManager.LoadScene("Level 2/Scenes/Level2");
         }

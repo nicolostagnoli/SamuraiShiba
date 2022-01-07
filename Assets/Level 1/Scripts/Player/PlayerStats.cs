@@ -38,9 +38,13 @@ public class PlayerStats : MonoBehaviour
             {
                 if (_inventory.slots[i].GetItemButton() != null)
                 {
-                    Instantiate(_inventory.slots[i].GetItemButton(), _playerInventory.slots[i].transform, false);
-                    _playerInventory.slots[i].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[i].ToString();
-                    _playerInventory.currentStack[i] = StateNameController.playerInventory.currentStack[i];
+                    if (_inventory.currentStack[i] > 0)
+                    {
+                        Instantiate(_inventory.slots[i].GetItemButton(), _playerInventory.slots[i].transform, false);
+                        _playerInventory.slots[i].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[i].ToString();
+                        _playerInventory.currentStack[i] = StateNameController.playerInventory.currentStack[i];
+                    }
+
                 }
             }
         }
