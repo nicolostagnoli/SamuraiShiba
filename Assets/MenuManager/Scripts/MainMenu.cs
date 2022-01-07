@@ -18,6 +18,7 @@ using UnityEngine.SceneManagement;
             if (MenuManager.Instance != null)
             //MenuManager.Instance.OpenMenu(PlayerInterface.Instance);
             MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
             SceneManager.LoadScene("Tutorial/Scenes/Tutorial");
         }
 
@@ -57,7 +58,8 @@ using UnityEngine.SceneManagement;
         {
             if (GameOverMenu.Instance != null)
             MenuManager.Instance.SetNonActiveSpecificMenu(GameOverMenu.Instance);
-            MenuManager.Instance.OpenSpecificMenu(MainMenu.Instance);
+            MenuManager.Instance.OpenMenu(MainMenu.Instance);
+          
             SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
             
             
