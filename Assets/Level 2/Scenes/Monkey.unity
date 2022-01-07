@@ -2919,6 +2919,7 @@ GameObject:
   - component: {fileID: 1850143741}
   - component: {fileID: 1850143738}
   - component: {fileID: 1850143743}
+  - component: {fileID: 1850143745}
   m_Layer: 8
   m_Name: Monkey
   m_TagString: Untagged
@@ -3053,9 +3054,10 @@ MonoBehaviour:
   dropAmount: 5
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 1850143741}
+  woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 0}
   invulnerabilityTime: 0.25
-  maxHealth: 225
+  maxHealth: 300
   barScript: {fileID: 1990144204}
   chest: {fileID: 0}
   chestSpawnPosition: {fileID: 0}
@@ -3119,7 +3121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5346911050268031053, guid: 7681783aa950d18408ac601d3314423e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3131,6 +3133,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1850143745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850143736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5024636b74a2ae946b8429b394c64c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
+  Rate: 500
+  darkModeisTrigger: 0
 --- !u!1 &1862131647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,6 +3284,10 @@ PrefabInstance:
     - target: {fileID: 1198578693233598302, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: m_Name
       value: Shiba
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010953476913594263, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: GameOverScreen

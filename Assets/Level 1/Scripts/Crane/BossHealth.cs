@@ -23,7 +23,7 @@ public class BossHealth : Enemy
         barScript.SetHealth(GetHealth());
         if (GetHealth() <= 0)
         {
-            PlayerInterface.Instance.Invoke("Pause", 3f);
+            //PlayerInterface.Instance.Invoke("Pause", 3f);
             dropChest();
             nextLevel.GetComponent<BoxCollider2D>().enabled = true;
             bossDead = true;

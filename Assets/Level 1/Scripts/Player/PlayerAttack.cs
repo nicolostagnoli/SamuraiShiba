@@ -27,8 +27,6 @@ public class PlayerAttack : MonoBehaviour
     public float lightAttackStamina;
     public float heavyAttackStamina;
 
-    public GameObject hitEffect;
-
     // Start is called before the first frame update
     private void Start() {
         _timeBetweenAttacks = 0;
@@ -79,7 +77,6 @@ public class PlayerAttack : MonoBehaviour
             Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
             for (int i = 0; i < enemiesToAttack.Length; i++) {
                 enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(lightDamage + _comboContHeavy * comboDamageBoost);
-                Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
                 CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f); 
             }
         }
@@ -88,7 +85,6 @@ public class PlayerAttack : MonoBehaviour
             Collider2D[] enemiesToAttack = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnemy);
             for (int i = 0; i < enemiesToAttack.Length; i++) {
                 enemiesToAttack[i].gameObject.GetComponent<Enemy>().TakeDamage(heavyDamage + _comboContHeavy * comboDamageBoost);
-                Instantiate(hitEffect, enemiesToAttack[i].transform.position, Quaternion.identity, enemiesToAttack[i].gameObject.transform);
                 CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
             }
         }
