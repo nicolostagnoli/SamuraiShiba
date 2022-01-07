@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
 	public Text continueText;
 
+	public PlayerController playerController;
+
 	public Animator animator;
 	private int _dialoguesCounter = 0;
 	
@@ -180,6 +182,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 		if (_dialoguesCounter ==10)
 		{
+			playerController.jumpForce = 10f;
 			Time.timeScale = 1f;
 			Invoke("DisplayNextSentence", 1.5f);
 		}

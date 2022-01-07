@@ -401,6 +401,7 @@ MonoBehaviour:
   nameText: {fileID: 1660974785}
   dialogueText: {fileID: 1565244954}
   continueText: {fileID: 646662090}
+  playerController: {fileID: 833739727}
   animator: {fileID: 1068402624}
   craneDialogue: {fileID: 592423805}
   buttonA: {fileID: 0}
@@ -2152,6 +2153,17 @@ Transform:
   m_Father: {fileID: 968678991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833739727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5598778780533556487, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+  m_PrefabInstance: {fileID: 1922399597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3b9dc37d87b5d429637c3a1692a62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &917480377 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5956895853402374723, guid: f12db268a24f68c4ca4fc7a021115308, type: 3}
