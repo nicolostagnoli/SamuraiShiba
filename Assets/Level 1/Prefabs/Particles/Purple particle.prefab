@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2510206970786795047}
   - component: {fileID: 5785909382687722288}
   - component: {fileID: 2569478947502647513}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Purple particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4586034752946325184}
   - component: {fileID: 1530251827748411635}
   - component: {fileID: -1749737859339916528}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Purple particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8140230556608118561}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Missing Prefab (Dummy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8423788554613951210}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Darker purple particle (Missing Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

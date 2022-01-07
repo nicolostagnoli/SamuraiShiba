@@ -11962,7 +11962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681816852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 0, z: 0}
+  m_LocalPosition: {x: -0.86, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1850143740}
@@ -13814,9 +13814,9 @@ MonoBehaviour:
   jumpForceVariance: 1.5
   player: {fileID: 1441065966}
   desiredPosition: {x: 0, y: 0, z: 0}
-  speed: 2.75
+  speed: 2.5
   chargeSpeed: 3.5
-  timeBetweenHangs: 10
+  timeBetweenHangs: 5
   hangTime: 2
   bananaPrefab: {fileID: 9089927028098948925, guid: 47644300333eec447a72d9a587f4fe33, type: 3}
   shootTime: 0.4
@@ -13825,9 +13825,9 @@ MonoBehaviour:
   minTimeBetweenJumps: 0.35
   maxTimeBetweenJumps: 0.8
   attackPosition: {fileID: 681816853}
-  attackRange: 2
-  damage: 15
-  attackProbability: 0.65
+  attackRange: 1.5
+  damage: 8
+  attackProbability: 0.6
   feetPos: {fileID: 116092284}
   whatIsGround:
     serializedVersion: 2
@@ -13928,7 +13928,7 @@ MonoBehaviour:
   woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 0}
   invulnerabilityTime: 0.25
-  maxHealth: 50
+  maxHealth: 600
   barScript: {fileID: 1990144204}
   chest: {fileID: 9100316239940630846, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
   chestSpawnPosition: {fileID: 200532229}
