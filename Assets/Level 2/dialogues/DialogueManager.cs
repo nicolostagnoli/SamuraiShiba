@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour {
 			
 		}
 		
-		if (goldenShadowTrigger.GetComponent<goldenShadowAppear>().is_colliding == true && goldenShadowDialogueShown==false)
+		if (goldenShadowTrigger.GetComponent<GoldenShadowAppear>().is_colliding == true && goldenShadowDialogueShown==false)
 		{
 			goldenShadowDialogueShown = true;
 			GoldenShadow.gameObject.SetActive(true);

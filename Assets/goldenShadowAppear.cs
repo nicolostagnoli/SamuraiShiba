@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 
-public class goldenShadowAppear : MonoBehaviour
+public class GoldenShadowAppear : MonoBehaviour
 {
     public bool is_colliding = false;
     // Start is called before the first frame update
