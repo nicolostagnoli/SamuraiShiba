@@ -13,7 +13,6 @@ public class WolfMovement : BossMovement
     public LayerMask whatIsGround;
     public Transform feetPos;
     //private bool _isShibaInRange;
-    private bool _isGrounded;
     private bool _isReadyToAttack;
     private float _timeToAttack = 3f;
     
@@ -27,28 +26,16 @@ public class WolfMovement : BossMovement
     public List<GameObject> teleportPoints = new List<GameObject>();
     private float _timeToTeleport = 3f;
     private Renderer _wolfRenderer;
-
-        //DashAttack
-    [Header("DashAttack")]
-    //private float checkRadius = 0.5f;
-    //private float _timeDashing;
-    //private float _timeToDash = 2f;
-    private float _dashSpeed = 5f;
-    private float _facingDirection;
-    //private bool _isDashing;
     
     //ShadowKunai
     [Header("ShadowKunai")] 
     public GameObject shadowKunaiPrefab;
     public float shadowKunaiVelocity;
     public float shadowKunaiDamage;
-    //public float maxShootTime;
-    //public float minShootTime;
-    
+
     //Clones
     [Header("Clones")]
     public GameObject wolfClonePrefab;
-    private float _radiusSpawner = 10f;
     public int numClones;
     
     //Melee Attack
@@ -88,12 +75,10 @@ public class WolfMovement : BossMovement
         
         if (transform.position.x > shiba.transform.position.x)
         {
-            _facingDirection = -1f;
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else
         {
-            _facingDirection = 1f;
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 

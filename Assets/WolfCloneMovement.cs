@@ -6,7 +6,6 @@ using UnityEngine;
 public class WolfCloneMovement : Enemy
 {
     private GameObject _shiba;
-    private float _constY = -2.34f;
     private float _movementSpeed = 1.5f; 
     public  float initialHealth = 1;
     public float damage = 3;
