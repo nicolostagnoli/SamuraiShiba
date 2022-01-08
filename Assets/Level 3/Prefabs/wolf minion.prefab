@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 4868973330201475015}
   - component: {fileID: 4351502110017067453}
   - component: {fileID: 4351502110017067454}
+  - component: {fileID: -5066125637494360045}
   m_Layer: 8
   m_Name: wolf minion
   m_TagString: Enemy
@@ -452,6 +453,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
   duration: 0
+--- !u!95 &-5066125637494360045
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868973330201475008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88290bc1dad831841ba3e662025f36a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8316189792686995819
 GameObject:
   m_ObjectHideFlags: 0

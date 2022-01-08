@@ -403,9 +403,9 @@ MonoBehaviour:
   dropAmount: 1
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 6588095854842372225}
-  woodenHitEffect: {fileID: 0}
+  woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 3426089596674393793}
-  invulnerabilityTime: 0
+  invulnerabilityTime: 0.1
   _player: {fileID: 0}
   _agroRange: 5
   _attackRange: 2
