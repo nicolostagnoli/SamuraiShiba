@@ -5003,7 +5003,7 @@ MonoBehaviour:
   attackPosition: {fileID: 4167753217064836030}
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 73984
   attackRange: 0.4
   lightDamage: 8
   heavyDamage: 15

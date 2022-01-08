@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfCloneMovement : MonoBehaviour
+public class WolfCloneMovement : Enemy
 {
     private GameObject _shiba;
     private float _constY = -2.34f;
     private float _movementSpeed = 1.5f; 
+    public  float initialHealth = 1;
+    public float damage = 3;
     // Start is called before the first frame update
     void Start()
     {
         _shiba = GameObject.FindWithTag("Player");
+        SetHealth(initialHealth);
     }
     // Update is called once per frame
     void Update()
@@ -52,6 +55,7 @@ public class WolfCloneMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }
