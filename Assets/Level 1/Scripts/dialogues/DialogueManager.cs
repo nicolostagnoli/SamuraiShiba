@@ -182,7 +182,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 		if (_dialoguesCounter ==10)
 		{
-			playerController.jumpForce = 10f;
+			//playerController.jumpForce = 10f;
 			Time.timeScale = 1f;
 			Invoke("DisplayNextSentence", 1.5f);
 		}
