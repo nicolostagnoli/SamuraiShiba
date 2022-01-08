@@ -1848,6 +1848,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1198578693233598302, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
   m_PrefabInstance: {fileID: 1343983976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &793838973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5598778780533556487, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+  m_PrefabInstance: {fileID: 1343983976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793838967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3b9dc37d87b5d429637c3a1692a62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &823266511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12174,7 +12185,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1248505815
   m_SortingLayer: -4
-  m_SortingOrder: 90
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81d1a198d05c6ea4d94ac14df9f0cdb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12235,7 +12246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currenTime: 0
-  startingTime: 10
+  startingTime: 60
   bossScript: {fileID: 190872550}
   feather: {fileID: 4147787978139971670, guid: 30d483a0f49bdd24a8cb457e75bad39d, type: 3}
   countDownText: {fileID: 379451208}
@@ -12465,7 +12476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292733920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.72, y: 6.56, z: 0}
+  m_LocalPosition: {x: -1.72, y: 7.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1689467014}
@@ -12604,6 +12615,7 @@ MonoBehaviour:
   nameText: {fileID: 1310834039}
   dialogueText: {fileID: 3255382}
   continueText: {fileID: 1448375206}
+  playerController: {fileID: 793838973}
   animator: {fileID: 1600481595}
   wolfDialogue: {fileID: 296399882}
   buttonA: {fileID: 0}
@@ -13620,7 +13632,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1248505815
   m_SortingLayer: -4
-  m_SortingOrder: 90
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81d1a198d05c6ea4d94ac14df9f0cdb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14287,6 +14299,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 694598734}
     - target: {fileID: 190872555, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 190872555, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: nextLevel
       value: 
       objectReference: {fileID: 215134559}
@@ -14298,6 +14314,10 @@ PrefabInstance:
       propertyPath: chestSpawnPosition
       value: 
       objectReference: {fileID: 1629259834}
+    - target: {fileID: 787511353544597650, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4352962358290764682, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -14346,6 +14366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 4352962358290764683, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4352962358290764725, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: shiba
       value: 
@@ -14386,5 +14410,9 @@ PrefabInstance:
       propertyPath: teleportPoints.Array.data[8]
       value: 
       objectReference: {fileID: 2107430403}
+    - target: {fileID: 4352962358338349565, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}

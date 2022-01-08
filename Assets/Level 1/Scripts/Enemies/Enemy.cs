@@ -40,12 +40,17 @@ public class Enemy : MonoBehaviour
                 DropLoot();
                 if (gameObject.name == "Crane")
                 {
-                    StateNameController.jumpForce = 10f;
+                    StateNameController.jumpForce = 8f;
                 }
 
                 if (gameObject.name == "Wolf")
                 {
                     StateNameController.dashSpeed = 5f;
+                }
+
+                if (gameObject.name == "Monkey")
+                {
+                    StateNameController.attackRange = 0.5f;
                 }
                 Destroy(gameObject);
                 //anim.SetTrigger("die")
