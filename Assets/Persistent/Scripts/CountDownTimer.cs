@@ -58,6 +58,6 @@ public class CountDownTimer : MonoBehaviour
         _projectileDarkParticleEffect.activateDarkMode();
         _darkParticleEffect.activateDarkMode();
         countDownText.fontSize = 30;
-        countDownText.text = "THE CRANE IS ON DARK MODE";
+        countDownText.text = "";
     }
 }
