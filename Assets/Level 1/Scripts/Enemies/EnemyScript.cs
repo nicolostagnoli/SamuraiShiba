@@ -82,7 +82,6 @@ public class EnemyScript : Enemy
             }
             if (isInvisible)
             {
-                //Debug.Log("invisibility duration " +invisibilityDurationCooldown);
                 invisibilityDurationCooldown -= Time.deltaTime;
                 if(invisibilityDurationCooldown<=0) RandomTeletrasport(); 
             }
@@ -196,8 +195,8 @@ public class EnemyScript : Enemy
         invisibilityDurationCooldown = invisibilityDuration ;
         //Random position within the player
         float randomNumber = Random.Range(0f, 1f);
-        if(randomNumber>0.5f) transform.position = pointA.position;
-        else transform.position = pointB.position;
+        if(randomNumber>0.5f) transform.position = new Vector3(pointA.position.x, pointA.position.y,0);
+        else transform.position = new Vector3(pointB.position.x, pointA.position.y,0);
         TriggerThrowKunai();
     }
 
