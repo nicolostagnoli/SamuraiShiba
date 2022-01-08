@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2223157256891301987}
   - component: {fileID: 5652912065795118593}
   - component: {fileID: 7873503647809829952}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1782370841
-  m_SortingLayer: 5
+  m_SortingLayerID: 1441002311
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d9c66f7849c970e4c8d3447141d6d291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7200638cef479a4abff2f72ba38db9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 451ad8409ed6eb549a4f70f2e5ed57d8, type: 2}
+  lootTable: {fileID: 11400000, guid: c15187c4ed77b124a8a6f3bbf187c28d, type: 2}
   dropAmount: 5
   blood: {fileID: 6912025550447371134, guid: 38c22ae445f386746a5b40e8caf41c5d, type: 3}
   hitEffect: {fileID: 7873503647809829952}

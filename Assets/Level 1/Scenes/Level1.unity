@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1803442379638019482, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
+      propertyPath: invulnerabilityTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873503647809829952, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
+      propertyPath: duration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9100316239940630819, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -177,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 9100316239940630846, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
       propertyPath: m_Name
       value: Chest (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100316239940630846, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
