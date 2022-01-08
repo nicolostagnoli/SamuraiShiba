@@ -10,13 +10,14 @@ public class NextLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.name.Equals("Shiba"))
         {
+            Inventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             StateNameController.playerHealth =
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().getHealth();
             StateNameController.playerStamina =
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().getStamina();
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().setSlots(StateNameController.playerInventory.slots);
-            StateNameController.playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-            StateNameController.playerInventory.setSlots(GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().slots);
+            playerInventory.setSlots(StateNameController.playerInventory.slots);
+            StateNameController.playerInventory = playerInventory;
+            StateNameController.playerInventory.setSlots(playerInventory.slots);
             SceneManager.LoadScene(scene);
         }
     }

@@ -31,6 +31,7 @@ public class Pickup : MonoBehaviour
                 Instantiate(itemButton, _inventory.slots[_slotNumber].transform, false);
                 _inventory.slots[_slotNumber].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[_slotNumber].ToString();
                 _inventory.slots[_slotNumber].SetItemButton(itemButton);
+                StateNameController.playerInventory.slots[_slotNumber].SetItemButton(itemButton);
                 Destroy(gameObject);
             }
             else
