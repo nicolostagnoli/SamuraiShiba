@@ -1702,37 +1702,38 @@ MonoBehaviour:
   - name: Crane
     sentences:
     - Shiba....
-    - I waited you for so long
-    - and now i can finally give you what you deserve
+    - Just go back off
+    - You have no idea about the danger you are facing
+    - Well.....if you insist.....
+    - 'I will stop you '
   - name: Crane
     sentences:
     - I feel...
-    - The Shadows...
-  - name: GYACrane
-    sentences:
-    - GYAAAAAAAAAAAAAAAA
+    - ....something bad....
   - name: Crane
     sentences:
-    - darkness
+    - .....i can't control it.....
   - name: Crane
     sentences:
-    - is coming
+    - .....darkness.....
   - name: Crane
     sentences:
-    - help
+    - .....is coming.....
+  - name: Crane
+    sentences:
+    - Help!!
   - name: Crane
     sentences:
     - GYAAAAA
   - name: Crane
     sentences:
     - I'm dead
-    - gg
-    - cya
+    - I can't believe it!
   - name: GoldenShadow
     sentences:
-    - Wp shiba
-    - you got superjump!
-    - bye
+    - You did a great job
+    - Defeating the Crane increase your jump power
+    - See you soon!
   dialogue1:
     name: 
     sentences: []
@@ -3212,7 +3213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currenTime: 0
-  startingTime: 10
+  startingTime: 45
   bossScript: {fileID: 822372895}
   feather: {fileID: 9089927028098948925, guid: dfed3e2bf9c867b4e96821d5720b248d, type: 3}
   countDownText: {fileID: 1901428305}
@@ -3420,7 +3421,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d5f3affce0ea2be46a8419b5b7fde04f, type: 2}
     - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: maxHealth
-      value: 75
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: -1429698849895668920, guid: fbafa1a240c4e224997734c5d0f21192, type: 3}
       propertyPath: nextLevel
