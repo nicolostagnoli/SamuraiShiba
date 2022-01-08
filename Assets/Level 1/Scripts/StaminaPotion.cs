@@ -6,9 +6,11 @@ public class StaminaPotion : UsableItem
 {
     public int _potionValue=50;
     private PlayerStats _playerStats;
+    private ParticleSystem manaParticle;
     private void Start()
     {
         _playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        manaParticle = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<ParticleSystem>()[2];
         InitCategory();
         SetItemName(ItemName.StaminaPotion);
     }
@@ -19,6 +21,7 @@ public class StaminaPotion : UsableItem
         {
             _playerStats.setStamina(_playerStats.GetMaxStamina());
         }
+        manaParticle.Play();
         Debug.Log("stamina: " +_playerStats.getStamina());
     }
     
