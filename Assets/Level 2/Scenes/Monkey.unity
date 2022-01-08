@@ -14463,6 +14463,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1441065966}
