@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
         _playerStats = GetComponent<PlayerStats>();
         lightAttackEnabled = false;
         heavyAttackEnabled = false;
+        attackRange = StateNameController.attackRange;
     }
 
     // Update is called once per frame

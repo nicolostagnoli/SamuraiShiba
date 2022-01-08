@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour {
 
 	public Animator animator;
 	private int _dialoguesCounter = 0;
+
+	public PlayerAttack playerAttack;
 	
 	private Queue<string> _sentences;
 	public MonkeyDialogue monkeyDialogue;
@@ -181,6 +183,7 @@ public class DialogueManager : MonoBehaviour {
 
 		if (_dialoguesCounter ==10)
 		{
+			playerAttack.attackRange = 0.5f;
 			Time.timeScale = 1f;
 			Invoke("DisplayNextSentence", 1.5f);
 		}
