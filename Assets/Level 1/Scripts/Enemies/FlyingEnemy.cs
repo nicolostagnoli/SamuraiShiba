@@ -43,7 +43,19 @@ public class FlyingEnemy : Enemy
     {
         if (_player != null)
         {
+            if (transform.position.x < _player.position.x)
+            {
+                //transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                TurnRight();
+
+            }
+            else if(transform.position.x > _player.position.x)
+            {
+                //transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                TurnLeft();
+            }
             float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
+            if (distanceToPlayer > _agroRange) StopChasing();
             if (distanceToPlayer < _agroRange)
             {
                 ChasePlayer();
@@ -97,13 +109,13 @@ public class FlyingEnemy : Enemy
         {
             if (transform.position.x < _player.position.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
                 TurnRight();
 
             }
             else if(transform.position.x > _player.position.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, _player.position, _moveSpeed * Time.deltaTime);
                 TurnLeft();
             }
         }
@@ -128,7 +140,7 @@ public class FlyingEnemy : Enemy
 
     private Vector3 GetRoamingPosition()
     {
-        return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 4f,4f);
+        return startingPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(0, 0)).normalized* Random.Range( 2f,2f);
     }
 
     private void AttackPlayer()
