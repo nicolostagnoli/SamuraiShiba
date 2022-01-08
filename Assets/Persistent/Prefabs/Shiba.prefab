@@ -5005,7 +5005,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8448
   attackRange: 0.4
-  lightDamage: 510
+  lightDamage: 8
   heavyDamage: 15
   comboDuration: 1.5
   comboDamageBoost: 0.7
