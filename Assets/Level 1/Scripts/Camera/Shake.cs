@@ -13,19 +13,7 @@ public class Shake : MonoBehaviour
     public float duration = 1f;
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("h"))
-        {
-            StartCoroutine(Shaking());
-        }
-        /*To test from the inspector
-        if (start)
-        {
-            start = false;
-            StartCoroutine(Shaking());
-        }*/
-    }
+
     
     IEnumerator Shaking()
     {

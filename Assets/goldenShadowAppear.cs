@@ -11,7 +11,7 @@ public class goldenShadowAppear : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         is_colliding = true;
-        Debug.Log("OnCollisionEnter2D");
+        Debug.Log(collision.transform.name);
     }
 
     private void OnTriggerExit2D(Collider2D collision) 
