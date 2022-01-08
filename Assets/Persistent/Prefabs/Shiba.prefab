@@ -5065,6 +5065,7 @@ MonoBehaviour:
   _attackCooldown: 0.5
   firePoint: {fileID: 4167753217064836030}
   shurikenPrefab: {fileID: 4847237043305194295, guid: 9b85776e6cf57d54d9e16bc4ee62b604, type: 3}
+  shurikenSound: {fileID: 8181573133953296142}
 --- !u!114 &3709326142677595105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5187,7 +5188,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 33a633310a1062c45a4f1241720f8ee6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5283,7 +5284,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3309e7eaccf0af94ca589943bae9c2e8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5379,7 +5380,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 13f932e8a9a6e164c8d8b39af4a00533, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5475,7 +5476,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab8c637b65b21cd4b8bec6d9fed4c681, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5600,9 +5601,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: b6dd900babfe18342a72d873671bf35a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

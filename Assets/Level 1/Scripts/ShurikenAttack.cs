@@ -17,6 +17,7 @@ public class ShurikenAttack : MonoBehaviour
     public GameObject shurikenPrefab;
     private float _cooldownTimer= Mathf.Infinity;
 
+    public GameObject shurikenSound;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class ShurikenAttack : MonoBehaviour
     {
         _cooldownTimer = 0;
         shurikenPrefab.GetComponent<Projectile>().SetDirection(gameObject.transform.right);
+        shurikenSound.GetComponent<AudioSource>().Play();
         Instantiate(shurikenPrefab,firePoint.position, Quaternion.identity);
     }
 
