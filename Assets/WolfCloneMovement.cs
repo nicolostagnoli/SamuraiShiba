@@ -52,12 +52,15 @@ public class WolfCloneMovement : Enemy
         transform.eulerAngles = new Vector3(0, 180, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-            Destroy(gameObject);
+            if (!other.gameObject.GetComponent<PlayerStats>().GetInvulnerability())
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
