@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPotion : UsableItem
 {
-  private int _potionValue=20;
+  public int _potionValue=20;
   private PlayerStats _playerStats;
   private void Start()
   {

@@ -399,9 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f1c1f62e166d74faabc6526b5bd590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 50
-  lootTable: {fileID: 0}
-  dropAmount: 5
+  lootTable: {fileID: 11400000, guid: 57d75512176701a4bb59beaf6459d28e, type: 2}
+  dropAmount: 1
   blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
   hitEffect: {fileID: 6588095854842372225}
   woodenHitEffect: {fileID: 0}
@@ -412,7 +411,7 @@ MonoBehaviour:
   _attackRange: 2
   _moveSpeed: 2
   attackPosition: {fileID: 3202692560257449493}
-  bananaPrefab: {fileID: 9089927028098948925, guid: 47644300333eec447a72d9a587f4fe33, type: 3}
+  bananaPrefab: {fileID: 853026723178346102, guid: 953caf0c1aa4ad5438736c2dc6020c05, type: 3}
   bananaDamage: 5
   bananaVelocity: 5
 --- !u!95 &1836956859

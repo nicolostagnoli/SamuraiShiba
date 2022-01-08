@@ -40,7 +40,7 @@ public class Feather : MonoBehaviour
         hit = false;
         _lifeTime = 0;
         Vector3 dir = (direction- transform.position).normalized;
-        Vector3 temp = transform.position-direction;
+        Vector3 temp = direction-transform.position;
         //Rotation the feather towards the player
         transform.rotation= Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y,180+Mathf.Atan2(temp.y,temp.x)*Mathf.Rad2Deg);
         GetComponent<Rigidbody2D>().velocity = dir * speed;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2223157256891301987}
   - component: {fileID: 5652912065795118593}
   - component: {fileID: 7873503647809829952}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1782370841
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d9c66f7849c970e4c8d3447141d6d291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

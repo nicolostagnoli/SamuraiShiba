@@ -44,6 +44,10 @@ GameObject:
   - component: {fileID: 4352962358290764725}
   - component: {fileID: 5309733745672493985}
   - component: {fileID: 32287390094823832}
+  - component: {fileID: 190872551}
+  - component: {fileID: 190872552}
+  - component: {fileID: 190872555}
+  - component: {fileID: 190872556}
   m_Layer: 8
   m_Name: Wolf
   m_TagString: Enemy
@@ -127,9 +131,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  shadowKunaiPrefab: {fileID: 9089927028098948925, guid: dfed3e2bf9c867b4e96821d5720b248d, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  shadowKunaiPrefab: {fileID: 4147787978139971670, guid: 30d483a0f49bdd24a8cb457e75bad39d, type: 3}
   shadowKunaiVelocity: 5
-  wolfClonePrefab: {fileID: 0}
+  shadowKunaiDamage: 12
+  wolfClonePrefab: {fileID: 9017634088001411057, guid: ae88b64736e50f94f9a4642fac394464, type: 3}
+  numClones: 4
   attackPoint: {fileID: 3493080582496316975}
   meleeRange: 0.6
   whatIsPlayer:
@@ -173,8 +183,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1441002311
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -952761984627393443, guid: a9c9ce8a81ba65540a6c49757ad8fa8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +207,7 @@ Animator:
   m_GameObject: {fileID: 4352962358290764683}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7156683f971331489523ce59be14203, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -206,6 +216,142 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &190872551
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352962358290764683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04, y: -0.65999997}
+      - {x: 0.17, y: -0.79999995}
+      - {x: 0.24, y: -0.81}
+      - {x: 0.31, y: -0.74}
+      - {x: 0.24, y: -0.59}
+      - {x: 0.19, y: -0.56}
+      - {x: 0.19999999, y: -0.42}
+      - {x: 0.14999999, y: -0.25}
+      - {x: 0.19, y: -0.19999999}
+      - {x: 0.32999998, y: -0.26}
+      - {x: 0.45, y: -0.35999998}
+      - {x: 0.39, y: -0.44}
+      - {x: 0.41, y: -0.5}
+      - {x: 0.51, y: -0.47}
+      - {x: 0.59, y: -0.37}
+      - {x: 0.64, y: -0.26999998}
+      - {x: 0.64, y: -0.16}
+      - {x: 0.59, y: -0.049999997}
+      - {x: 0.53999996, y: -0.04}
+      - {x: 0.47, y: -0.12}
+      - {x: 0.37, y: -0.06}
+      - {x: 0.37, y: 0.04}
+      - {x: 0.32999998, y: 0.24}
+      - {x: 0.29999998, y: 0.44}
+      - {x: 0.22999999, y: 0.59}
+      - {x: 0.22999999, y: 0.84}
+      - {x: 0.21, y: 0.85999995}
+      - {x: 0.14, y: 0.84}
+      - {x: -0.089999996, y: 0.9}
+      - {x: -0.13, y: 0.9}
+      - {x: -0.16, y: 0.85999995}
+      - {x: -0.22, y: 0.72999996}
+      - {x: -0.29, y: 0.47}
+      - {x: -0.42999998, y: 0.32}
+      - {x: -0.47, y: 0.26}
+      - {x: -0.66999996, y: 0}
+      - {x: -0.65, y: -0.21}
+      - {x: -0.75, y: -0.32999998}
+      - {x: -0.77, y: -0.32999998}
+      - {x: -0.77, y: -0.39999998}
+      - {x: -0.71, y: -0.51}
+      - {x: -0.48, y: -0.51}
+      - {x: -0.35999998, y: -0.38}
+      - {x: -0.32999998, y: -0.29999998}
+      - {x: -0.42, y: -0.25}
+      - {x: -0.35999998, y: -0.03}
+      - {x: -0.32999998, y: -0.29999998}
+      - {x: -0.37, y: -0.47}
+      - {x: -0.63, y: -0.61}
+      - {x: -0.65, y: -0.65}
+      - {x: -0.64, y: -0.68}
+      - {x: -0.45999998, y: -0.71}
+      - {x: -0.38, y: -0.7}
+      - {x: -0.32999998, y: -0.82}
+      - {x: -0.22999999, y: -0.82}
+      - {x: -0.14, y: -0.7}
+      - {x: -0.14, y: -0.59999996}
+      - {x: -0.049999997, y: -0.52}
+--- !u!114 &190872552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352962358290764683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5024636b74a2ae946b8429b394c64c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
+  Rate: 750
+--- !u!114 &190872555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352962358290764683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c0dbdff6070804497fe7d6b15fd73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 11400000, guid: a3fffef0f4b146547a06d935dd83a5e5, type: 2}
+  dropAmount: 5
+  blood: {fileID: 6912025550447371134, guid: 290d9dd90a8bc8a499fc495b01fb8d51, type: 3}
+  hitEffect: {fileID: 190872556}
+  woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
+  _healthBarScript: {fileID: 0}
+  invulnerabilityTime: 0.2
+  maxHealth: 250
+  barScript: {fileID: 0}
+  chest: {fileID: 9100316239940630846, guid: fd3a9684c0a94be45a95473730fc9563, type: 3}
+  chestSpawnPosition: {fileID: 0}
+  nextLevel: {fileID: 0}
+  bossDead: 0
+--- !u!114 &190872556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352962358290764683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d3a26291f20044bb797e67dfd778d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
+  duration: 0.1
 --- !u!1 &4352962358338349565
 GameObject:
   m_ObjectHideFlags: 0

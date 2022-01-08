@@ -14,10 +14,8 @@ public class EnemyScript : Enemy
     [SerializeField]
     private float _attackRange;
     [SerializeField]
-    private float _moveSpeed;
     private float initialHealth=2000f;
     private Vector3 startingPosition;
-    private Vector3 roamPosition;
     public Transform attackPosition;
     public int damage;
     public LayerMask player;
@@ -29,12 +27,13 @@ public class EnemyScript : Enemy
     public float invisibilityAttackCooldown = 2f;
     public GameObject kunai;
     private bool inAttackRange;
-    public float teletrasportRange;
     private bool firstTeletrasport;
     public Transform pointA;
     public Transform pointB;
     private bool isInvisible;
     public GameObject canvas;
+    private Animator animator;
+
 
 
 
@@ -45,11 +44,12 @@ public class EnemyScript : Enemy
     {
         startingPosition = transform.position;
         _rigidbody = GetComponent<Rigidbody2D>();
-        roamPosition = GetRoamingPosition();
         SetHealth(initialHealth);
         _timeBetweenAttacks = 1;
         invisibilityDurationCooldown = invisibilityDuration;
         invisibilityCooldown = invisibilityAttackCooldown;
+        animator = GetComponent<Animator>();
+
     }
     
 
@@ -66,7 +66,7 @@ public class EnemyScript : Enemy
                 invisibilityAttackCooldown -= Time.deltaTime;
                 if(invisibilityAttackCooldown<=0)
                 {
-                    if(!firstTeletrasport) InvisibilityActivated();
+                    if(!firstTeletrasport) triggerInvisibility();
 
 
                 }
@@ -82,6 +82,7 @@ public class EnemyScript : Enemy
             }
             if (isInvisible)
             {
+                //Debug.Log("invisibility duration " +invisibilityDurationCooldown);
                 invisibilityDurationCooldown -= Time.deltaTime;
                 if(invisibilityDurationCooldown<=0) RandomTeletrasport(); 
             }
@@ -167,6 +168,16 @@ public class EnemyScript : Enemy
     }
     */
 
+    private void triggerInvisibility()
+    {
+        animator.SetTrigger("teleport");
+    }
+    
+    private void TriggerThrowKunai()
+    {
+        animator.SetTrigger("throw kunai");
+    }
+    
     private void InvisibilityActivated()
     {
         isInvisible = true;
@@ -178,9 +189,6 @@ public class EnemyScript : Enemy
         float randomNumber = Random.Range(0f, 1f);
         if(randomNumber>0.5f) transform.position = pointA.position;
         else transform.position = pointB.position;
-        //gameObject.SetActive(false);
-        //GetComponent<BoxCollider2D>().enabled = false;
-        // when the invisibility ends
     }
 
     private void RandomTeletrasport()
@@ -190,8 +198,7 @@ public class EnemyScript : Enemy
         float randomNumber = Random.Range(0f, 1f);
         if(randomNumber>0.5f) transform.position = pointA.position;
         else transform.position = pointB.position;
-        ThrowKunai();
-
+        TriggerThrowKunai();
     }
 
     private void ThrowKunai()
@@ -202,8 +209,6 @@ public class EnemyScript : Enemy
         GetComponent<SpriteRenderer>().color = tmp;
         isInvisible = false;
         canvas.SetActive(true);
-        
-        //GetComponent<BoxCollider2D>().enabled = true;
         if (transform.position.x < _player.position.x)
         {
             TurnLeft();
@@ -213,9 +218,8 @@ public class EnemyScript : Enemy
         {
             TurnRight();
         }
-        GameObject feather = Instantiate(kunai,transform.position, Quaternion.identity);
-        //da cambiare con il kunai 
-        feather.GetComponent<Feather>().SetDirection(_player.transform.position);
+        GameObject minionKunai = Instantiate(kunai,transform.position, Quaternion.identity);
+        minionKunai.GetComponent<Feather>().SetDirection(_player.transform.position);
         invisibilityAttackCooldown = invisibilityCooldown;
         firstTeletrasport = false;
     }
