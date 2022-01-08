@@ -1245,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158648359587455682, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4954557
+      value: 1.9954557
       objectReference: {fileID: 0}
     - target: {fileID: 2158648359587455682, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1269,11 +1269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131766863839525530, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0132446
+      value: -5.012135
       objectReference: {fileID: 0}
     - target: {fileID: 6131766863839525530, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2849379
+      value: 1.9954557
       objectReference: {fileID: 0}
     - target: {fileID: 6131766863839525530, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13417,6 +13417,10 @@ PrefabInstance:
       propertyPath: nextLevel
       value: 
       objectReference: {fileID: 215134559}
+    - target: {fileID: 190872555, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: dropAmount
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 190872555, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: chestSpawnPosition
       value: 
