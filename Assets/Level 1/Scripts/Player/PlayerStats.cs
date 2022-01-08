@@ -32,12 +32,14 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        _health = PlayerMaxHealth;
+        _stamina = PlayerMaxStamina;
         if (StateNameController.playerHealth != 0 && StateNameController.playerStamina != 0)
         {
-            _health = StateNameController.playerHealth;
-            _stamina = StateNameController.playerStamina;
-            _inventory=Inventory.CreateInventory(gameObject,StateNameController.playerInventory.slots,
-                StateNameController.playerInventory.currentStack);
+            //_health = StateNameController.playerHealth;
+            //_stamina = StateNameController.playerStamina;
+            _inventory = StateNameController.playerInventory;
+            _playerInventory.setSlots(_inventory.slots);
             for (int i = 0; i < TotalSlots; i++)
             {
                 if (_inventory.slots[i].GetItemButton() != null)
@@ -54,8 +56,8 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            _health = PlayerMaxHealth;
-            _stamina = PlayerMaxStamina;
+           // _health = PlayerMaxHealth;
+           // _stamina = PlayerMaxStamina;
             //_coinCounterTextScript=GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<CoinCounterTextScript>();
             //_coinCounterTextScript.setCoinsAmount(_coins);
         }
