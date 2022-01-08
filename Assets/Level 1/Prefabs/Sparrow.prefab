@@ -366,7 +366,7 @@ MonoBehaviour:
   radius: 0.3
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -379,7 +379,7 @@ MonoBehaviour:
   autoRepath:
     mode: 2
     interval: 0.5
-    sensitivity: 10
+    sensitivity: 20
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
