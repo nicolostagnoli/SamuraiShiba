@@ -12202,6 +12202,7 @@ MonoBehaviour:
   dialogueText: {fileID: 66792793}
   continueText: {fileID: 38525830}
   animator: {fileID: 1310753968}
+  playerAttack: {fileID: 2145107645}
   monkeyDialogue: {fileID: 1485705548}
   buttonA: {fileID: 0}
   DarkParticleEffect: {fileID: 1850143745}
@@ -12815,32 +12816,38 @@ MonoBehaviour:
   dialogues:
   - name: Monkey
     sentences:
-    - Helo Boss
+    - Look who we got here!
   - name: Monkey
     sentences:
-    - Wait... I' m the boss
+    - The mighty Hero, the Saviour of the mountain! The Shiba!
+    - But your journey will stop......here
+    - I won't let you pass, to disturb "the great one!"
   - name: Monkey
     sentences:
-    - Shut UP! You've gone too far #1 start
+    - Fight me! Shiba!
   - name: Monkey
     sentences:
-    - Darkness
+    - 'What is going on? '
   - name: Monkey
     sentences:
-    - Oh no
+    - I feel different.....
   - name: Monkey
     sentences:
-    - Ehmm
+    - This is his power!
+    - Incredible......
+    - I feel invincible
   - name: Monkey
     sentences:
-    - Combattimento #2 start
+    - Die Shibaaaa!!!!
   - name: Monkey
     sentences:
-    - Me ded
+    - Your abilities are unbelievable
+    - But not enough to defeat him!
   - name: GoldenShadow
     sentences:
-    - Halo
-    - Now you can swing swang
+    - Well done! Your ambition has no limit!
+    - Your slashes are more and more lethal...
+    - That means that your attack range has increased
   dialogue1:
     name: Monkey
     sentences:
@@ -14369,6 +14376,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145107645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4930271037381103038, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+  m_PrefabInstance: {fileID: 1922399597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c895ee690261f46a07b81f8f8f6ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6616578244126640692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14424,6 +14442,10 @@ PrefabInstance:
       propertyPath: barScript
       value: 
       objectReference: {fileID: 1990144204}
+    - target: {fileID: 6616578243425860042, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6616578243425860042, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
       propertyPath: nextLevel
       value: 
