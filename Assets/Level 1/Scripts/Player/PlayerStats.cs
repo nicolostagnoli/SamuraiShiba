@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class PlayerStats : MonoBehaviour
     public float invulnerabilityTime;
     private float timeToInvulnerability;
     private bool _invulnerable; //Independent from invulnerability time
-    
+
+    [Header("SoundEffects")] 
+    public GameObject woodenKatanaSounds;
+
     private void Start()
     {
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -165,4 +169,11 @@ public class PlayerStats : MonoBehaviour
         _coins+=amount;
         _coinCounterTextScript.setCoinsAmount(_coins);
     }
+
+    public void PlayWoodenKatanaSound()
+    {
+        int randomValue = Random.Range(0, 4);
+        woodenKatanaSounds.GetComponents<AudioSource>()[randomValue].Play();
+    }
+    
 }
