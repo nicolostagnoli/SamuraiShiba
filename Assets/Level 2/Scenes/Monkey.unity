@@ -14486,5 +14486,9 @@ PrefabInstance:
       propertyPath: attackProbability
       value: 0.65
       objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425861173, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: Rate
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}

@@ -14294,6 +14294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 190872552, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
+      propertyPath: Rate
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 190872555, guid: 43ab597b3f2e84a438d04f1f78b83523, type: 3}
       propertyPath: barScript
       value: 

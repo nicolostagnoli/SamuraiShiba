@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
-  Rate: 750
+  Rate: 300
 --- !u!1 &822842994
 GameObject:
   m_ObjectHideFlags: 0
