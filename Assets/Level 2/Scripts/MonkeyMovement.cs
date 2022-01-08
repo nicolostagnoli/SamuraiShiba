@@ -174,5 +174,13 @@ public class MonkeyMovement : BossMovement {
     public override void TriggerDarkMode(float damage, float speed, float projectileDamage)
     {
         featherDarkMode = true;
+        speed = 3;
+        chargeSpeed = 4;
+        hangTime = 3;
+        shootTime = 0.25f;
+        bananaDamage = 10;
+        damage = 12;
+        attackProbability = 0.55f;
+        timeBetweenHangs = 10;
     }
 }

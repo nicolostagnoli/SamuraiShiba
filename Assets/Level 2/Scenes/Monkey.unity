@@ -11629,7 +11629,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448513611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -12281,7 +12281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158648359587455682, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5604553
+      value: 2.0604556
       objectReference: {fileID: 0}
     - target: {fileID: 2158648359587455682, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12305,7 +12305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131766863839525530, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5604553
+      value: 2.0604556
       objectReference: {fileID: 0}
     - target: {fileID: 6131766863839525530, guid: eda858715793c5c48920e0fa836e98b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13877,10 +13877,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiba
       objectReference: {fileID: 0}
-    - target: {fileID: 3010953476913594263, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
@@ -13898,10 +13894,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 29146502}
     - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
-      propertyPath: GameOverScreen
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: healthBarScript
       value: 
       objectReference: {fileID: 1803848964}
@@ -13909,10 +13901,6 @@ PrefabInstance:
       propertyPath: staminaBarScript
       value: 
       objectReference: {fileID: 1803848963}
-    - target: {fileID: 8442788336162533092, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
-      propertyPath: invulnerabilityTime
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
 --- !u!114 &1990144204 stripped
@@ -14449,8 +14437,28 @@ PrefabInstance:
       value: Monkey
       objectReference: {fileID: 0}
     - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1441065966}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: shootTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: chargeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: bananaDamage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616578243425860045, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
+      propertyPath: attackProbability
+      value: 0.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f3e381a647eac245b927c6e5c9be7b4, type: 3}
