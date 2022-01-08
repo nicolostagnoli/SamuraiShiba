@@ -194,10 +194,12 @@ public class WolfMovement : BossMovement
         _timeToAttack = 0f;
         for (int i = 1; i <= numClones; i++)
         {
+            int pointIndex = Random.Range(0, teleportPoints.Count);
             GameObject wolfClone = Instantiate(wolfClonePrefab);
-            float spawnPoint = Random.Range(-_radiusSpawner, _radiusSpawner);
-            wolfClone.transform.position = new Vector3(shiba.transform.position.x + spawnPoint, transform.position.y,
-                transform.position.z);
+            //float spawnPoint = Random.Range(-_radiusSpawner, _radiusSpawner);
+            //wolfClone.transform.position = new Vector3(shiba.transform.position.x + spawnPoint, transform.position.y,
+               // transform.position.z);
+            wolfClone.transform.position = teleportPoints[pointIndex].transform.position;
         }
     }
 

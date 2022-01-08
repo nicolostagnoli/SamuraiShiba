@@ -42,6 +42,11 @@ public class Enemy : MonoBehaviour
                 {
                     StateNameController.jumpForce = 10f;
                 }
+
+                if (gameObject.name == "Wolf")
+                {
+                    StateNameController.dashSpeed = 5f;
+                }
                 Destroy(gameObject);
                 //anim.SetTrigger("die")
             }

@@ -19,6 +19,7 @@ public class WolfCloneMovement : Enemy
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         if (_shiba != null)
         {
             ChaseShiba();
@@ -28,7 +29,7 @@ public class WolfCloneMovement : Enemy
     void ChaseShiba()
     {
         
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(_shiba.transform.position.x, _constY), _movementSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _shiba.transform.position, _movementSpeed * Time.deltaTime);
         
          if (transform.position.x < _shiba.transform.position.x)
          {

@@ -8,4 +8,5 @@ public class StateNameController : MonoBehaviour
     public static float playerStamina;
     public static float jumpForce = 8f;
     public static Inventory playerInventory;
+    public static float dashSpeed = 3f;
 }

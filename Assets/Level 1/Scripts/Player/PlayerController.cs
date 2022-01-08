@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     _animator = GetComponent<Animator>();
         _stats = GetComponent<PlayerStats>();
         jumpForce = StateNameController.jumpForce;
+        dashSpeed = StateNameController.dashSpeed;
   }
 
   private void FixedUpdate()
@@ -158,8 +159,16 @@ public class PlayerController : MonoBehaviour
         //_rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
         //Debug.Log(_rb.velocity);
         _dashTimeLeft -= Time.deltaTime;
-        _animator.SetTrigger("Dodge");
-        _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
+        if (_moveInput == 0)
+        {
+          _animator.SetTrigger("Dodge");
+          _rb.velocity = new Vector2(dashSpeed * -_facingDirection, _rb.velocity.y);
+        }
+        else
+        {
+          _animator.SetTrigger("Roll");
+          _rb.velocity = new Vector2(dashSpeed * 2 * _facingDirection, _rb.velocity.y);
+        }
         /*if (Mathf.Abs(transform.position.x - _lastImageXPos) > distanceBetweenImages)
         {
           PlayerAfterImagePool.Instance.GetFromPool();
