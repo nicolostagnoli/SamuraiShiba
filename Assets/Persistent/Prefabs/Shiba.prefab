@@ -4976,7 +4976,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   dust: {fileID: 380765881808693270}
   speed: 3
-  jumpForce: 8
+  jumpForce: 5
   checkRadius: 0.3
   jumpTime: 0.25
   dashStamina: 15
