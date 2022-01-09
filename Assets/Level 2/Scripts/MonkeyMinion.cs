@@ -22,6 +22,7 @@ public class MonkeyMinion : Enemy
     public float bananaDamage;
     public float bananaVelocity;
     private Animator animator;
+    public bool standing;
 
 
 
@@ -68,7 +69,7 @@ public class MonkeyMinion : Enemy
             }
             else
             {
-                Roam();
+                if(!standing) Roam();
             }
         }
     }

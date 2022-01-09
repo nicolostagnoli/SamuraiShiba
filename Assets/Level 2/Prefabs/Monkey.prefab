@@ -405,10 +405,10 @@ MonoBehaviour:
   hitEffect: {fileID: 6588095854842372225}
   woodenHitEffect: {fileID: 6502109788513755394, guid: f21f30cfc8197b146b9ad1da5bee954d, type: 3}
   _healthBarScript: {fileID: 3426089596674393793}
-  invulnerabilityTime: 0.1
+  invulnerabilityTime: 0.2
   _player: {fileID: 0}
   _agroRange: 5
-  _attackRange: 2
+  _attackRange: 4
   _moveSpeed: 2
   attackPosition: {fileID: 3202692560257449493}
   bananaPrefab: {fileID: 853026723178346102, guid: 953caf0c1aa4ad5438736c2dc6020c05, type: 3}

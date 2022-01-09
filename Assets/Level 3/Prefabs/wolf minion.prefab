@@ -374,16 +374,16 @@ MonoBehaviour:
   invulnerabilityTime: 0.2
   _player: {fileID: 0}
   _agroRange: 6
-  _attackRange: 2.7
-  initialHealth: 50
+  _attackRange: 4
+  initialHealth: 100
   attackPosition: {fileID: 4868973328685189582}
   damage: 10
   player:
     serializedVersion: 2
     m_Bits: 8
-  invisibilityDuration: 1
-  invisibilityCooldown: 2
-  invisibilityAttackCooldown: 2
+  invisibilityDuration: 0.5
+  invisibilityCooldown: 1
+  invisibilityAttackCooldown: 1
   kunai: {fileID: 2661709202526936419, guid: 2fbcb95e743df854f979067636c8b366, type: 3}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: fbb8e7fdc05d45747b26a3d2ee27c429, type: 2}
-  duration: 0
+  duration: 0.2
 --- !u!95 &-5066125637494360045
 Animator:
   serializedVersion: 3
