@@ -631,7 +631,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Thanks to everyone who helped us testing and developing the game.\n\nProgrammers:
     Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele Ziza, Pardeep Khumar\n\nArtist: Chenmin
-    Luo\n\nMusic Artist: Tarek Bouguerra\n"
+    Luo, Yifei Xiong\n\nMusic Artist: Tarek Bouguerra\n"
 --- !u!1 &1970454844763331219
 GameObject:
   m_ObjectHideFlags: 0
