@@ -976,6 +976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInterface
       objectReference: {fileID: 0}
+    - target: {fileID: 4894278141936791895, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7542846013725466924, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
