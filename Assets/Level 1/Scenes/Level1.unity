@@ -92330,6 +92330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiba
       objectReference: {fileID: 0}
+    - target: {fileID: 5598778780533556487, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: jumpForce
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
