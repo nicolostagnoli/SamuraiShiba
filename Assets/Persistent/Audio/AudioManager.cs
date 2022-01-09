@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
     public static AudioManager singleton;
-    private AudioSource _audioSource;
+    private int i = 0;
+    
+    
+    
+    private AudioSource[] _audioSource;
     private void Awake() {
         
         if (singleton != null)
@@ -17,24 +21,33 @@ public class AudioManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
         
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponents<AudioSource>();
     }
 
     public void PlayMusic() {
-        if (_audioSource.isPlaying) return;
-        _audioSource.Play();
+        if (_audioSource[i].isPlaying) return;
+        _audioSource[i].Play();
     }
 
     public void StopMusic() {
-        _audioSource.Stop();
+        _audioSource[i].Stop();
     }
     
     public void AddVolume()
     {
-        _audioSource.volume += 0.10f;
+        _audioSource[i].volume += 0.10f;
     }
     public void LowerVolume()
     {
-        _audioSource.volume -= 0.10f;
+        _audioSource[i].volume -= 0.10f;
     }
+    public void FirstTrack()
+    {
+        i = 0;
+    }
+    public void SecondTrack()
+    {
+        i = 1;
+    }
+    
 }

@@ -641,7 +641,6 @@ MonoBehaviour:
   mainMenuPrefab: {fileID: 7723690275407746386, guid: 6ace2eeb64f7b479ab9a2b6237787dc5, type: 3}
   settingsMenuPrefab: {fileID: -3527050457494538089, guid: 3ee0f41340204497ba3fda18c2162eb2, type: 3}
   creditsMenuPrefab: {fileID: 367069374756227885, guid: 1829f3c889ce0a14d9603f07c6cfa20f, type: 3}
-  playerInterfacePrefab: {fileID: 2202309787941737829, guid: 9b08f36f8a2f6a048a5150936c295638, type: 3}
   pauseMenuPrefab: {fileID: 2381142871931879556, guid: c768ade9590f94e79b029cf1188a5a87, type: 3}
   gameOverMenu: {fileID: -4717271902043671103, guid: 7b324f4f524a30947bc0419c962d02d9, type: 3}
 --- !u!4 &2055213116

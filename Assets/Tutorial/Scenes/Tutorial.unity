@@ -372,7 +372,10 @@ MonoBehaviour:
     - (J to Attack, K for Heavy Attack)
   - name: Golden Shadow
     sentences:
-    - (Press SHIFT to DASH)
+    - '(Press SHIFT to DASH)
+
+      You can dash forward or backward to prevent damage
+      if timed correctly'
   - name: Golden Shadow
     sentences:
     - ......alright.....that's all........
