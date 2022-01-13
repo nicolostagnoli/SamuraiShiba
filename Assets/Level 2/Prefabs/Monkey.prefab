@@ -411,9 +411,10 @@ MonoBehaviour:
   _attackRange: 4
   _moveSpeed: 2
   attackPosition: {fileID: 3202692560257449493}
-  bananaPrefab: {fileID: 853026723178346102, guid: 953caf0c1aa4ad5438736c2dc6020c05, type: 3}
+  bananaPrefab: {fileID: 4496881826666530666, guid: bf4a77cbd22337e42953f1582f004d66, type: 3}
   bananaDamage: 5
   bananaVelocity: 5
+  standing: 0
 --- !u!95 &1836956859
 Animator:
   serializedVersion: 3

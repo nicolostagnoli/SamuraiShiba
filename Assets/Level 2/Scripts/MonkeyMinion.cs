@@ -158,11 +158,14 @@ public class MonkeyMinion : Enemy
 
     void ThrowBanana()
     {
-        GameObject banana = Instantiate(bananaPrefab);
-        banana.GetComponent<BossProjectyle>().SetDamage(bananaDamage);
-        banana.transform.position = attackPosition.position;
+        GameObject banana = Instantiate(bananaPrefab,attackPosition.position, Quaternion.identity);
+        banana.GetComponent<Feather>().SetDirection(_player.transform.position);
+        
+        //GameObject banana = Instantiate(bananaPrefab);
+        //banana.GetComponent<BossProjectyle>().SetDamage(bananaDamage);
+        //banana.transform.position = attackPosition.position;
         banana.transform.rotation = Quaternion.FromToRotation(banana.transform.right, _player.transform.position - banana.transform.position) * Quaternion.Euler(0, 0, Random.Range(-10, 10));
-        banana.GetComponent<Rigidbody2D>().velocity = banana.transform.right * bananaVelocity;
+        //banana.GetComponent<Rigidbody2D>().velocity = banana.transform.right * bananaVelocity;
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
