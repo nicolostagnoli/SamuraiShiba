@@ -186,17 +186,17 @@ public class EnemyScript : Enemy
         tmp.a = 0f;
         GetComponent<SpriteRenderer>().color = tmp;
         float randomNumber = Random.Range(0f, 1f);
-        if(randomNumber>0.5f) transform.position = pointA.position;
-        else transform.position = pointB.position;
+        if(randomNumber>0.5f) transform.position = new Vector3(pointA.position.x, pointA.position.y,0);
+        else transform.position = new Vector3(pointB.position.x, pointB.position.y,0);
     }
 
     private void RandomTeletrasport()
     {
         invisibilityDurationCooldown = invisibilityDuration ;
         //Random position within the player
-        float randomNumber = Random.Range(0f, 1f);
-        if(randomNumber>0.5f) transform.position = new Vector3(pointA.position.x, pointA.position.y,0);
-        else transform.position = new Vector3(pointB.position.x, pointA.position.y,0);
+        //float randomNumber = Random.Range(0f, 1f);
+        //if(randomNumber>0.5f) transform.position = new Vector3(pointA.position.x, pointA.position.y,0);
+        //else transform.position = new Vector3(pointB.position.x, pointB.position.y,0);
         TriggerThrowKunai();
     }
 
