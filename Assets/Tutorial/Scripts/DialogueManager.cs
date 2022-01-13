@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public Text nameText;
 	public Text dialogueText;
+	public Text continueText;
 
 	public Animator animator;
 	private int _dialoguesCounter = 0;
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour {
 			buttonA.SetActive(true);
 			buttonD.SetActive(true);
 			buttonSpacebar.SetActive(true);
+			continueText.text = "Press the keys below...";
 
 			StartCoroutine(WaitForKeyYoBePressed1());
 			
@@ -49,6 +51,7 @@ public class DialogueManager : MonoBehaviour {
 			buttonSpacebar.SetActive(false);
 			buttonJ.SetActive(true);
 			buttonK.SetActive(true);
+			continueText.text = "Press the keys below...";
 			
 			
 
@@ -63,6 +66,7 @@ public class DialogueManager : MonoBehaviour {
 			buttonK.SetActive(false);
 			
 			buttonShift.SetActive(true);
+			continueText.text = "Press the keys below...";
 
 			StartCoroutine(WaitForKeyYoBePressed3());
 			
@@ -257,7 +261,7 @@ public class DialogueManager : MonoBehaviour {
 
 
 					DisplayNextSentence();
-
+					continueText.text = "Press Enter to continue...";
 					//do stuff once space is pressed
 
 				}

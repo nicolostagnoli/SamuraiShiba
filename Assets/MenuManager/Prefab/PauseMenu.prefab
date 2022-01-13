@@ -895,7 +895,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dfbcc96b08bcf3740a8e23a228b369dc, type: 3}
-    m_FontSize: 117
+    m_FontSize: 97
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -906,8 +906,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Thanks to everyone who is helping us testing and developing the game.\n\nDevelopers:\nChenmin
-    Luo, Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele ..., Deep ...,\nMusic Artist:\n...\n"
+  m_Text: "Thanks to everyone who helped us testing and developing the game.\n\nProgrammers:
+    Nicol\xF2 Stagnoli, Davide Ubaldi, Gabriele Ziza, Pardeep Khumar\n\nArtist: Chenmin
+    Luo, Yifei Xiong\n\nMusic Artist: Tarek Bouguerra"
 --- !u!1 &1970454844763331219
 GameObject:
   m_ObjectHideFlags: 0

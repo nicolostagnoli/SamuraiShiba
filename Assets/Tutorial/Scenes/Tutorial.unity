@@ -825,6 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1845476597}
   dialogueText: {fileID: 1693065541}
+  continueText: {fileID: 1452835389}
   animator: {fileID: 1741239113}
   goldenShadowTutorial: {fileID: 647756772}
   buttonA: {fileID: 1947033279}
