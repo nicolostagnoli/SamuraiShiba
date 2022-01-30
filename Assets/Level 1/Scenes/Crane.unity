@@ -1832,7 +1832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761d6b6c527de0943ba334ed81d41474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_colliding: 0
 --- !u!1 &646662088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 3156118926362986453, guid: cee08ef170bc82546974c97fae9557c4, type: 3}
-  Rate: 200
+  Rate: 100
 --- !u!1 &822842994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,6 +3353,10 @@ PrefabInstance:
     - target: {fileID: 1198578693233598302, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: m_Name
       value: Shiba
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598778780533556487, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6830801137162050834, guid: 0ffc32d10bcf43845b8bb1e55d23a6f6, type: 3}
       propertyPath: slots.Array.data[0]

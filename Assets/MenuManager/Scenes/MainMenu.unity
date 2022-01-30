@@ -219,6 +219,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf464a7f1fe17846a1535438067cfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuClip: {fileID: 8300000, guid: 21e29a3d9e3bc9143b53622e03d8faa6, type: 3}
+  tutorialClip: {fileID: 8300000, guid: 94f2c776f8935c8458e331b1dd1c8e68, type: 3}
+  level1Clip: {fileID: 8300000, guid: b448feaba65b4d9409a80b053350cc01, type: 3}
+  boss1Clip: {fileID: 8300000, guid: 01f17e5d87570814c979f2281dd00af4, type: 3}
+  level2Clip: {fileID: 8300000, guid: 086c8807006c4fc4ebd28dc9f53cdbf0, type: 3}
+  boss2Clip: {fileID: 8300000, guid: 6ad595200a9f7db4d9352915e957bc70, type: 3}
+  level3Clip: {fileID: 8300000, guid: 94f2c776f8935c8458e331b1dd1c8e68, type: 3}
+  boss3Clip: {fileID: 8300000, guid: 8de682d5152f7fc449743120de5db206, type: 3}
+  level4Clip: {fileID: 8300000, guid: 086c8807006c4fc4ebd28dc9f53cdbf0, type: 3}
+  boss4Clip: {fileID: 8300000, guid: 01f17e5d87570814c979f2281dd00af4, type: 3}
 --- !u!4 &302835885
 Transform:
   m_ObjectHideFlags: 0
