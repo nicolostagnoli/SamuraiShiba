@@ -52,7 +52,8 @@ public class DarkParticleEffect : MonoBehaviour
 
     void SpawnDarkAtPosition(Vector2 position)
     {
-        SimplePool.Spawn(particlePrefab, position, Quaternion.identity);
+        //SimplePool.Spawn(particlePrefab, position, Quaternion.identity);
+        Instantiate(particlePrefab, position, Quaternion.identity);
     }
 
     public void activateDarkMode()

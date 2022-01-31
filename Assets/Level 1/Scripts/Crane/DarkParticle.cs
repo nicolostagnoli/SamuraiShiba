@@ -30,7 +30,8 @@ public class DarkParticle : MonoBehaviour
         timeAlive += Time.deltaTime;
         if (timeAlive >= actualLifeSpan)
         {
-            SimplePool.Despawn(gameObject);
+            //SimplePool.Despawn(gameObject);
+            Destroy(gameObject);
             return;
         }
         transform.Translate(velocity*Time.deltaTime);
