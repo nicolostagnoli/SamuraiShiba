@@ -26,4 +26,12 @@ public class PauseMenu : Menu<PauseMenu>
     {
         Application.Quit();
     }
+    
+    public void BackToMainMenu()
+    {
+        MenuManager.Instance.SetNonActiveSpecificMenu(Instance);
+        MenuManager.Instance.OpenMenu(MainMenu.Instance);
+          
+        SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
+    }
 }

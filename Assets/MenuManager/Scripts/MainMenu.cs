@@ -29,6 +29,14 @@ using UnityEngine.SceneManagement;
                 MenuManager.Instance.OpenMenu(SettingsMenu.Instance);
             }
         }
+        
+        public void OnLevelSelectPressed()
+        {
+            if (MenuManager.Instance != null && SelectLevel.Instance != null)
+            {
+                MenuManager.Instance.OpenMenu(SelectLevel.Instance);
+            }
+        }
 
         public void onCreditsPressed()
         {
@@ -63,6 +71,63 @@ using UnityEngine.SceneManagement;
             SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
             
             
+        }
+        
+        public void OnLevel1Pressed()
+        {
+            if (MenuManager.Instance != null)
+            //MenuManager.Instance.OpenMenu(PlayerInterface.Instance);
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+            SceneManager.LoadScene("Level 1/Scenes/level1");
+        }
+
+        public void OnLevel2Pressed()
+        {
+       
+
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+            SceneManager.LoadScene("Level 2/Scenes/level2");
+        }
+        
+        public void OnLevel3Pressed()
+        {
+         
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+            SceneManager.LoadScene("Level4/Level4");
+        }
+        
+
+        public void OnLevelCranePressed()
+        {
+         
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+            SceneManager.LoadScene("Level 1/Scenes/Crane");
+        }
+        
+        public void OnLevelMonkeyPressed()
+    
+        {
+    
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+            
+          
+            SceneManager.LoadScene("Level 2/Scenes/Monkey");
+            
+            
+        }
+        
+        public void OnLevelWolfPressed()
+    
+        {
+            MenuManager.Instance.CloseMenu();
+            MenuManager.Instance.CloseSpecificMenu(Instance);
+          
+            SceneManager.LoadScene("level 3/Scenes/Wolf");
         }
         
 

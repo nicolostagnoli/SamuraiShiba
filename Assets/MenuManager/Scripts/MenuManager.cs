@@ -22,6 +22,8 @@ public class MenuManager : Singleton<MenuManager>
     
     public GameOverMenu gameOverMenu;
 
+    public SelectLevel selectLevel;
+
     private Stack<Menu> _menusStack = new Stack<Menu>();
 
     
@@ -30,7 +32,7 @@ public class MenuManager : Singleton<MenuManager>
 
     public void InizializeMenu()
     {
-        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, pauseMenuPrefab, gameOverMenu};
+        Menu[] menus = new Menu[] {mainMenuPrefab, settingsMenuPrefab, creditsMenuPrefab, pauseMenuPrefab, gameOverMenu, selectLevel};
 
         if (_menuParent == null)
         {
