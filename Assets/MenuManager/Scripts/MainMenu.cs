@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
     {
 
         private bool _gameIsPaused;
-       
-
+        
         
 
         public void OnPlayPressed()
@@ -35,6 +34,14 @@ using UnityEngine.SceneManagement;
             if (MenuManager.Instance != null && SelectLevel.Instance != null)
             {
                 MenuManager.Instance.OpenMenu(SelectLevel.Instance);
+            }
+        }
+        
+        public void OnDifficultySelectPressed()
+        {
+            if (MenuManager.Instance != null && DifficultySelect.Instance != null)
+            {
+                MenuManager.Instance.OpenMenu(DifficultySelect.Instance);
             }
         }
 
@@ -129,6 +136,34 @@ using UnityEngine.SceneManagement;
           
             SceneManager.LoadScene("level 3/Scenes/Wolf");
         }
+
+        public void setDifficultyEasy()
+        {
+            StateNameController.SetEasyDifficulty();
+            MenuManager.Instance.SetNonActiveSpecificMenu(Instance);
+            MenuManager.Instance.OpenMenu(MainMenu.Instance);
+          
+            SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
+        }
+
+        public void setDifficultyNormal()
+        {
+            StateNameController.SetMediumDifficulty();
+            MenuManager.Instance.SetNonActiveSpecificMenu(Instance);
+            MenuManager.Instance.OpenMenu(MainMenu.Instance);
+          
+            SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
+        }
+
+        public void setDifficultyHard()
+        {
+            StateNameController.SetHardDifficulty();
+            MenuManager.Instance.SetNonActiveSpecificMenu(Instance);
+            MenuManager.Instance.OpenMenu(MainMenu.Instance);
+          
+            SceneManager.LoadScene("MenuManager/Scenes/MainMenu");
+        }
+        
         
 
     }

@@ -654,6 +654,7 @@ MonoBehaviour:
   pauseMenuPrefab: {fileID: 2381142871931879556, guid: c768ade9590f94e79b029cf1188a5a87, type: 3}
   gameOverMenu: {fileID: -4717271902043671103, guid: 7b324f4f524a30947bc0419c962d02d9, type: 3}
   selectLevel: {fileID: 1635485378605210579, guid: 490efaa57791f1a4ca6765b5e7ca4ed5, type: 3}
+  DifficultySelect: {fileID: -510722174339654528, guid: 10feec36317020c42b4b5dde0bd5d4d0, type: 3}
 --- !u!4 &2055213116
 Transform:
   m_ObjectHideFlags: 0
