@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPotion : UsableItem
 {
-  public int _potionValue=20;
+  private float _potionValue=0.5f;
   private PlayerStats _playerStats;
   private ParticleSystem healingParticle;
   private void Start()
@@ -17,13 +17,14 @@ public class HealthPotion : UsableItem
 
   public override void UseItem()
   {
-    if (_playerStats.getHealth() + _potionValue > _playerStats.GetMaxHealth())
+    if (_playerStats.getHealth() + _potionValue *StateNameController.playerMaxHealth > _playerStats.GetMaxHealth())
     {
       _playerStats.setHealth(_playerStats.GetMaxHealth());
     }
     else 
-      _playerStats.setHealth(_playerStats.getHealth() + _potionValue);
+      _playerStats.setHealth(_playerStats.getHealth() + _potionValue*StateNameController.playerMaxHealth);
     healingParticle.Play();
+    Debug.Log("player health "+_playerStats.getHealth());
   }
 
   public override bool CanUseItem()
