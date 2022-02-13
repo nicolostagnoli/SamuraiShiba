@@ -20,8 +20,8 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPosition;
     public LayerMask whatIsEnemy;
     public float attackRange;
-    public float lightDamage;
-    public float heavyDamage;
+    private float lightDamage;
+    private float heavyDamage;
     public float comboDuration;
     public float comboDamageBoost;
     public float lightAttackStamina;
@@ -37,6 +37,8 @@ public class PlayerAttack : MonoBehaviour
         lightAttackEnabled = false;
         heavyAttackEnabled = false;
         attackRange = StateNameController.attackRange;
+        lightDamage = StateNameController.lightAttackDamage;
+        heavyDamage = StateNameController.heavyAttackDamage;
     }
 
     // Update is called once per frame

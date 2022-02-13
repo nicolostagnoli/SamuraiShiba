@@ -33,7 +33,6 @@ public class PlayerStats : MonoBehaviour
     {
         PlayerMaxHealth = StateNameController.playerMaxHealth;
         healthRegenerationSpeed = StateNameController.healthRegeneration;
-
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         _health = PlayerMaxHealth;
         _stamina = PlayerMaxStamina;
@@ -41,8 +40,40 @@ public class PlayerStats : MonoBehaviour
         {
             _inventory = StateNameController.playerInventory;
             _playerInventory.setSlots(_inventory.slots);
+
             for (int i = 0; i < TotalSlots; i++)
             {
+                if (_inventory.slots[i].GetItemButton() != null)
+                {
+                    if (_inventory.currentStack[i] > 0)
+                    {
+                        Instantiate(_inventory.slots[i].GetItemButton(), _playerInventory.slots[i].transform, false);
+                        _playerInventory.slots[i].GetComponentInChildren<TextMeshProUGUI>().text = _inventory.currentStack[i].ToString();
+                        _playerInventory.currentStack[i] = StateNameController.playerInventory.currentStack[i];
+                    }
+
+                }
+            }
+        }
+
+        if (StateNameController.HealthPotionQuantity != 0 || StateNameController.StaminaPotionQuantity != 0 ||
+            StateNameController.ShurikenQuantity != 0)
+        {
+            StateNameController.playerInventory = _playerInventory;
+            _inventory = StateNameController.playerInventory;
+            _inventory.currentStack[0] += StateNameController.HealthPotionQuantity;
+            StateNameController.HealthPotionQuantity = 0;
+            _inventory.currentStack[1] += StateNameController.StaminaPotionQuantity;
+            StateNameController.StaminaPotionQuantity = 0;
+            _inventory.currentStack[2] += StateNameController.ShurikenQuantity;
+            StateNameController.ShurikenQuantity = 0;
+            _inventory.slots[0].SetItemButton(StateNameController.HealthPotion);
+            _inventory.slots[1].SetItemButton(StateNameController.StaminaPotion);
+            _inventory.slots[2].SetItemButton(StateNameController.Shuriken);
+            
+            for (int i = 0; i < TotalSlots; i++)
+            {
+                Debug.Log(_inventory.slots[i].GetItemButton() != null);
                 if (_inventory.slots[i].GetItemButton() != null)
                 {
                     if (_inventory.currentStack[i] > 0)

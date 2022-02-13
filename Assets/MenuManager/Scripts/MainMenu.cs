@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
     {
 
         private bool _gameIsPaused;
+        public GameObject item1;
+        public GameObject item2;
+        public GameObject item3;
         
         
 
@@ -91,11 +94,13 @@ using UnityEngine.SceneManagement;
 
         public void OnLevel2Pressed()
         {
-       
-
+            
             MenuManager.Instance.CloseMenu();
             MenuManager.Instance.CloseSpecificMenu(Instance);
             SceneManager.LoadScene("Level 2/Scenes/level2");
+            StateNameController.AddHealPotion(3, item1);
+            StateNameController.AddStaminaPotion(3,item2);
+            StateNameController.AddShuriken(2,item3);
         }
         
         public void OnLevel3Pressed()
@@ -104,6 +109,9 @@ using UnityEngine.SceneManagement;
             MenuManager.Instance.CloseMenu();
             MenuManager.Instance.CloseSpecificMenu(Instance);
             SceneManager.LoadScene("Level4/Level4");
+            StateNameController.AddHealPotion(5, item1);
+            StateNameController.AddStaminaPotion(5,item2);
+            StateNameController.AddShuriken(4,item3);
         }
         
 
@@ -113,7 +121,11 @@ using UnityEngine.SceneManagement;
             MenuManager.Instance.CloseMenu();
             MenuManager.Instance.CloseSpecificMenu(Instance);
             SceneManager.LoadScene("Level 1/Scenes/Crane");
+            StateNameController.AddHealPotion(2, item1);
+            StateNameController.AddStaminaPotion(2,item2);
+            StateNameController.AddShuriken(1,item3);
         }
+        
         
         public void OnLevelMonkeyPressed()
     
@@ -124,6 +136,9 @@ using UnityEngine.SceneManagement;
             
           
             SceneManager.LoadScene("Level 2/Scenes/Monkey");
+            StateNameController.AddHealPotion(4, item1);
+            StateNameController.AddStaminaPotion(4,item2);
+            StateNameController.AddShuriken(3,item3);
             
             
         }
@@ -135,6 +150,9 @@ using UnityEngine.SceneManagement;
             MenuManager.Instance.CloseSpecificMenu(Instance);
           
             SceneManager.LoadScene("level 3/Scenes/Wolf");
+            StateNameController.AddHealPotion(6, item1);
+            StateNameController.AddStaminaPotion(6,item2);
+            StateNameController.AddShuriken(6,item3);
         }
 
         public void setDifficultyEasy()
