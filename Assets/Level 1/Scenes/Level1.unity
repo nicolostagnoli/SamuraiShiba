@@ -100340,6 +100340,14 @@ PrefabInstance:
       propertyPath: _attackRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5709301204850128225, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709301204850128225, guid: b030186259b2ff84f81967a24503bb15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.026
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b030186259b2ff84f81967a24503bb15, type: 3}
 --- !u!1001 &1607918780
