@@ -16,11 +16,11 @@ https://polimi-game-collective.itch.io/
 
 ![](Images/screen4.png)
 
-![](Images/Screenshoot5.png)
+![](Images/Screenshot5.png)
 
-![](Images/Screenshoot6.png)
+![](Images/Screenshot6.png)
 
-![](Images/Screenshoot7.png)
+![](Images/Screenshot7.png)
 
-![](Images/Screenshoot8.png)
+![](Images/Screenshot8.png)
 
